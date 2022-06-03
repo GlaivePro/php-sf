@@ -2,6 +2,10 @@
 
 Build SFA-SQL (SQL/MM) expressions using SFA-CA syntax.
 
+> **Note**
+> Currently this doc contains not only description of this package and
+> documentation sketch, but plans and research as well. WIP. Unreleased.
+
 [Simple Features](https://en.wikipedia.org/wiki/Simple_Features) is a standard
 (multiple standards actually) by Open Geospatial Consortium defining models for
 geospatial data. The standard defines object oriented and SQL access (known as
@@ -12,7 +16,7 @@ from it.
 It can be used to build SQL statements for systems such as PostGIS,
 SpatiaLite, MySQL spatial and others implementing SFA-SQL or SQL-MM.
 
-## Examples
+## Feature examples
 
 The objects in this lib allow chaining SFA to create SQL expressions:
 
@@ -61,12 +65,80 @@ $buf2 = $geom->buffer($dynamicBuffer);
 $buf2->bindings; // [3]
 ```
 
+## Usage examples
+
+This section presents some plain examples in plain PDO.
+
+Query a relation between columns `yard` and `road`:
+
+```php
+$yard = new Geometry('yard');
+$road = new Geometry('road');
+
+$expr = $yard->intersects($road);
+
+$statement = $pdo->prepare("
+	SELECT *
+	FROM features
+	WHERE $expr
+");
+
+$statement->execute($expr->bindings);
+```
+
+Query a column against a raw statement:
+
+```php
+$box = Geometry::fromMethod('ST_MakeEnvelope', 0, 0, 1, 3);
+
+// You may skip trivial `new Geometry('geom')` and just supply the column name
+// or any other SQL string.
+$contains = $box->contains('geom');
+// produces ST_Contains(ST_MakeEnvelope(?, ?, ?, ?), geom)
+
+$statement = $pdo->prepare("
+	SELECT *
+	FROM features
+	WHERE
+		created_at > ? 
+		AND $contains
+");
+
+// merge bindings with other bindings
+$statement->execute([$createdFrom, ...$contains->bindings]);
+```
+
+Set a value:
+
+```php
+$point = new Point('ST_MakePoint(?, ?)', [2, 7]);
+// Equivalent to:
+// $point = Point::fromMethod('ST_MakePoint', [2, 7]);
+
+$statement = $pdo->prepare("
+	UPDATE features
+	SET location = $point
+	WHERE id = ?
+");
+
+// merge bindings with other bindings
+$statement->execute([...$point->bindings, $id]);
+```
+
 ## Scope and goals
 
 The main goal is to support creation of PostGIS expressions which follows the
 ArcSDE implementation. If method names are different, we should have aliases
 to support PostGIS naming. If arguments are different, we should strive to
 support all cases.
+
+### Roadmap
+
+- All the SFA model
+- All the other SFA-SQL functions
+- Internal support for return and arg types (e.g. `IntExpression`, `AreaExpression`)
+- PostGIS specific stuff like additional args, geography stuff and so on
+- Laravel query builder and Eloquent (casts, setting, queries...) integration
 
 ## Terminology and references
 

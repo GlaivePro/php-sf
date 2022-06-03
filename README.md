@@ -148,6 +148,7 @@ the geometries and the interface to interact with them.
 - **OGC** — Open Geospatial Consortium
 - **SQL/MM** — SQL multimedia schema defined by ISO/IEC 13249, including SQL/MM
 spatial defined in ISO/IEC 13249-3.
+- **SFA-CA** — Geometry model defined by OGC in [SFA part 1](https://www.ogc.org/standards/sfa)
 - **SFA-SQL** — SQL schema for simple features defined by OGC in [SFA part 2](https://www.ogc.org/standards/sfs)
 - **ArcSDE** — the thing in ArcGIS suite that communicates with a relational
 database. Some RDBMS treat it as a de facto standard and sometimes follows it

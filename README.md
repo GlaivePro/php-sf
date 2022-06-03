@@ -2,6 +2,16 @@
 
 Build SFA-SQL (SQL/MM) expressions using SFA-CA syntax.
 
+[Simple Features](https://en.wikipedia.org/wiki/Simple_Features) is a standard
+(multiple standards actually) by Open Geospatial Consortium defining models for
+geospatial data. The standard defines object oriented and SQL access (known as
+SFA-SQL, SQL/MM and ArcSDE among others) to these models. This package
+implements the object oriented SFA API in PHP and produces SFA-SQL expressions
+from it.
+
+It can be used to build SQL statements for systems such as PostGIS,
+SpatiaLite, MySQL spatial and others implementing SFA-SQL or SQL-MM.
+
 ## Examples
 
 The objects in this lib allow chaining SFA to create SQL expressions:
@@ -63,6 +73,14 @@ support all cases.
 - **SF** — [Simple Features](https://en.wikipedia.org/wiki/Simple_Features),
 the geometries and the interface to interact with them.
 - **SFA** — Simple Feature Access, same thing as Simple Features.
+- **OGC** — Open Geospatial Consortium
+- **SQL/MM** — SQL multimedia schema defined by ISO/IEC 13249, including SQL/MM
+spatial defined in ISO/IEC 13249-3.
+- **SFA-SQL** — SQL schema for simple features defined by OGC in [SFA part 2](https://www.ogc.org/standards/sfs)
+- **ArcSDE** — the thing in ArcGIS suite that communicates with a relational
+database. Some RDBMS treat it as a de facto standard and sometimes follows it
+over SFA (dropping SFA methods that ArcSDE is not using https://trac.osgeo.org/postgis/changeset/8680)
+or SQL/MM (implemented for ArcSDE not SQL/MM https://postgis.net/docs/ST_OrderingEquals.html).
 
 Our API mainly tries to support the 
 [OpenGIS SFA standard](https://www.ogc.org/standards/sfa), but it might also
@@ -75,7 +93,8 @@ The supportable SQL is described in multiple standards and other resources:
 - [ArcSDE](https://desktop.arcgis.com/en/arcmap/latest/manage-data/using-sql-with-gdbs/a-quick-tour-of-sql-functions-used-with-st-geometry.htm)
 - [PostGIS](https://postgis.net/docs/reference.html)
 
-Some might also be interested to see ISO 19125 (SFA) and ISO 19107 (spatial schema).
+Some might also be interested to see ISO 19125 (SFA), ISO/IEC 13249-3 (SQL/MM spatial)
+and ISO 19107 (spatial schema).
 
 ## Similar projects
 
@@ -104,3 +123,22 @@ formats.
 https://github.com/vincjo/spatialite
 
 PHP interface to SpatiaLite.
+
+### elevenlab/php-ogc
+
+https://github.com/eleven-lab/php-ogc
+
+Implementation of SFA types in PHP.
+
+### elevenlab/laravel-geo
+
+https://github.com/eleven-lab/laravel-geo
+
+Extending Laravel query builder and Eloquent with some of the SFA-SQL methods.
+
+### mstaack/laravel-postgis
+
+https://github.com/mstaack/laravel-postgis
+
+Implementation of SFA types with custom interface and support for those objects
+in Eloquent. Also adds support for these types in migrations.

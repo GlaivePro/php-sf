@@ -161,7 +161,7 @@ include some common aliases from ArcSDE and others.
 The supportable SQL is described in multiple standards and other resources:
 
 - [OpenGIS SFA part 2](https://www.ogc.org/standards/sfs)
-- [SQL/MM](https://subs.emis.de/LNI/Proceedings/Proceedings26/GI-Proceedings.26-17.pdf)
+- SQL/MM (ISO/IEC 13249-3), no free access
 - [ArcSDE](https://desktop.arcgis.com/en/arcmap/latest/manage-data/using-sql-with-gdbs/a-quick-tour-of-sql-functions-used-with-st-geometry.htm)
 - [PostGIS](https://postgis.net/docs/reference.html)
 

@@ -43,7 +43,7 @@ trait GeometryBasic
 	 */
 	public function spatialDimension(): Expression // Integer-valued expression
 	{
-		throw new MethodNotImplemented;
+		throw new Exceptions\MethodNotImplemented;
 	}
 
 	public function geometryType(): Expression // String-valued expression

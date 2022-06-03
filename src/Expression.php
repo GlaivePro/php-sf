@@ -26,7 +26,7 @@ class Expression implements \Stringable
 		if (\is_string($expression))
 			return new static($expression);
 
-		throw new InvalidExpressionType(
+		throw new Exceptions\InvalidExpressionType(
 			'Only strings and '.static::class.' can be wrapped in expressions of type '.static::class.'.'
 		);
 	}

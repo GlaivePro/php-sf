@@ -4,7 +4,7 @@ namespace TontonsB\SF\Tests;
 
 use TontonsB\SF\Expression;
 use TontonsB\SF\Geometry;
-use TontonsB\SF\MethodNotImplemented;
+use TontonsB\SF\Exceptions\MethodNotImplemented;
 
 class GeometryBasicTest extends GeometryTestCase
 {

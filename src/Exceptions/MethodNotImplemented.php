@@ -1,6 +1,6 @@
 <?php
 
-namespace TontonsB\SF;
+namespace TontonsB\SF\Exceptions;
 
 class MethodNotImplemented extends \BadMethodCallException
 {

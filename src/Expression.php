@@ -23,7 +23,7 @@ class Expression implements \Stringable
 		if ($expression instanceof static)
 			return $expression;
 
-		if (is_string($expression))
+		if (\is_string($expression))
 			return new static($expression);
 
 		throw new InvalidExpressionType(
@@ -36,7 +36,7 @@ class Expression implements \Stringable
 	 * Any Expression args are merged in the sql expression while raw args
 	 * are moved to bindings and replaced by ?.
 	 */
-	public static function fromMethod(string $method, string|self ...$args): static
+	public static function fromMethod(string $method, int|float|string|bool|self ...$args): static
 	{
 		$params = [];
 		$bindings = [];

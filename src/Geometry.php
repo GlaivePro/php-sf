@@ -4,7 +4,7 @@ namespace TontonsB\SF;
 
 /**
  * Implements geometry model according to
- * 6.1 Geometry object model
+ * 6.1.2 Geometry
  * of "OpenGIS® Implementation Standard for Geographic information - Simple
  * feature access - Part 1: Common architecture"
  *

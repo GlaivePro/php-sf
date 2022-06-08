@@ -4,7 +4,7 @@ namespace TontonsB\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
 use TontonsB\SF\Expression;
-use TontonsB\SF\Geometry;
+use TontonsB\SF\OGC\Geometry;
 use TontonsB\SF\Exceptions\InvalidExpressionType;
 
 class ExpressionTest extends TestCase

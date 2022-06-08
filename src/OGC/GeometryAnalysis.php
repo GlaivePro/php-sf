@@ -1,6 +1,8 @@
 <?php
 
-namespace TontonsB\SF;
+namespace TontonsB\SF\OGC;
+
+use TontonsB\SF\Expression;
 
 /**
  * Supports analysis methods on geometry object according to

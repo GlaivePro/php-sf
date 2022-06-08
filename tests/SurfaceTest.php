@@ -3,10 +3,9 @@
 namespace TontonsB\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TontonsB\SF\Curve;
-use TontonsB\SF\Geometry;
-use TontonsB\SF\Point;
-use TontonsB\SF\Surface;
+use TontonsB\SF\OGC\Geometry;
+use TontonsB\SF\OGC\Point;
+use TontonsB\SF\OGC\Surface;
 
 class SurfaceTest extends TestCase
 {

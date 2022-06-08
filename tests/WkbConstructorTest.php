@@ -3,9 +3,9 @@
 namespace TontonsB\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TontonsB\SF\Geometry;
-use TontonsB\SF\GeometryCollection;
-use TontonsB\SF\Point;
+use TontonsB\SF\OGC\Geometry;
+use TontonsB\SF\OGC\GeometryCollection;
+use TontonsB\SF\OGC\Point;
 
 use function TontonsB\SF\{
 	geomCollFromWKB,

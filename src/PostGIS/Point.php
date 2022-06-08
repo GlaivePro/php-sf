@@ -2,7 +2,7 @@
 
 namespace TontonsB\SF\PostGIS;
 
-use TontonsB\SF\Point as OGCPoint;
+use TontonsB\SF\OGC\Point as OGCPoint;
 
 /**
  * Point model with PostGIS-specific functions.

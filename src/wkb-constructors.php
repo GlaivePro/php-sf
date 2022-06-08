@@ -2,6 +2,10 @@
 
 namespace TontonsB\SF;
 
+use TontonsB\SF\OGC\Geometry;
+use TontonsB\SF\OGC\GeometryCollection;
+use TontonsB\SF\OGC\Point;
+
 /**
  * Implements constructors according to
  * Table 5 — SQL functions for constructing a geometric object given its

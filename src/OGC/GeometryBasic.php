@@ -1,6 +1,9 @@
 <?php
 
-namespace TontonsB\SF;
+namespace TontonsB\SF\OGC;
+
+use TontonsB\SF\Exceptions\MethodNotImplemented;
+use TontonsB\SF\Expression;
 
 /**
  * Supports basic methods on geometry object according to
@@ -48,7 +51,7 @@ trait GeometryBasic
 	 */
 	public function spatialDimension(): Expression // Integer-valued expression
 	{
-		throw new Exceptions\MethodNotImplemented;
+		throw new MethodNotImplemented;
 	}
 
 	public function geometryType(): Expression // String-valued expression

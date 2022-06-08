@@ -2,7 +2,7 @@
 
 namespace TontonsB\SF\SpatiaLite;
 
-use TontonsB\SF\Geometry as OGCGeometry;
+use TontonsB\SF\OGC\Geometry as OGCGeometry;
 
 /**
  * Geometry model with SpatiaLite-specific functions.

@@ -3,7 +3,7 @@
 namespace TontonsB\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TontonsB\SF\Point;
+use TontonsB\SF\OGC\Point;
 
 class PointTest extends TestCase
 {

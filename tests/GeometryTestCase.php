@@ -3,7 +3,7 @@
 namespace TontonsB\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TontonsB\SF\Geometry;
+use TontonsB\SF\OGC\Geometry;
 
 class GeometryTestCase extends TestCase
 {

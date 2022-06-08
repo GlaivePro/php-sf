@@ -3,8 +3,8 @@
 namespace TontonsB\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TontonsB\SF\Curve;
-use TontonsB\SF\Point;
+use TontonsB\SF\OGC\Curve;
+use TontonsB\SF\OGC\Point;
 
 class CurveTest extends TestCase
 {

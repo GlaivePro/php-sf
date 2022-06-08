@@ -8,6 +8,13 @@ namespace TontonsB\SF;
  * of "OpenGIS® Implementation Standard for Geographic information - Simple
  * feature access - Part 1: Common architecture"
  *
+ * Returns SQL statements according to
+ * Table 19 — SQL functions for distance relationships
+ * and
+ * Table 20 — SQL functions that implement spatial operators
+ * of "OpenGIS® Implementation Standard for Geographic information - Simple
+ * feature access - Part 2: SQL option"
+ *
  * TODO: Check arg types to disallow Expression args (currently they pass due
  * to getting coerced to string).
  */

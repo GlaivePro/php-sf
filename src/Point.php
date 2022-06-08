@@ -7,6 +7,11 @@ namespace TontonsB\SF;
  * 6.1.3 Point
  * of "OpenGIS® Implementation Standard for Geographic information - Simple
  * feature access - Part 1: Common architecture"
+ *
+ * Returns SQL statements according to
+ * Table 10 — SQL functions on type Point
+ * of "OpenGIS® Implementation Standard for Geographic information - Simple
+ * feature access - Part 2: SQL option"
  */
 class Point extends Geometry
 {

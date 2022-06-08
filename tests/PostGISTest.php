@@ -3,9 +3,12 @@
 namespace Tontonsb\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
+use TontonsB\SF\PostGIS\Curve;
 use TontonsB\SF\PostGIS\Geometry;
+use TontonsB\SF\PostGIS\GeometryCollection;
 use TontonsB\SF\PostGIS\Point;
 use TontonsB\SF\PostGIS\Sfc;
+use TontonsB\SF\PostGIS\Surface;
 
 class PostGISTest extends TestCase
 {
@@ -32,7 +35,26 @@ class PostGISTest extends TestCase
 		);
 	}
 
-	public function testTypesXXX(): void
+	// Just to ensure extensions and imports are working
+	public function testModels(): void
+	{
+		$this->assertEquals(
+			'ST_SetSRID(curve, ?)',
+			(string) (new Curve('curve'))->setSRID(3059),
+		);
+
+		$this->assertEquals(
+			'ST_CoordDim(geom)',
+			(string) (new GeometryCollection('geom'))->coordDim(),
+		);
+
+		$this->assertEquals(
+			'ST_CoordDim(surface)',
+			(string) (new Surface('surface'))->nDims(),
+		);
+	}
+
+	public function testTypes(): void
 	{
 		$geom = new Geometry('geom');
 

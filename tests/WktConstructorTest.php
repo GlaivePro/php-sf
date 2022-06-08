@@ -6,18 +6,13 @@ use PHPUnit\Framework\TestCase;
 use TontonsB\SF\OGC\Geometry;
 use TontonsB\SF\OGC\GeometryCollection;
 use TontonsB\SF\OGC\Point;
-
-use function TontonsB\SF\{
-	geomCollFromText,
-	geomFromText,
-	pointFromText,
-};
+use TontonsB\SF\OGC\Sfc;
 
 class WktConstructorTest extends TestCase
 {
 	public function testGeomFromText(): void
 	{
-		$geom = geomFromText('text');
+		$geom = Sfc::geomFromText('text');
 		$this->assertEquals(
 			'ST_GeomFromText(?)',
 			(string) $geom,
@@ -25,7 +20,7 @@ class WktConstructorTest extends TestCase
 		$this->assertEquals(['text'], $geom->bindings);
 		$this->assertInstanceOf(Geometry::class, $geom);
 
-		$geomWithSRID = geomFromText('text', 4326);
+		$geomWithSRID = Sfc::geomFromText('text', 4326);
 		$this->assertEquals(
 			'ST_GeomFromText(?, ?)',
 			(string) $geomWithSRID,
@@ -36,7 +31,7 @@ class WktConstructorTest extends TestCase
 
 	public function testPointFromText(): void
 	{
-		$point = pointFromText('text');
+		$point = Sfc::pointFromText('text');
 		$this->assertEquals(
 			'ST_PointFromText(?)',
 			(string) $point,
@@ -44,7 +39,7 @@ class WktConstructorTest extends TestCase
 		$this->assertEquals(['text'], $point->bindings);
 		$this->assertInstanceOf(Point::class, $point);
 
-		$pointWithSRID = pointFromText('text', 4326);
+		$pointWithSRID = Sfc::pointFromText('text', 4326);
 		$this->assertEquals(
 			'ST_PointFromText(?, ?)',
 			(string) $pointWithSRID,
@@ -55,7 +50,7 @@ class WktConstructorTest extends TestCase
 
 	public function testGeomCollFromText(): void
 	{
-		$geomColl = geomCollFromText('text');
+		$geomColl = Sfc::geomCollFromText('text');
 		$this->assertEquals(
 			'ST_GeomCollFromText(?)',
 			(string) $geomColl,
@@ -63,7 +58,7 @@ class WktConstructorTest extends TestCase
 		$this->assertEquals(['text'], $geomColl->bindings);
 		$this->assertInstanceOf(GeometryCollection::class, $geomColl);
 
-		$geomCollWithSRID = geomCollFromText('text', 4326);
+		$geomCollWithSRID = Sfc::geomCollFromText('text', 4326);
 		$this->assertEquals(
 			'ST_GeomCollFromText(?, ?)',
 			(string) $geomCollWithSRID,

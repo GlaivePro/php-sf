@@ -6,18 +6,13 @@ use PHPUnit\Framework\TestCase;
 use TontonsB\SF\OGC\Geometry;
 use TontonsB\SF\OGC\GeometryCollection;
 use TontonsB\SF\OGC\Point;
-
-use function TontonsB\SF\{
-	geomCollFromWKB,
-	geomFromWKB,
-	pointFromWKB,
-};
+use TontonsB\SF\OGC\Sfc;
 
 class WkbConstructorTest extends TestCase
 {
 	public function testGeomFromWKB(): void
 	{
-		$geom = geomFromWKB('binary');
+		$geom = Sfc::geomFromWKB('binary');
 		$this->assertEquals(
 			'ST_GeomFromWKB(?)',
 			(string) $geom,
@@ -25,7 +20,7 @@ class WkbConstructorTest extends TestCase
 		$this->assertEquals(['binary'], $geom->bindings);
 		$this->assertInstanceOf(Geometry::class, $geom);
 
-		$geomWithSRID = geomFromWKB('binary', 4326);
+		$geomWithSRID = Sfc::geomFromWKB('binary', 4326);
 		$this->assertEquals(
 			'ST_GeomFromWKB(?, ?)',
 			(string) $geomWithSRID,
@@ -36,7 +31,7 @@ class WkbConstructorTest extends TestCase
 
 	public function testPointFromWKB(): void
 	{
-		$point = pointFromWKB('binary');
+		$point = Sfc::pointFromWKB('binary');
 		$this->assertEquals(
 			'ST_PointFromWKB(?)',
 			(string) $point,
@@ -44,7 +39,7 @@ class WkbConstructorTest extends TestCase
 		$this->assertEquals(['binary'], $point->bindings);
 		$this->assertInstanceOf(Point::class, $point);
 
-		$pointWithSRID = pointFromWKB('binary', 4326);
+		$pointWithSRID = Sfc::pointFromWKB('binary', 4326);
 		$this->assertEquals(
 			'ST_PointFromWKB(?, ?)',
 			(string) $pointWithSRID,
@@ -55,7 +50,7 @@ class WkbConstructorTest extends TestCase
 
 	public function testGeomCollFromWKB(): void
 	{
-		$geomColl = geomCollFromWKB('binary');
+		$geomColl = Sfc::geomCollFromWKB('binary');
 		$this->assertEquals(
 			'ST_GeomCollFromWKB(?)',
 			(string) $geomColl,
@@ -63,7 +58,7 @@ class WkbConstructorTest extends TestCase
 		$this->assertEquals(['binary'], $geomColl->bindings);
 		$this->assertInstanceOf(GeometryCollection::class, $geomColl);
 
-		$geomCollWithSRID = geomCollFromWKB('binary', 4326);
+		$geomCollWithSRID = Sfc::geomCollFromWKB('binary', 4326);
 		$this->assertEquals(
 			'ST_GeomCollFromWKB(?, ?)',
 			(string) $geomCollWithSRID,

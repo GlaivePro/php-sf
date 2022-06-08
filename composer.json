@@ -24,10 +24,6 @@
         "phpunit/phpunit": "^9.0"
     },
     "autoload": {
-		"files": [
-			"src/wkb-constructors.php",
-			"src/wkt-constructors.php"
-		],
         "psr-4": {
             "TontonsB\\SF\\": "src"
         }

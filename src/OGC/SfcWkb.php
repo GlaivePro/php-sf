@@ -2,10 +2,6 @@
 
 namespace TontonsB\SF\OGC;
 
-use TontonsB\SF\OGC\Geometry;
-use TontonsB\SF\OGC\GeometryCollection;
-use TontonsB\SF\OGC\Point;
-
 /**
  * Implements constructors according to
  * Table 5 — SQL functions for constructing a geometric object given its
@@ -27,8 +23,8 @@ trait SfcWkb
 	public static function geomFromWKB(string $WKBGeometry, int $SRID = null): Geometry
 	{
 		return is_null($SRID)
-			? Geometry::fromMethod('ST_GeomFromWKB', $WKBGeometry)
-			: Geometry::fromMethod('ST_GeomFromWKB', $WKBGeometry, $SRID);
+			? static::geometryFromMethod('ST_GeomFromWKB', $WKBGeometry)
+			: static::geometryFromMethod('ST_GeomFromWKB', $WKBGeometry, $SRID);
 	}
 
 
@@ -40,8 +36,8 @@ trait SfcWkb
 	public static function pointFromWKB(string $WKBPoint, int $SRID = null): Point
 	{
 		return is_null($SRID)
-			? Point::fromMethod('ST_PointFromWKB', $WKBPoint)
-			: Point::fromMethod('ST_PointFromWKB', $WKBPoint, $SRID);
+			? static::pointFromMethod('ST_PointFromWKB', $WKBPoint)
+			: static::pointFromMethod('ST_PointFromWKB', $WKBPoint, $SRID);
 	}
 
 	// TODO: lineFromWKB
@@ -58,7 +54,7 @@ trait SfcWkb
 	public static function geomCollFromWKB(string $WKBGeomCollection, int $SRID = null): GeometryCollection
 	{
 		return is_null($SRID)
-			? GeometryCollection::fromMethod('ST_GeomCollFromWKB', $WKBGeomCollection)
-			: GeometryCollection::fromMethod('ST_GeomCollFromWKB', $WKBGeomCollection, $SRID);
+			? static::geometryCollectionFromMethod('ST_GeomCollFromWKB', $WKBGeomCollection)
+			: static::geometryCollectionFromMethod('ST_GeomCollFromWKB', $WKBGeomCollection, $SRID);
 	}
 }

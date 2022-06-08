@@ -2,10 +2,6 @@
 
 namespace TontonsB\SF\OGC;
 
-use TontonsB\SF\OGC\Geometry;
-use TontonsB\SF\OGC\GeometryCollection;
-use TontonsB\SF\OGC\Point;
-
 /**
  * Implements constructors according to
  * Table 3 — SQL functions for constructing a geometric object given its
@@ -27,8 +23,8 @@ trait SfcWkt
 	public static function geomFromText(string $geometryTaggedText, int $SRID = null): Geometry
 	{
 		return is_null($SRID)
-			? Geometry::fromMethod('ST_GeomFromText', $geometryTaggedText)
-			: Geometry::fromMethod('ST_GeomFromText', $geometryTaggedText, $SRID);
+			? static::geometryFromMethod('ST_GeomFromText', $geometryTaggedText)
+			: static::geometryFromMethod('ST_GeomFromText', $geometryTaggedText, $SRID);
 	}
 
 	/**
@@ -39,8 +35,8 @@ trait SfcWkt
 	public static function pointFromText(string $pointTaggedText, int $SRID = null): Point
 	{
 		return is_null($SRID)
-			? Point::fromMethod('ST_PointFromText', $pointTaggedText)
-			: Point::fromMethod('ST_PointFromText', $pointTaggedText, $SRID);
+			? static::pointFromMethod('ST_PointFromText', $pointTaggedText)
+			: static::pointFromMethod('ST_PointFromText', $pointTaggedText, $SRID);
 	}
 
 	// TODO: lineFromText
@@ -57,7 +53,7 @@ trait SfcWkt
 	public static function geomCollFromText(string $geometryCollectionTaggedText, int $SRID = null): GeometryCollection
 	{
 		return is_null($SRID)
-			? GeometryCollection::fromMethod('ST_GeomCollFromText', $geometryCollectionTaggedText)
-			: GeometryCollection::fromMethod('ST_GeomCollFromText', $geometryCollectionTaggedText, $SRID);
+			? static::geometryCollectionFromMethod('ST_GeomCollFromText', $geometryCollectionTaggedText)
+			: static::geometryCollectionFromMethod('ST_GeomCollFromText', $geometryCollectionTaggedText, $SRID);
 	}
 }

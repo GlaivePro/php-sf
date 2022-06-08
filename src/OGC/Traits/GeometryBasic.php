@@ -51,8 +51,6 @@ trait GeometryBasic
 
 	public function envelope(): GeometryInterface
 	{
-		// This is indirect because children like Point must keep this class,
-		// but derived models like PostGIS\Geometry must override it.
 		return $this->geometryFromMethod('ST_Envelope', $this);
 	}
 

@@ -2,8 +2,6 @@
 
 namespace TontonsB\SF\OGC;
 
-use TontonsB\SF\Expression;
-
 /**
  * Implements geometry model according to
  * 6.1.3 GeometryCollection
@@ -17,19 +15,5 @@ use TontonsB\SF\Expression;
  */
 class GeometryCollection extends Geometry implements Contracts\GeometryCollection
 {
-	public function numGeometries(): Expression // Integer-valued expression
-	{
-		return $this->wrap('ST_NumGeometries');
-	}
-
-	public function geometryN(int|Expression $n): Contracts\Geometry // Integer-valued expression
-	{
-		// We are explicitly NOT wrapping $n in an Expression, because
-		// raw numeric values should go to bindings.
-		return Geometry::fromMethod(
-			'ST_GeometryN',
-			$this,
-			$n,
-		);
-	}
+	use Traits\GeometryCollection;
 }

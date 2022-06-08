@@ -2,8 +2,6 @@
 
 namespace TontonsB\SF\OGC;
 
-use TontonsB\SF\Expression;
-
 /**
  * Implements geometry model according to
  * 6.1.6 Curve
@@ -17,28 +15,5 @@ use TontonsB\SF\Expression;
  */
 class Curve extends Geometry implements Contracts\Curve
 {
-	public function length(): Expression // Float-valued expression
-	{
-		return $this->wrap('ST_Length');
-	}
-
-	public function startPoint(): Contracts\Point
-	{
-		return Point::fromMethod('ST_StartPoint', $this);
-	}
-
-	public function endPoint(): Contracts\Point
-	{
-		return Point::fromMethod('ST_EndPoint', $this);
-	}
-
-	public function isClosed(): Expression // Boolean-valued expression
-	{
-		return $this->wrap('ST_IsClosed');
-	}
-
-	public function isRing(): Expression // Boolean-valued expression
-	{
-		return $this->wrap('ST_IsRing');
-	}
+	use Traits\Curve;
 }

@@ -9,5 +9,8 @@ use TontonsB\SF\OGC\Geometry as OGCGeometry;
  */
 class Geometry extends OGCGeometry
 {
-	use GeometryFunctions;
+	public function setSRID(int $srid): static
+	{
+		return static::fromMethod('ST_SetSRID', $this, $srid);
+	}
 }

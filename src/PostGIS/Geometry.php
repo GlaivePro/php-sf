@@ -10,6 +10,8 @@ use TontonsB\SF\OGC\Geometry as OGCGeometry;
  */
 class Geometry extends OGCGeometry
 {
+	protected const sfc = Sfc::class;
+
 	public function setSRID(int $srid): static
 	{
 		return static::fromMethod('ST_SetSRID', $this, $srid);

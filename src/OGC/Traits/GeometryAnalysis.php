@@ -43,7 +43,7 @@ trait GeometryAnalysis
 	{
 		// We are explicitly NOT wrapping $distance in an Expression, because
 		// raw numeric values should go to bindings.
-		return Geometry::fromMethod(
+		return $this->geometryFromMethod(
 			'ST_Buffer',
 			$this,
 			$distance,
@@ -52,7 +52,7 @@ trait GeometryAnalysis
 
 	public function convexHull(): GeometryInterface
 	{
-		return Geometry::fromMethod(
+		return $this->geometryFromMethod(
 			'ST_ConvexHull',
 			$this,
 		);

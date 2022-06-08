@@ -26,12 +26,12 @@ trait Curve
 
 	public function startPoint(): Contracts\Point
 	{
-		return Point::fromMethod('ST_StartPoint', $this);
+		return $this->pointFromMethod('ST_StartPoint', $this);
 	}
 
 	public function endPoint(): Contracts\Point
 	{
-		return Point::fromMethod('ST_EndPoint', $this);
+		return $this->pointFromMethod('ST_EndPoint', $this);
 	}
 
 	public function isClosed(): Expression // Boolean-valued expression

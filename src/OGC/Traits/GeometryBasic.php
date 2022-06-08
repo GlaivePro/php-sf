@@ -52,7 +52,9 @@ trait GeometryBasic
 
 	public function envelope(): GeometryInterface
 	{
-		return Geometry::fromMethod('ST_Envelope', $this);
+		// This is indirect because children like Point must keep this class,
+		// but derived models like PostGIS\Geometry must override it.
+		return $this->geometryFromMethod('ST_Envelope', $this);
 	}
 
 	// TODO: This should optionally accept maxdecimaldigits parameter
@@ -101,6 +103,6 @@ trait GeometryBasic
 
 	public function boundary(): GeometryInterface
 	{
-		return Geometry::fromMethod('ST_Boundary', $this);
+		return $this->geometryFromMethod('ST_Boundary', $this);
 	}
 }

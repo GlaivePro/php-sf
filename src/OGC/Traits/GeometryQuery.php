@@ -86,7 +86,7 @@ trait GeometryQuery
 	 */
 	public function locateAlong(float $mValue): GeometryInterface
 	{
-		return Geometry::fromMethod(
+		return $this->geometryFromMethod(
 			'ST_LocateAlong',
 			$this,
 			$mValue,
@@ -101,7 +101,7 @@ trait GeometryQuery
 	 */
 	public function locateBetween(float $mStart, float $mEnd): GeometryInterface
 	{
-		return Geometry::fromMethod(
+		return $this->geometryFromMethod(
 			'ST_LocateBetween',
 			$this,
 			$mStart,

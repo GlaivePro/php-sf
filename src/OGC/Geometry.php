@@ -21,6 +21,16 @@ class Geometry extends Expression implements Contracts\Geometry
 	use Traits\GeometryBasic;
 	use Traits\GeometryQuery;
 
+	protected const sfc = Sfc::class;
+
+	public function __call($method, $args)
+	{
+		if (str_ends_with($method, 'FromMethod'))
+			return static::sfc::$method(...$args);
+
+		throw new \BadMethodCallException('Unknown static method '.static::class.'::'.$method.'.'); // @codeCoverageIgnore
+	}
+
 	/**
 	 * Helper for simple expression creation that calls $method on $this.
 	 *
@@ -53,7 +63,7 @@ class Geometry extends Expression implements Contracts\Geometry
 	 */
 	protected function combine(string $method, self|string $another): self
 	{
-		return self::fromMethod(
+		return static::sfc::geometryFromMethod(
 			$method,
 			$this,
 			self::make($another),

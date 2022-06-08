@@ -32,6 +32,21 @@ class PostGISTest extends TestCase
 		);
 	}
 
+	public function testTypesXXX(): void
+	{
+		$geom = new Geometry('geom');
+
+		$this->assertInstanceOf(
+			Geometry::class,
+			$geom,
+		);
+
+		$this->assertInstanceOf(
+			Geometry::class,
+			$geom->envelope(),
+		);
+	}
+
 	/**
 	 * Ensure that the proxied methods create PostGIS objects
 	 */

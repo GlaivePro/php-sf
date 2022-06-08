@@ -28,7 +28,7 @@ trait GeometryCollection
 	{
 		// We are explicitly NOT wrapping $n in an Expression, because
 		// raw numeric values should go to bindings.
-		return Geometry::fromMethod(
+		return $this->geometryFromMethod(
 			'ST_GeometryN',
 			$this,
 			$n,

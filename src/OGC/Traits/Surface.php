@@ -27,12 +27,12 @@ trait Surface
 
 	public function centroid(): Contracts\Point
 	{
-		return Point::fromMethod('ST_Centroid', $this);
+		return $this->pointFromMethod('ST_Centroid', $this);
 	}
 
 	public function pointOnSurface(): Contracts\Point
 	{
-		return Point::fromMethod('ST_PointOnSurface', $this);
+		return $this->pointFromMethod('ST_PointOnSurface', $this);
 	}
 
 	/**
@@ -40,6 +40,6 @@ trait Surface
 	 */
 	public function boundary(): Contracts\Geometry // MultiCurve
 	{
-		return Geometry::fromMethod('ST_Boundary', $this);
+		return $this->geometryFromMethod('ST_Boundary', $this);
 	}
 }

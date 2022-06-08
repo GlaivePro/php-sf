@@ -65,6 +65,23 @@ $buf2 = $geom->buffer($dynamicBuffer);
 $buf2->bindings; // [3]
 ```
 
+Initiate objects using constructors
+
+```php
+Sfc::pointFromText('POINT(-71.064544 42.28787)')->X();
+// Produces ST_X(ST_PointFromText(?)) with binding 'POINT(-71.064544 42.28787)'
+```
+
+Use grammar-specific constructors and methods:
+
+```php
+PostGIS\Sfc::makePoint(1, 3)->setSRID(3059);
+// Produces ST_SetSRID(ST_MakePoint(?, ?), ?) with bindings [1, 3, 3059]
+
+SpatiaLite\Sfc::makePoint(1, 3)->setSRID(3059);
+// Produces SetSRID(MakePoint(?, ?), ?) with bindings [1, 3, 3059]
+```
+
 ## Usage examples
 
 This section presents some plain examples in plain PDO.

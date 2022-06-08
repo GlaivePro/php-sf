@@ -5,6 +5,9 @@ namespace TontonsB\SF\Tests;
 use PHPUnit\Framework\TestCase;
 use TontonsB\SF\Expression;
 use TontonsB\SF\OGC\Geometry;
+use TontonsB\SF\OGC\Sfc;
+use TontonsB\SF\PostGIS;
+use TontonsB\SF\SpatiaLite;
 
 /**
  * Test exmaples from the docs to ensure docs are correct.
@@ -100,5 +103,29 @@ class DocsTest extends TestCase
 		$this->assertIsObject(
 			$geom->intersects($expr)
 		);
+	}
+
+	public function testConstructors(): void
+	{
+		$pointX = Sfc::pointFromText('POINT(-71.064544 42.28787)')->X();
+		$this->assertEquals(
+			'ST_X(ST_PointFromText(?))',
+			(string) $pointX,
+		);
+		$this->assertEquals(['POINT(-71.064544 42.28787)'], $pointX->bindings);
+
+		$pgPoint = PostGIS\Sfc::makePoint(1, 3)->setSRID(3059);
+		$this->assertEquals(
+			'ST_SetSRID(ST_MakePoint(?, ?), ?)',
+			(string) $pgPoint,
+		);
+		$this->assertEquals([1, 3, 3059], $pgPoint->bindings);
+
+		$litePoint = SpatiaLite\Sfc::makePoint(1, 3)->setSRID(3059);
+		$this->assertEquals(
+			'SetSRID(MakePoint(?, ?), ?)',
+			(string) $litePoint,
+		);
+		$this->assertEquals([1, 3, 3059], $litePoint->bindings);
 	}
 }

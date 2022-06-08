@@ -1,8 +1,10 @@
 <?php
 
-namespace TontonsB\SF\OGC;
+namespace TontonsB\SF\OGC\Traits;
 
 use TontonsB\SF\Expression;
+use TontonsB\SF\OGC\Contracts\Geometry as GeometryInterface;
+use TontonsB\SF\OGC\Geometry;
 
 /**
  * Supports analysis methods on geometry object according to
@@ -20,42 +22,42 @@ use TontonsB\SF\Expression;
  */
 trait GeometryQuery
 {
-	public function equals(Geometry|string $another): Expression // Boolean-valued expression
+	public function equals(GeometryInterface|string $another): Expression // Boolean-valued expression
 	{
 		return $this->query('ST_Equals', $another);
 	}
 
-	public function disjoint(Geometry|string $another): Expression // Boolean-valued expression
+	public function disjoint(GeometryInterface|string $another): Expression // Boolean-valued expression
 	{
 		return $this->query('ST_Disjoint', $another);
 	}
 
-	public function intersects(Geometry|string $another): Expression // Boolean-valued expression
+	public function intersects(GeometryInterface|string $another): Expression // Boolean-valued expression
 	{
 		return $this->query('ST_Intersects', $another);
 	}
 
-	public function touches(Geometry|string $another): Expression // Boolean-valued expression
+	public function touches(GeometryInterface|string $another): Expression // Boolean-valued expression
 	{
 		return $this->query('ST_Touches', $another);
 	}
 
-	public function crosses(Geometry|string $another): Expression // Boolean-valued expression
+	public function crosses(GeometryInterface|string $another): Expression // Boolean-valued expression
 	{
 		return $this->query('ST_Crosses', $another);
 	}
 
-	public function within(Geometry|string $another): Expression // Boolean-valued expression
+	public function within(GeometryInterface|string $another): Expression // Boolean-valued expression
 	{
 		return $this->query('ST_Within', $another);
 	}
 
-	public function contains(Geometry|string $another): Expression // Boolean-valued expression
+	public function contains(GeometryInterface|string $another): Expression // Boolean-valued expression
 	{
 		return $this->query('ST_Contains', $another);
 	}
 
-	public function overlaps(Geometry|string $another): Expression // Boolean-valued expression
+	public function overlaps(GeometryInterface|string $another): Expression // Boolean-valued expression
 	{
 		return $this->query('ST_Overlaps', $another);
 	}
@@ -66,7 +68,7 @@ trait GeometryQuery
 	 * TODO: implement the other variants https://postgis.net/docs/ST_Relate.html
 	 * for full PostGIS support.
 	 */
-	public function relate(Geometry|string $another, string $matrix): Expression // Boolean-valued expression
+	public function relate(GeometryInterface|string $another, string $matrix): Expression // Boolean-valued expression
 	{
 		return Expression::fromMethod(
 			'ST_Relate',
@@ -82,7 +84,7 @@ trait GeometryQuery
 	 *
 	 * Note that the arg is double according to spec but float8 in PostGIS.
 	 */
-	public function locateAlong(float $mValue): Geometry
+	public function locateAlong(float $mValue): GeometryInterface
 	{
 		return Geometry::fromMethod(
 			'ST_LocateAlong',
@@ -97,7 +99,7 @@ trait GeometryQuery
 	 *
 	 * Note that args are double according to spec but float8 in PostGIS.
 	 */
-	public function locateBetween(float $mStart, float $mEnd): Geometry
+	public function locateBetween(float $mStart, float $mEnd): GeometryInterface
 	{
 		return Geometry::fromMethod(
 			'ST_LocateBetween',

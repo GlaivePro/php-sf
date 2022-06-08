@@ -1,8 +1,10 @@
 <?php
 
-namespace TontonsB\SF\OGC;
+namespace TontonsB\SF\OGC\Traits;
 
 use TontonsB\SF\Expression;
+use TontonsB\SF\OGC\Contracts\Geometry as GeometryInterface;
+use TontonsB\SF\OGC\Geometry;
 
 /**
  * Supports analysis methods on geometry object according to
@@ -26,7 +28,7 @@ trait GeometryAnalysis
 	 * TODO: support the optional arg supported by PostGIS
 	 * https://postgis.net/docs/ST_Distance.html
 	 */
-	public function distance(Geometry|string $another): Expression // Distance(float)-valued expression
+	public function distance(GeometryInterface|string $another): Expression // Distance(float)-valued expression
 	{
 		return $this->query('ST_Distance', $another);
 	}
@@ -37,7 +39,7 @@ trait GeometryAnalysis
 	 * TODO: support the optional args supported by PostGIS
 	 * https://postgis.net/docs/ST_Buffer.html
 	 */
-	public function buffer(float|Expression $distance): Geometry
+	public function buffer(float|Expression $distance): GeometryInterface
 	{
 		// We are explicitly NOT wrapping $distance in an Expression, because
 		// raw numeric values should go to bindings.
@@ -48,7 +50,7 @@ trait GeometryAnalysis
 		);
 	}
 
-	public function convexHull(): Geometry
+	public function convexHull(): GeometryInterface
 	{
 		return Geometry::fromMethod(
 			'ST_ConvexHull',
@@ -60,7 +62,7 @@ trait GeometryAnalysis
 	 * TODO: support the optional arg supported by PostGIS
 	 * https://postgis.net/docs/ST_Intersection.html
 	 */
-	public function intersection(Geometry|string $another): Geometry
+	public function intersection(GeometryInterface|string $another): GeometryInterface
 	{
 		return $this->combine('ST_Intersection', $another);
 	}
@@ -69,7 +71,7 @@ trait GeometryAnalysis
 	 * TODO: support the optional args and other options supported by PostGIS
 	 * https://postgis.net/docs/ST_Union.html
 	 */
-	public function union(Geometry|string $another): Geometry
+	public function union(GeometryInterface|string $another): GeometryInterface
 	{
 		return $this->combine('ST_Union', $another);
 	}
@@ -78,7 +80,7 @@ trait GeometryAnalysis
 	 * TODO: support the optional arg supported by PostGIS
 	 * https://postgis.net/docs/ST_Difference.html
 	 */
-	public function difference(Geometry|string $another): Geometry
+	public function difference(GeometryInterface|string $another): GeometryInterface
 	{
 		return $this->combine('ST_Difference', $another);
 	}
@@ -87,7 +89,7 @@ trait GeometryAnalysis
 	 * TODO: support the optional arg supported by PostGIS
 	 * https://postgis.net/docs/ST_SymDifference.html
 	 */
-	public function symDifference(Geometry|string $another): Geometry
+	public function symDifference(GeometryInterface|string $another): GeometryInterface
 	{
 		return $this->combine('ST_SymDifference', $another);
 	}

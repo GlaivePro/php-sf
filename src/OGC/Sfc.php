@@ -10,8 +10,8 @@ namespace TontonsB\SF\OGC;
  */
 class Sfc
 {
-	use SfcWkt;
-	use SfcWkb;
+	use Traits\SfcWkt;
+	use Traits\SfcWkb;
 
 	public static function __callStatic($method, $args)
 	{
@@ -24,7 +24,7 @@ class Sfc
 	/**
 	 * Calls `fromMethod` on the desired class.
 	 */
-	protected static function callFromMethod(string $method, array $args): Geometry
+	protected static function callFromMethod(string $method, array $args): Contracts\Geometry
 	{
 		$class = match($method) {
 			'geometry' => Geometry::class,

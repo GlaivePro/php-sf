@@ -15,14 +15,14 @@ use TontonsB\SF\Expression;
  * of "OpenGIS® Implementation Standard for Geographic information - Simple
  * feature access - Part 2: SQL option"
  */
-class GeometryCollection extends Geometry
+class GeometryCollection extends Geometry implements Contracts\GeometryCollection
 {
 	public function numGeometries(): Expression // Integer-valued expression
 	{
 		return $this->wrap('ST_NumGeometries');
 	}
 
-	public function geometryN(int|Expression $n): Geometry // Integer-valued expression
+	public function geometryN(int|Expression $n): Contracts\Geometry // Integer-valued expression
 	{
 		// We are explicitly NOT wrapping $n in an Expression, because
 		// raw numeric values should go to bindings.

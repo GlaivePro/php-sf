@@ -1,6 +1,10 @@
 <?php
 
-namespace TontonsB\SF\OGC;
+namespace TontonsB\SF\OGC\Traits;
+
+use TontonsB\SF\OGC\Contracts\Geometry;
+use TontonsB\SF\OGC\Contracts\GeometryCollection;
+use TontonsB\SF\OGC\Contracts\Point;
 
 /**
  * Implements constructors according to

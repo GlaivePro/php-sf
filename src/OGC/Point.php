@@ -6,7 +6,7 @@ use TontonsB\SF\Expression;
 
 /**
  * Implements geometry model according to
- * 6.1.3 Point
+ * 6.1.4 Point
  * of "OpenGIS® Implementation Standard for Geographic information - Simple
  * feature access - Part 1: Common architecture"
  *
@@ -15,7 +15,7 @@ use TontonsB\SF\Expression;
  * of "OpenGIS® Implementation Standard for Geographic information - Simple
  * feature access - Part 2: SQL option"
  */
-class Point extends Geometry
+class Point extends Geometry implements Contracts\Point
 {
 	public function X(): Expression // Float-valued expression
 	{

@@ -1,9 +1,11 @@
 <?php
 
-namespace TontonsB\SF\OGC;
+namespace TontonsB\SF\OGC\Traits;
 
 use TontonsB\SF\Exceptions\MethodNotImplemented;
 use TontonsB\SF\Expression;
+use TontonsB\SF\OGC\Contracts\Geometry as GeometryInterface;
+use TontonsB\SF\OGC\Geometry;
 
 /**
  * Supports basic methods on geometry object according to
@@ -30,6 +32,8 @@ trait GeometryBasic
 
 	/**
 	 * Alias for coordinateDimension as used in PostGIS
+	 *
+	 * TODO: move to PostGIS Geometry.
 	 */
 	public function coordDim(): Expression // Integer-valued expression
 	{
@@ -38,6 +42,8 @@ trait GeometryBasic
 
 	/**
 	 * Alias for coordinateDimension as used in PostGIS
+	 *
+	 * TODO: move to PostGIS Geometry.
 	 */
 	public function nDims(): Expression // Integer-valued expression
 	{
@@ -64,7 +70,7 @@ trait GeometryBasic
 		return $this->wrap('ST_SRID');
 	}
 
-	public function envelope(): Geometry
+	public function envelope(): GeometryInterface
 	{
 		return Geometry::fromMethod('ST_Envelope', $this);
 	}
@@ -113,7 +119,7 @@ trait GeometryBasic
 		return $this->wrap('SE_IsMeasured');
 	}
 
-	public function boundary(): Geometry
+	public function boundary(): GeometryInterface
 	{
 		return Geometry::fromMethod('ST_Boundary', $this);
 	}

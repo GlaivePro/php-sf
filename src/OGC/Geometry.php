@@ -15,11 +15,11 @@ use TontonsB\SF\Expression;
  *
  * TODO: Implement return types according to spec. Or PostGIS. Or both.
  */
-class Geometry extends Expression
+class Geometry extends Expression implements Contracts\Geometry
 {
-	use GeometryAnalysis;
-	use GeometryBasic;
-	use GeometryQuery;
+	use Traits\GeometryAnalysis;
+	use Traits\GeometryBasic;
+	use Traits\GeometryQuery;
 
 	/**
 	 * Helper for simple expression creation that calls $method on $this.

@@ -3,6 +3,7 @@
 namespace TontonsB\SF\OGC;
 
 use TontonsB\SF\Expression;
+use TontonsB\SF\OGC\Contracts;
 
 /**
  * Implements geometry model according to
@@ -15,19 +16,19 @@ use TontonsB\SF\Expression;
  * of "OpenGIS® Implementation Standard for Geographic information - Simple
  * feature access - Part 2: SQL option"
  */
-class Surface extends Geometry
+class Surface extends Geometry implements Contracts\Surface
 {
 	public function area(): Expression // Area(float)-valued expression
 	{
 		return $this->wrap('ST_Area');
 	}
 
-	public function centroid(): Point
+	public function centroid(): Contracts\Point
 	{
 		return Point::fromMethod('ST_Centroid', $this);
 	}
 
-	public function pointOnSurface(): Point
+	public function pointOnSurface(): Contracts\Point
 	{
 		return Point::fromMethod('ST_PointOnSurface', $this);
 	}
@@ -35,7 +36,7 @@ class Surface extends Geometry
 	/**
 	 * TODO: change result to MultiCurve once we have it.
 	 */
-	public function boundary(): Geometry // MultiCurve
+	public function boundary(): Contracts\Geometry // MultiCurve
 	{
 		return Geometry::fromMethod('ST_Boundary', $this);
 	}

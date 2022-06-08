@@ -15,19 +15,19 @@ use TontonsB\SF\Expression;
  * of "OpenGIS® Implementation Standard for Geographic information - Simple
  * feature access - Part 2: SQL option"
  */
-class Curve extends Geometry
+class Curve extends Geometry implements Contracts\Curve
 {
 	public function length(): Expression // Float-valued expression
 	{
 		return $this->wrap('ST_Length');
 	}
 
-	public function startPoint(): Point
+	public function startPoint(): Contracts\Point
 	{
 		return Point::fromMethod('ST_StartPoint', $this);
 	}
 
-	public function endPoint(): Point
+	public function endPoint(): Contracts\Point
 	{
 		return Point::fromMethod('ST_EndPoint', $this);
 	}

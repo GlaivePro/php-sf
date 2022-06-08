@@ -138,6 +138,7 @@ support all cases.
 - All the other SFA-SQL functions
 - Internal support for return and arg types (e.g. `IntExpression`, `AreaExpression`)
 - PostGIS specific stuff like additional args, geography stuff and so on
+- Testing support, including a SpatiaLite driver and ability to replace "drivers"
 - Laravel query builder and Eloquent (casts, setting, queries...) integration
 
 ## Terminology and references

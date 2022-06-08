@@ -21,16 +21,6 @@ class GeometryBasicTest extends GeometryTestCase
 		);
 
 		$this->assertEquals(
-			'ST_CoordDim(geom)',
-			(string) $this->geom->coordDim(),
-		);
-
-		$this->assertEquals(
-			'ST_CoordDim(geom)',
-			(string) $this->geom->nDims(),
-		);
-
-		$this->assertEquals(
 			'ST_GeometryType(geom)',
 			(string) $this->geom->geometryType(),
 		);

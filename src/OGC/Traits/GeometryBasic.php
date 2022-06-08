@@ -31,26 +31,6 @@ trait GeometryBasic
 	}
 
 	/**
-	 * Alias for coordinateDimension as used in PostGIS
-	 *
-	 * TODO: move to PostGIS Geometry.
-	 */
-	public function coordDim(): Expression // Integer-valued expression
-	{
-		return $this->coordinateDimension();
-	}
-
-	/**
-	 * Alias for coordinateDimension as used in PostGIS
-	 *
-	 * TODO: move to PostGIS Geometry.
-	 */
-	public function nDims(): Expression // Integer-valued expression
-	{
-		return $this->coordinateDimension();
-	}
-
-	/**
 	 * This is defined in SFA part 1, but not mentioned in SFA part 2.
 	 *
 	 * TODO: Find out what this is supposed to do :)

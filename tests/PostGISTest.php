@@ -20,6 +20,16 @@ class PostGISTest extends TestCase
 		);
 		$this->assertEquals([4326], $setSRID->bindings);
 		$this->assertInstanceOf(Geometry::class, $setSRID);
+
+		$this->assertEquals(
+			'ST_CoordDim(geom)',
+			(string) $geom->coordDim(),
+		);
+
+		$this->assertEquals(
+			'ST_CoordDim(geom)',
+			(string) $geom->nDims(),
+		);
 	}
 
 	/**

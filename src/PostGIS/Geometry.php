@@ -2,6 +2,7 @@
 
 namespace TontonsB\SF\PostGIS;
 
+use TontonsB\SF\Expression;
 use TontonsB\SF\OGC\Geometry as OGCGeometry;
 
 /**
@@ -12,5 +13,21 @@ class Geometry extends OGCGeometry
 	public function setSRID(int $srid): static
 	{
 		return static::fromMethod('ST_SetSRID', $this, $srid);
+	}
+
+	/**
+	 * Alias for coordinateDimension
+	 */
+	public function coordDim(): Expression // Integer-valued expression
+	{
+		return $this->coordinateDimension();
+	}
+
+	/**
+	 * Alias for coordinateDimension
+	 */
+	public function nDims(): Expression // Integer-valued expression
+	{
+		return $this->coordinateDimension();
 	}
 }

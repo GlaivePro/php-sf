@@ -2,6 +2,7 @@
 
 namespace TontonsB\SF\PostGIS;
 
+use TontonsB\SF\Expression;
 use TontonsB\SF\OGC\Sfc as OGCSfc;
 
 /**
@@ -13,7 +14,7 @@ use TontonsB\SF\OGC\Sfc as OGCSfc;
  */
 
 // TODO: This is nowhere near completed :)
-
+// TODO: Consider allowing expressions in the constructors
 class Sfc extends OGCSfc
 {
 	/**
@@ -26,9 +27,7 @@ class Sfc extends OGCSfc
 		$class = match($method) {
 			'geometry' => Geometry::class,
 			'point' => Point::class,
-			// 'curve' => Curve::class,
-			// 'surface' => Surface::class,
-			// 'geometryCollection' => GeometryCollection::class,
+			'lineString' => LineString::class,
 		};
 
 		return $class::fromMethod(...$args);
@@ -123,5 +122,10 @@ class Sfc extends OGCSfc
 		return is_null($srid)
 			? Point::fromMethod('ST_PointZM', $x, $y, $z, $m)
 			: Point::fromMethod('ST_PointZM', $x, $y, $z, $m, $srid);
+	}
+
+	public static function makeLine(string|Expression ...$geometry): LineString
+	{
+		return LineString::fromMethod('ST_MakeLine', ...$geometry);
 	}
 }

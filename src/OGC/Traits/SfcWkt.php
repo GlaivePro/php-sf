@@ -5,6 +5,7 @@ namespace TontonsB\SF\OGC\Traits;
 use TontonsB\SF\OGC\Contracts\Geometry;
 use TontonsB\SF\OGC\Contracts\GeometryCollection;
 use TontonsB\SF\OGC\Contracts\Point;
+use TontonsB\SF\OGC\Contracts\LineString;
 
 /**
  * Implements constructors according to
@@ -43,7 +44,18 @@ trait SfcWkt
 			: static::pointFromMethod('ST_PointFromText', $pointTaggedText, $SRID);
 	}
 
-	// TODO: lineFromText
+	/**
+	 * Create a LineString from WKT.
+	 *
+	 * If SRID is omitted, we will also omit it.
+	 */
+	public static function lineFromText(string $lineStringTaggedText, int $SRID = null): LineString
+	{
+		return is_null($SRID)
+			? static::lineStringFromMethod('ST_LineFromText', $lineStringTaggedText)
+			: static::lineStringFromMethod('ST_LineFromText', $lineStringTaggedText, $SRID);
+	}
+
 	// TODO: polyFromText
 	// TODO: mPointFromText
 	// TODO: mLineFromText

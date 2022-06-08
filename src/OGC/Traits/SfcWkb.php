@@ -4,6 +4,7 @@ namespace TontonsB\SF\OGC\Traits;
 
 use TontonsB\SF\OGC\Contracts\Geometry;
 use TontonsB\SF\OGC\Contracts\GeometryCollection;
+use TontonsB\SF\OGC\Contracts\LineString;
 use TontonsB\SF\OGC\Contracts\Point;
 
 /**
@@ -31,7 +32,6 @@ trait SfcWkb
 			: static::geometryFromMethod('ST_GeomFromWKB', $WKBGeometry, $SRID);
 	}
 
-
 	/**
 	 * Create a Point from WKB.
 	 *
@@ -44,7 +44,18 @@ trait SfcWkb
 			: static::pointFromMethod('ST_PointFromWKB', $WKBPoint, $SRID);
 	}
 
-	// TODO: lineFromWKB
+	/**
+	 * Create a LineString from WKB.
+	 *
+	 * If SRID is omitted, we will also omit it.
+	 */
+	public static function lineFromWKB(string $WKBLineString, int $SRID = null): LineString
+	{
+		return is_null($SRID)
+			? static::lineStringFromMethod('ST_LineFromWKB', $WKBLineString)
+			: static::lineStringFromMethod('ST_LineFromWKB', $WKBLineString, $SRID);
+	}
+
 	// TODO: polyFromWKB
 	// TODO: mPointFromWKB
 	// TODO: mLineFromWKB

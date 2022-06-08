@@ -3,7 +3,7 @@
 namespace TontonsB\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TontonsB\SF\OGC\Geometry;
+use TontonsB\SF\OGC\Contracts;
 use TontonsB\SF\OGC\GeometryCollection;
 use TontonsB\SF\OGC\Point;
 use TontonsB\SF\OGC\Sfc;
@@ -18,7 +18,7 @@ class WkbConstructorTest extends TestCase
 			(string) $geom,
 		);
 		$this->assertEquals(['binary'], $geom->bindings);
-		$this->assertInstanceOf(Geometry::class, $geom);
+		$this->assertInstanceOf(Contracts\Geometry::class, $geom);
 
 		$geomWithSRID = Sfc::geomFromWKB('binary', 4326);
 		$this->assertEquals(
@@ -26,7 +26,7 @@ class WkbConstructorTest extends TestCase
 			(string) $geomWithSRID,
 		);
 		$this->assertEquals(['binary', 4326], $geomWithSRID->bindings);
-		$this->assertInstanceOf(Geometry::class, $geomWithSRID);
+		$this->assertInstanceOf(Contracts\Geometry::class, $geomWithSRID);
 	}
 
 	public function testPointFromWKB(): void
@@ -37,7 +37,7 @@ class WkbConstructorTest extends TestCase
 			(string) $point,
 		);
 		$this->assertEquals(['binary'], $point->bindings);
-		$this->assertInstanceOf(Point::class, $point);
+		$this->assertInstanceOf(Contracts\Point::class, $point);
 
 		$pointWithSRID = Sfc::pointFromWKB('binary', 4326);
 		$this->assertEquals(
@@ -45,7 +45,26 @@ class WkbConstructorTest extends TestCase
 			(string) $pointWithSRID,
 		);
 		$this->assertEquals(['binary', 4326], $pointWithSRID->bindings);
-		$this->assertInstanceOf(Point::class, $pointWithSRID);
+		$this->assertInstanceOf(Contracts\Point::class, $pointWithSRID);
+	}
+
+	public function testLineFromWKB(): void
+	{
+		$lineString = Sfc::lineFromWKB('binary');
+		$this->assertEquals(
+			'ST_LineFromWKB(?)',
+			(string) $lineString,
+		);
+		$this->assertEquals(['binary'], $lineString->bindings);
+		$this->assertInstanceOf(Contracts\LineString::class, $lineString);
+
+		$lineStringWithSRID = Sfc::lineFromWKB('binary', 4326);
+		$this->assertEquals(
+			'ST_LineFromWKB(?, ?)',
+			(string) $lineStringWithSRID,
+		);
+		$this->assertEquals(['binary', 4326], $lineStringWithSRID->bindings);
+		$this->assertInstanceOf(Contracts\LineString::class, $lineStringWithSRID);
 	}
 
 	public function testGeomCollFromWKB(): void
@@ -56,7 +75,7 @@ class WkbConstructorTest extends TestCase
 			(string) $geomColl,
 		);
 		$this->assertEquals(['binary'], $geomColl->bindings);
-		$this->assertInstanceOf(GeometryCollection::class, $geomColl);
+		$this->assertInstanceOf(Contracts\GeometryCollection::class, $geomColl);
 
 		$geomCollWithSRID = Sfc::geomCollFromWKB('binary', 4326);
 		$this->assertEquals(
@@ -64,6 +83,6 @@ class WkbConstructorTest extends TestCase
 			(string) $geomCollWithSRID,
 		);
 		$this->assertEquals(['binary', 4326], $geomCollWithSRID->bindings);
-		$this->assertInstanceOf(GeometryCollection::class, $geomCollWithSRID);
+		$this->assertInstanceOf(Contracts\GeometryCollection::class, $geomCollWithSRID);
 	}
 }

@@ -3,9 +3,13 @@
 namespace Tontonsb\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
+use TontonsB\SF\Expression;
 use TontonsB\SF\PostGIS\Curve;
 use TontonsB\SF\PostGIS\Geometry;
 use TontonsB\SF\PostGIS\GeometryCollection;
+use TontonsB\SF\PostGIS\Line;
+use TontonsB\SF\PostGIS\LinearRing;
+use TontonsB\SF\PostGIS\LineString;
 use TontonsB\SF\PostGIS\Point;
 use TontonsB\SF\PostGIS\Sfc;
 use TontonsB\SF\PostGIS\Surface;
@@ -51,6 +55,21 @@ class PostGISTest extends TestCase
 		$this->assertEquals(
 			'ST_CoordDim(surface)',
 			(string) (new Surface('surface'))->nDims(),
+		);
+
+		$this->assertEquals(
+			'ST_SetSRID(line, ?)',
+			(string) (new LineString('line'))->setSRID(3059),
+		);
+
+		$this->assertEquals(
+			'ST_CoordDim(line)',
+			(string) (new Line('line'))->coordDim(),
+		);
+
+		$this->assertEquals(
+			'ST_CoordDim(line)',
+			(string) (new LinearRing('line'))->nDims(),
 		);
 	}
 
@@ -202,5 +221,22 @@ class PostGISTest extends TestCase
 			'ST_PointZM(?, ?, ?, ?, ?)',
 			(string) Sfc::pointZM(1, 3, 4, 8, 4326),
 		);
+	}
+
+	public function testLineStringConstructors(): void
+	{
+		$lineString = Sfc::makeLine(new Expression('line'));
+		$this->assertSame(
+			'ST_MakeLine(line)',
+			(string) $lineString,
+		);
+		$this->assertInstanceOf(LineString::class, $lineString);
+
+		$lineFromText = Sfc::lineFromText('text');
+		$this->assertSame(
+			'ST_LineFromText(?)',
+			(string) $lineFromText,
+		);
+		$this->assertInstanceOf(LineString::class, $lineFromText);
 	}
 }

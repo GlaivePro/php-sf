@@ -29,7 +29,7 @@ class PostGISTest extends TestCase
 	{
 		$this->assertInstanceOf(Geometry::class, Sfc::geomFromText('text'));
 
-		$this->assertInstanceOf(\TontonsB\SF\PostGIS\Point::class, Sfc::pointFromWKB('binary'));
+		$this->assertInstanceOf(Point::class, Sfc::pointFromWKB('binary'));
 	}
 
 	public function testMakePointConstructors(): void

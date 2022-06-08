@@ -4,8 +4,6 @@ namespace TontonsB\SF\OGC\Traits;
 
 use TontonsB\SF\Expression;
 use TontonsB\SF\OGC\Contracts;
-use TontonsB\SF\OGC\Geometry;
-use TontonsB\SF\OGC\Point;
 
 /**
  * Implements geometry model according to

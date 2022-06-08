@@ -13,5 +13,5 @@ use TontonsB\SF\Expression;
 interface GeometryCollection extends Geometry
 {
 	public function numGeometries(): Expression; // Integer-valued expression
-	public function geometryN(int|Expression $n): Geometry; // Integer-valued expression
+	public function geometryN(int|Expression $n): Geometry;
 }

@@ -5,7 +5,6 @@ namespace TontonsB\SF\OGC\Traits;
 use TontonsB\SF\Exceptions\MethodNotImplemented;
 use TontonsB\SF\Expression;
 use TontonsB\SF\OGC\Contracts\Geometry as GeometryInterface;
-use TontonsB\SF\OGC\Geometry;
 
 /**
  * Supports basic methods on geometry object according to

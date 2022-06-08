@@ -4,7 +4,6 @@ namespace TontonsB\SF\OGC\Traits;
 
 use TontonsB\SF\Expression;
 use TontonsB\SF\OGC\Contracts;
-use TontonsB\SF\OGC\Geometry;
 
 /**
  * Implements geometry model according to
@@ -24,7 +23,7 @@ trait GeometryCollection
 		return $this->wrap('ST_NumGeometries');
 	}
 
-	public function geometryN(int|Expression $n): Contracts\Geometry // Integer-valued expression
+	public function geometryN(int|Expression $n): Contracts\Geometry
 	{
 		// We are explicitly NOT wrapping $n in an Expression, because
 		// raw numeric values should go to bindings.

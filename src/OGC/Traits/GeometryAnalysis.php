@@ -4,7 +4,6 @@ namespace TontonsB\SF\OGC\Traits;
 
 use TontonsB\SF\Expression;
 use TontonsB\SF\OGC\Contracts\Geometry as GeometryInterface;
-use TontonsB\SF\OGC\Geometry;
 
 /**
  * Supports analysis methods on geometry object according to

@@ -6,18 +6,15 @@ use TontonsB\SF\OGC\Contracts\Geometry;
 use TontonsB\SF\OGC\Contracts\GeometryCollection;
 use TontonsB\SF\OGC\Contracts\Point;
 use TontonsB\SF\OGC\Contracts\LineString;
+use TontonsB\SF\OGC\Contracts\Polygon;
 
 /**
  * Implements constructors according to
  * Table 3 — SQL functions for constructing a geometric object given its
  * Well-known Text Representation
  * of "OpenGIS® Implementation Standard for Geographic information - Simple
- * feature access - Part 2: SQL option"
+ * feature access - Part 2: SQL option" Version 1.1.0
  */
-
-// TODO: consider adding Table 4 — Optional SQL functions for constructing a
-// geometric object given its Well-known Text Representation
-
 trait SfcWkt
 {
 	/**
@@ -56,7 +53,18 @@ trait SfcWkt
 			: static::lineStringFromMethod('ST_LineFromText', $lineStringTaggedText, $SRID);
 	}
 
-	// TODO: polyFromText
+	/**
+	 * Create a Polygon from WKT.
+	 *
+	 * If SRID is omitted, we will also omit it.
+	 */
+	public static function polyFromText(string $polygonTaggedText, int $SRID = null): Polygon
+	{
+		return is_null($SRID)
+			? static::polygonFromMethod('ST_PolyFromText', $polygonTaggedText)
+			: static::polygonFromMethod('ST_PolyFromText', $polygonTaggedText, $SRID);
+	}
+
 	// TODO: mPointFromText
 	// TODO: mLineFromText
 	// TODO: mPolyFromText

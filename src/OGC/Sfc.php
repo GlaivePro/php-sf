@@ -7,11 +7,14 @@ namespace TontonsB\SF\OGC;
  *
  * Provides constructors as defined in "OpenGIS® Implementation Standard for
  * Geographic information - Simple feature access - Part 2: SQL option"
+ * Version 1.1.0
  */
 class Sfc
 {
 	use Traits\SfcWkt;
 	use Traits\SfcWkb;
+	use Traits\SfcWktOptional;
+	use Traits\SfcWkbOptional;
 
 	public static function __callStatic($method, $args)
 	{
@@ -31,6 +34,7 @@ class Sfc
 			'point' => Point::class,
 			'lineString' => LineString::class,
 			'geometryCollection' => GeometryCollection::class,
+			'polygon' => Polygon::class,
 		};
 
 		return $class::fromMethod(...$args);

@@ -67,6 +67,25 @@ class WkbConstructorTest extends TestCase
 		$this->assertInstanceOf(Contracts\LineString::class, $lineStringWithSRID);
 	}
 
+	public function testPolyFromWKB(): void
+	{
+		$polygon = Sfc::polyFromWKB('binary');
+		$this->assertEquals(
+			'ST_PolyFromWKB(?)',
+			(string) $polygon,
+		);
+		$this->assertEquals(['binary'], $polygon->bindings);
+		$this->assertInstanceOf(Contracts\Polygon::class, $polygon);
+
+		$polygonWithSRID = Sfc::polyFromWKB('binary', 4326);
+		$this->assertEquals(
+			'ST_PolyFromWKB(?, ?)',
+			(string) $polygonWithSRID,
+		);
+		$this->assertEquals(['binary', 4326], $polygonWithSRID->bindings);
+		$this->assertInstanceOf(Contracts\Polygon::class, $polygonWithSRID);
+	}
+
 	public function testGeomCollFromWKB(): void
 	{
 		$geomColl = Sfc::geomCollFromWKB('binary');
@@ -84,5 +103,24 @@ class WkbConstructorTest extends TestCase
 		);
 		$this->assertEquals(['binary', 4326], $geomCollWithSRID->bindings);
 		$this->assertInstanceOf(Contracts\GeometryCollection::class, $geomCollWithSRID);
+	}
+
+	public function testBdPolyFromWKB(): void
+	{
+		$polygon = Sfc::bdPolyFromWKB('binary');
+		$this->assertEquals(
+			'ST_BdPolyFromWKB(?)',
+			(string) $polygon,
+		);
+		$this->assertEquals(['binary'], $polygon->bindings);
+		$this->assertInstanceOf(Contracts\Polygon::class, $polygon);
+
+		$polygonWithSRID = Sfc::bdPolyFromWKB('binary', 4326);
+		$this->assertEquals(
+			'ST_BdPolyFromWKB(?, ?)',
+			(string) $polygonWithSRID,
+		);
+		$this->assertEquals(['binary', 4326], $polygonWithSRID->bindings);
+		$this->assertInstanceOf(Contracts\Polygon::class, $polygonWithSRID);
 	}
 }

@@ -6,18 +6,15 @@ use TontonsB\SF\OGC\Contracts\Geometry;
 use TontonsB\SF\OGC\Contracts\GeometryCollection;
 use TontonsB\SF\OGC\Contracts\LineString;
 use TontonsB\SF\OGC\Contracts\Point;
+use TontonsB\SF\OGC\Contracts\Polygon;
 
 /**
  * Implements constructors according to
  * Table 5 — SQL functions for constructing a geometric object given its
  * Well-known Binary Representation
  * of "OpenGIS® Implementation Standard for Geographic information - Simple
- * feature access - Part 2: SQL option"
+ * feature access - Part 2: SQL option" Version 1.1.0
  */
-
-// TODO: consider adding Table 6 — Optional SQL functions for constructing a
-// geometric object given its Well-known Binary Representation
-
 trait SfcWkb
 {
 	/**
@@ -56,7 +53,18 @@ trait SfcWkb
 			: static::lineStringFromMethod('ST_LineFromWKB', $WKBLineString, $SRID);
 	}
 
-	// TODO: polyFromWKB
+	/**
+	 * Create a Polygon from WKB.
+	 *
+	 * If SRID is omitted, we will also omit it.
+	 */
+	public static function polyFromWKB(string $WKBPolygon, int $SRID = null): Polygon
+	{
+		return is_null($SRID)
+			? static::polygonFromMethod('ST_PolyFromWKB', $WKBPolygon)
+			: static::polygonFromMethod('ST_PolyFromWKB', $WKBPolygon, $SRID);
+	}
+
 	// TODO: mPointFromWKB
 	// TODO: mLineFromWKB
 	// TODO: mPolyFromWKB

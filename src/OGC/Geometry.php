@@ -14,6 +14,9 @@ use TontonsB\SF\Expression;
  * and args that are not present in the spec, but implemented in PostGIS.
  *
  * TODO: Implement return types according to spec. Or PostGIS. Or both.
+ *
+ * TODO: update docs  according to v1.2.1 of "OpenGIS ® Implementation Standard
+ *  for Geographic information - Simple feature access - Part 2: SQL option"
  */
 class Geometry extends Expression implements Contracts\Geometry
 {

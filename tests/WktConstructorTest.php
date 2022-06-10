@@ -65,6 +65,25 @@ class WktConstructorTest extends TestCase
 		$this->assertInstanceOf(Contracts\LineString::class, $lineStringWithSRID);
 	}
 
+	public function testPolyFromText(): void
+	{
+		$polygon = Sfc::polyFromText('text');
+		$this->assertEquals(
+			'ST_PolyFromText(?)',
+			(string) $polygon,
+		);
+		$this->assertEquals(['text'], $polygon->bindings);
+		$this->assertInstanceOf(Contracts\Polygon::class, $polygon);
+
+		$polygonWithSRID = Sfc::polyFromText('text', 4326);
+		$this->assertEquals(
+			'ST_PolyFromText(?, ?)',
+			(string) $polygonWithSRID,
+		);
+		$this->assertEquals(['text', 4326], $polygonWithSRID->bindings);
+		$this->assertInstanceOf(Contracts\Polygon::class, $polygonWithSRID);
+	}
+
 	public function testGeomCollFromText(): void
 	{
 		$geomColl = Sfc::geomCollFromText('text');
@@ -82,5 +101,24 @@ class WktConstructorTest extends TestCase
 		);
 		$this->assertEquals(['text', 4326], $geomCollWithSRID->bindings);
 		$this->assertInstanceOf(Contracts\GeometryCollection::class, $geomCollWithSRID);
+	}
+
+	public function testBdPolyFromText(): void
+	{
+		$polygon = Sfc::bdPolyFromText('text');
+		$this->assertEquals(
+			'ST_BdPolyFromText(?)',
+			(string) $polygon,
+		);
+		$this->assertEquals(['text'], $polygon->bindings);
+		$this->assertInstanceOf(Contracts\Polygon::class, $polygon);
+
+		$polygonWithSRID = Sfc::bdPolyFromText('text', 4326);
+		$this->assertEquals(
+			'ST_BdPolyFromText(?, ?)',
+			(string) $polygonWithSRID,
+		);
+		$this->assertEquals(['text', 4326], $polygonWithSRID->bindings);
+		$this->assertInstanceOf(Contracts\Polygon::class, $polygonWithSRID);
 	}
 }

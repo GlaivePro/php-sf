@@ -9,9 +9,9 @@ namespace TontonsB\SF\OGC;
  * feature access - Part 1: Common architecture" Version 1.2.1
  *
  * Returns SQL statements according to
- * Table 10 — SQL functions on type Point
+ * 7.2.9 SQL routines on type Point
  * of "OpenGIS® Implementation Standard for Geographic information - Simple
- * feature access - Part 2: SQL option" Version 1.1.0
+ * feature access - Part 2: SQL option" Version 1.2.1
  */
 class Point extends Geometry implements Contracts\Point
 {

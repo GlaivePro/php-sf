@@ -9,9 +9,9 @@ namespace TontonsB\SF\OGC;
  * feature access - Part 1: Common architecture" Version 1.2.1
  *
  * Returns SQL statements according to
- * Table 12 — SQL functions on type LineString
+ * 7.2.11 SQL routines on type LineString
  * of "OpenGIS® Implementation Standard for Geographic information - Simple
- * feature access - Part 2: SQL option" Version 1.1.0
+ * feature access - Part 2: SQL option" Version 1.2.1
  */
 class LineString extends Curve implements Contracts\LineString
 {

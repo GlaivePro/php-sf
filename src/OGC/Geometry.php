@@ -8,7 +8,7 @@ use TontonsB\SF\Expression;
  * Implements geometry model according to
  * 6.1.2 Geometry
  * of "OpenGIS® Implementation Standard for Geographic information - Simple
- * feature access - Part 1: Common architecture"
+ * feature access - Part 1: Common architecture" Version 1.2.1
  *
  * The method and argument names follow the spec. Exceptions are some methods
  * and args that are not present in the spec, but implemented in PostGIS.

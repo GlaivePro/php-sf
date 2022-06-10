@@ -9,14 +9,14 @@ use TontonsB\SF\OGC\Contracts\Geometry as GeometryInterface;
  * Supports analysis methods on geometry object according to
  * 6.1.2.4 Methods that support spatial analysis
  * of "OpenGIS® Implementation Standard for Geographic information - Simple
- * feature access - Part 1: Common architecture"
+ * feature access - Part 1: Common architecture" Version 1.2.1
  *
  * Returns SQL statements according to
  * Table 19 — SQL functions for distance relationships
  * and
  * Table 20 — SQL functions that implement spatial operators
  * of "OpenGIS® Implementation Standard for Geographic information - Simple
- * feature access - Part 2: SQL option"
+ * feature access - Part 2: SQL option" Version 1.1.0
  *
  * TODO: Check arg types to disallow Expression args (currently they pass due
  * to getting coerced to string).

@@ -10,12 +10,12 @@ use TontonsB\SF\OGC\Contracts\Geometry as GeometryInterface;
  * Supports basic methods on geometry object according to
  * 6.1.2.2 Basic methods on geometric objects
  * of "OpenGIS® Implementation Standard for Geographic information - Simple
- * feature access - Part 1: Common architecture"
+ * feature access - Part 1: Common architecture" Version 1.2.1
  *
  * Returns SQL statements according to
  * Table 9 — SQL functions on type Geometry
  * of "OpenGIS® Implementation Standard for Geographic information - Simple
- * feature access - Part 2: SQL option"
+ * feature access - Part 2: SQL option" Version 1.1.0
  */
 trait GeometryBasic
 {

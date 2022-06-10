@@ -10,12 +10,12 @@ use TontonsB\SF\OGC\Geometry;
  * Supports analysis methods on geometry object according to
  * 6.1.2.3 Methods for testing spatial relations between geometric objects
  * of "OpenGIS® Implementation Standard for Geographic information - Simple
- * feature access - Part 1: Common architecture"
+ * feature access - Part 1: Common architecture" Version 1.2.1
  *
  * Returns SQL statements according to
  * Table 18 — SQL functions that test spatial relationships
  * of "OpenGIS® Implementation Standard for Geographic information - Simple
- * feature access - Part 2: SQL option"
+ * feature access - Part 2: SQL option" Version 1.1.0
  *
  * TODO: Check arg types to disallow Expression args (currently they pass due
  * to getting coerced to string).

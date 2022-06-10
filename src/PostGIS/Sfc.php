@@ -28,6 +28,7 @@ class Sfc extends OGCSfc
 			'geometry' => Geometry::class,
 			'point' => Point::class,
 			'lineString' => LineString::class,
+			'polygon' => Polygon::class,
 		};
 
 		return $class::fromMethod(...$args);

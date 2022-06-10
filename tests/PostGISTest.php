@@ -11,8 +11,12 @@ use TontonsB\SF\PostGIS\Line;
 use TontonsB\SF\PostGIS\LinearRing;
 use TontonsB\SF\PostGIS\LineString;
 use TontonsB\SF\PostGIS\Point;
+use TontonsB\SF\PostGIS\Polygon;
+use TontonsB\SF\PostGIS\PolyhedralSurface;
 use TontonsB\SF\PostGIS\Sfc;
 use TontonsB\SF\PostGIS\Surface;
+use TontonsB\SF\PostGIS\TIN;
+use TontonsB\SF\PostGIS\Triangle;
 
 class PostGISTest extends TestCase
 {
@@ -36,6 +40,28 @@ class PostGISTest extends TestCase
 		$this->assertEquals(
 			'ST_CoordDim(geom)',
 			(string) $geom->nDims(),
+		);
+	}
+
+	public function testPolyhedralSurface(): void
+	{
+		$poly = new PolyhedralSurface('poly');
+
+		$this->assertEquals(
+			'ST_NumPatches(poly)',
+			(string) $poly->numPatches(),
+		);
+
+		$patchN = $poly->patchN(4);
+		$this->assertEquals(
+			'ST_PatchN(poly, ?)',
+			(string) $patchN,
+		);
+		$this->assertEquals([4], $patchN->bindings);
+
+		$this->assertEquals(
+			'ST_IsClosed(poly)',
+			(string) $poly->isClosed(),
 		);
 	}
 
@@ -70,6 +96,21 @@ class PostGISTest extends TestCase
 		$this->assertEquals(
 			'ST_CoordDim(line)',
 			(string) (new LinearRing('line'))->nDims(),
+		);
+
+		$this->assertEquals(
+			'ST_SetSRID(polygon, ?)',
+			(string) (new Polygon('polygon'))->setSRID(3059),
+		);
+
+		$this->assertEquals(
+			'ST_CoordDim(triangle)',
+			(string) (new Triangle('triangle'))->coordDim(),
+		);
+
+		$this->assertEquals(
+			'ST_CoordDim(tin)',
+			(string) (new TIN('tin'))->nDims(),
 		);
 	}
 

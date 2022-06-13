@@ -233,3 +233,10 @@ https://github.com/mstaack/laravel-postgis
 
 Implementation of SFA types with custom interface and support for those objects
 in Eloquent. Also adds support for these types in migrations.
+
+### geo-io/geometry
+
+[https://github.com/mstaack/laravel-postgis](https://github.com/geo-io/geometry)
+
+Implementation of SFA object oriented features in plain PHP. Part of project
+[Geo I/O](https://github.com/geo-io) that includes other Geo PHP tools as well.

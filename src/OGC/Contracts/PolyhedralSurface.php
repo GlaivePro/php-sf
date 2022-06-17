@@ -10,8 +10,6 @@ use TontonsB\SF\Expression;
  * of "OpenGIS® Implementation Standard for Geographic information - Simple
  * feature access - Part 1: Common architecture" Version 1.2.1
  *
- * // TODO also implement MultiPolygon's routines.
- *
  * According to Part 1: Common architecture:
  * > A Polyhedral Surface is not a MultiPolygon because it violates the rule
  * > for MultiPolygons that the boundaries of the element Polygons intersect

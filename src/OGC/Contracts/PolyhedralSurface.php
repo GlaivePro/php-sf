@@ -20,7 +20,7 @@ use TontonsB\SF\Expression;
  * > The routines supported by type Geometry, Surface and MultiPolygon shall
  * > be supported for geometries of type Polyhedral Surface, PolyhedSurface.
  */
-interface PolyhedralSurface extends Surface
+interface PolyhedralSurface extends Surface, MultiPolygon
 {
 	public function numPatches(): Expression; // Integer-valued expression
 	public function patchN(int|Expression $n): Polygon;

@@ -11,6 +11,7 @@ use TontonsB\SF\OGC\Contracts\PolyhedralSurface as OGCPolyhedralSurface;
 class PolyhedralSurface extends Surface implements OGCPolyhedralSurface
 {
 	use \TontonsB\SF\OGC\Traits\PolyhedralSurface;
+	use \TontonsB\SF\OGC\Traits\GeometryCollection;
 
 	public function numPatches(): Expression // Integer-valued expression
 	{

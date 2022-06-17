@@ -22,6 +22,6 @@ interface PolyhedralSurface extends Surface, MultiPolygon
 {
 	public function numPatches(): Expression; // Integer-valued expression
 	public function patchN(int|Expression $n): Polygon;
-	public function boundingPolygons(Polygon $p): Geometry; // MultiPolygon
+	public function boundingPolygons(Polygon $p): MultiPolygon;
 	public function isClosed(): Expression; // Boolean-valued expression
 }

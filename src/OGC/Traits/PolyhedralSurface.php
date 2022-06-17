@@ -35,7 +35,7 @@ trait PolyhedralSurface
 		);
 	}
 
-	public function boundingPolygons(Contracts\Polygon $p): Contracts\Geometry // MultiPolygon
+	public function boundingPolygons(Contracts\Polygon $p): Contracts\MultiPolygon
 	{
 		// It appears that OpenGIS ® Implementation Standard for Geographic
 		// information - Simple feature access - Part 1: Common architecture

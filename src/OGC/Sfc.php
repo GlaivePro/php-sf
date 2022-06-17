@@ -31,9 +31,10 @@ class Sfc
 	{
 		$class = match($method) {
 			'geometry' => Geometry::class,
-			'point' => Point::class,
-			'lineString' => LineString::class,
 			'geometryCollection' => GeometryCollection::class,
+			'lineString' => LineString::class,
+			'multiCurve' => MultiCurve::class,
+			'point' => Point::class,
 			'polygon' => Polygon::class,
 		};
 

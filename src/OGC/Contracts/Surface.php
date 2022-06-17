@@ -15,5 +15,5 @@ interface Surface extends Geometry
 	public function area(): Expression; // Area(float)-valued expression
 	public function centroid(): Point;
 	public function pointOnSurface(): Point;
-	public function boundary(): Geometry; // MultiCurve
+	public function boundary(): MultiCurve;
 }

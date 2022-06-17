@@ -19,11 +19,8 @@ trait Surface
 {
 	use SurfaceBasic;
 
-	/**
-	 * TODO: change result to MultiCurve once we have it.
-	 */
-	public function boundary(): Contracts\Geometry // MultiCurve
+	public function boundary(): Contracts\MultiCurve
 	{
-		return $this->geometryFromMethod('ST_Boundary', $this);
+		return $this->multiCurveFromMethod('ST_Boundary', $this);
 	}
 }

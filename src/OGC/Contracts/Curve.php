@@ -12,7 +12,7 @@ use TontonsB\SF\Expression;
  */
 interface Curve extends Geometry
 {
-	public function length(): Expression; // Float-valued expression
+	public function length(): Expression; // Float-valued expression // or length
 	public function startPoint(): Point;
 	public function endPoint(): Point;
 	public function isClosed(): Expression; // Boolean-valued expression

@@ -2,7 +2,6 @@
 
 namespace TontonsB\SF\OGC\Traits;
 
-use TontonsB\SF\Expression;
 use TontonsB\SF\OGC\Contracts;
 
 /**
@@ -18,20 +17,7 @@ use TontonsB\SF\OGC\Contracts;
  */
 trait Surface
 {
-	public function area(): Expression // Area(float)-valued expression
-	{
-		return $this->wrap('ST_Area');
-	}
-
-	public function centroid(): Contracts\Point
-	{
-		return $this->pointFromMethod('ST_Centroid', $this);
-	}
-
-	public function pointOnSurface(): Contracts\Point
-	{
-		return $this->pointFromMethod('ST_PointOnSurface', $this);
-	}
+	use SurfaceBasic;
 
 	/**
 	 * TODO: change result to MultiCurve once we have it.

@@ -18,10 +18,7 @@ use TontonsB\SF\OGC\Contracts;
  */
 trait Curve
 {
-	public function length(): Expression // Float-valued expression
-	{
-		return $this->wrap('ST_Length');
-	}
+	use CurveBasic;
 
 	public function startPoint(): Contracts\Point
 	{
@@ -31,11 +28,6 @@ trait Curve
 	public function endPoint(): Contracts\Point
 	{
 		return $this->pointFromMethod('ST_EndPoint', $this);
-	}
-
-	public function isClosed(): Expression // Boolean-valued expression
-	{
-		return $this->wrap('ST_IsClosed');
 	}
 
 	public function isRing(): Expression // Boolean-valued expression

@@ -15,5 +15,5 @@ namespace TontonsB\SF\OGC;
  */
 class MultiCurve extends GeometryCollection implements Contracts\MultiCurve
 {
-	use Traits\MultiCurve;
+	use Traits\CurveBasic;
 }

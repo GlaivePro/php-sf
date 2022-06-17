@@ -15,5 +15,5 @@ namespace TontonsB\SF\OGC;
  */
 class MultiSurface extends GeometryCollection implements Contracts\MultiSurface
 {
-	use Traits\MultiSurface;
+	use Traits\SurfaceBasic;
 }

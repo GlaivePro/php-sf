@@ -4,8 +4,6 @@ namespace TontonsB\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
 use TontonsB\SF\OGC\Contracts;
-use TontonsB\SF\OGC\GeometryCollection;
-use TontonsB\SF\OGC\Point;
 use TontonsB\SF\OGC\Sfc;
 
 class WkbConstructorTest extends TestCase

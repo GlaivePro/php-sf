@@ -2,6 +2,7 @@
 
 namespace TontonsB\SF\PostGIS;
 
+use TontonsB\SF\Exceptions\MethodNotImplemented;
 use TontonsB\SF\Expression;
 use TontonsB\SF\OGC\Sfc as OGCSfc;
 
@@ -26,8 +27,13 @@ class Sfc extends OGCSfc
 	{
 		$class = match($method) {
 			'geometry' => Geometry::class,
-			'point' => Point::class,
+			'geometryCollection' => GeometryCollection::class,
 			'lineString' => LineString::class,
+			'multiCurve' => MultiCurve::class,
+			'multiLineString' => MultiLineString::class,
+			'multiPoint' => MultiPoint::class,
+			'multiPolygon' => MultiPolygon::class,
+			'point' => Point::class,
 			'polygon' => Polygon::class,
 		};
 
@@ -128,5 +134,21 @@ class Sfc extends OGCSfc
 	public static function makeLine(string|Expression ...$geometry): LineString
 	{
 		return LineString::fromMethod('ST_MakeLine', ...$geometry);
+	}
+
+	/**
+	 * Not implemented in PostGIS.
+	 */
+	public static function bdPolyFromWKB(string $WKBMultiLineString, int $SRID = null): Polygon
+	{
+		throw new MethodNotImplemented;
+	}
+
+	/**
+	 * Not implemented in PostGIS.
+	 */
+	public static function bdMPolyFromWKB(string $WKBMultiLineString, int $SRID = null): MultiPolygon
+	{
+		throw new MethodNotImplemented;
 	}
 }

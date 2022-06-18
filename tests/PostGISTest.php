@@ -3,6 +3,7 @@
 namespace Tontonsb\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
+use TontonsB\SF\Exceptions\MethodNotImplemented;
 use TontonsB\SF\Expression;
 use TontonsB\SF\PostGIS\Curve;
 use TontonsB\SF\PostGIS\Geometry;
@@ -10,6 +11,10 @@ use TontonsB\SF\PostGIS\GeometryCollection;
 use TontonsB\SF\PostGIS\Line;
 use TontonsB\SF\PostGIS\LinearRing;
 use TontonsB\SF\PostGIS\LineString;
+use TontonsB\SF\PostGIS\MultiCurve;
+use TontonsB\SF\PostGIS\MultiLineString;
+use TontonsB\SF\PostGIS\MultiPoint;
+use TontonsB\SF\PostGIS\MultiPolygon;
 use TontonsB\SF\PostGIS\Point;
 use TontonsB\SF\PostGIS\Polygon;
 use TontonsB\SF\PostGIS\PolyhedralSurface;
@@ -127,6 +132,11 @@ class PostGISTest extends TestCase
 			Geometry::class,
 			$geom->envelope(),
 		);
+
+		$this->assertInstanceOf(
+			MultiCurve::class,
+			(new Surface('surface'))->boundary(),
+		);
 	}
 
 	/**
@@ -135,8 +145,24 @@ class PostGISTest extends TestCase
 	public function testProxiedConstructors(): void
 	{
 		$this->assertInstanceOf(Geometry::class, Sfc::geomFromText('text'));
+		$this->assertInstanceOf(GeometryCollection::class, Sfc::geomCollFromText('text'));
+		$this->assertInstanceOf(MultiPolygon::class, Sfc::mPolyFromText('text'));
 
 		$this->assertInstanceOf(Point::class, Sfc::pointFromWKB('binary'));
+		$this->assertInstanceOf(MultiPoint::class, Sfc::mPointFromWKB('binary'));
+		$this->assertInstanceOf(MultiLineString::class, Sfc::mLineFromWKB('binary'));
+	}
+
+	public function testBdPolyFromWkbNotImplemented(): void
+	{
+		$this->expectException(MethodNotImplemented::class);
+		Sfc::bdPolyFromWKB('binary');
+	}
+
+	public function testBdMPolyFromWkbNotImplemented(): void
+	{
+		$this->expectException(MethodNotImplemented::class);
+		Sfc::bdMPolyFromWKB('binary');
 	}
 
 	public function testMakePointConstructors(): void

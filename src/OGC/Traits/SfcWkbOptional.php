@@ -2,6 +2,7 @@
 
 namespace TontonsB\SF\OGC\Traits;
 
+use TontonsB\SF\OGC\Contracts\MultiPolygon;
 use TontonsB\SF\OGC\Contracts\Polygon;
 
 /**
@@ -25,5 +26,15 @@ trait SfcWkbOptional
 			: static::polygonFromMethod('ST_BdPolyFromWKB', $WKBMultiLineString, $SRID);
 	}
 
-	// TODO: bdMPolyFromWKB
+	/**
+	 * Create a MultiPolygon from MultiLineString WKB.
+	 *
+	 * If SRID is omitted, we will also omit it.
+	 */
+	public static function bdMPolyFromWKB(string $WKBMultiLineString, int $SRID = null): MultiPolygon
+	{
+		return is_null($SRID)
+			? static::multiPolygonFromMethod('ST_BdMPolyFromWKB', $WKBMultiLineString)
+			: static::multiPolygonFromMethod('ST_BdMPolyFromWKB', $WKBMultiLineString, $SRID);
+	}
 }

@@ -84,6 +84,63 @@ class WktConstructorTest extends TestCase
 		$this->assertInstanceOf(Contracts\Polygon::class, $polygonWithSRID);
 	}
 
+	public function testMPointFromText(): void
+	{
+		$mPoint = Sfc::mPointFromText('text');
+		$this->assertEquals(
+			'ST_MPointFromText(?)',
+			(string) $mPoint,
+		);
+		$this->assertEquals(['text'], $mPoint->bindings);
+		$this->assertInstanceOf(Contracts\MultiPoint::class, $mPoint);
+
+		$mPointWithSRID = Sfc::mPointFromText('text', 4326);
+		$this->assertEquals(
+			'ST_MPointFromText(?, ?)',
+			(string) $mPointWithSRID,
+		);
+		$this->assertEquals(['text', 4326], $mPointWithSRID->bindings);
+		$this->assertInstanceOf(Contracts\MultiPoint::class, $mPointWithSRID);
+	}
+
+	public function testMLineFromText(): void
+	{
+		$mLine = Sfc::mLineFromText('text');
+		$this->assertEquals(
+			'ST_MLineFromText(?)',
+			(string) $mLine,
+		);
+		$this->assertEquals(['text'], $mLine->bindings);
+		$this->assertInstanceOf(Contracts\MultiLineString::class, $mLine);
+
+		$mLineWithSRID = Sfc::mLineFromText('text', 4326);
+		$this->assertEquals(
+			'ST_MLineFromText(?, ?)',
+			(string) $mLineWithSRID,
+		);
+		$this->assertEquals(['text', 4326], $mLineWithSRID->bindings);
+		$this->assertInstanceOf(Contracts\MultiLineString::class, $mLineWithSRID);
+	}
+
+	public function testMPolyFromText(): void
+	{
+		$mPoly = Sfc::mPolyFromText('text');
+		$this->assertEquals(
+			'ST_MPolyFromText(?)',
+			(string) $mPoly,
+		);
+		$this->assertEquals(['text'], $mPoly->bindings);
+		$this->assertInstanceOf(Contracts\MultiPolygon::class, $mPoly);
+
+		$mPolyWithSRID = Sfc::mPolyFromText('text', 4326);
+		$this->assertEquals(
+			'ST_MPolyFromText(?, ?)',
+			(string) $mPolyWithSRID,
+		);
+		$this->assertEquals(['text', 4326], $mPolyWithSRID->bindings);
+		$this->assertInstanceOf(Contracts\MultiPolygon::class, $mPolyWithSRID);
+	}
+
 	public function testGeomCollFromText(): void
 	{
 		$geomColl = Sfc::geomCollFromText('text');
@@ -120,5 +177,24 @@ class WktConstructorTest extends TestCase
 		);
 		$this->assertEquals(['text', 4326], $polygonWithSRID->bindings);
 		$this->assertInstanceOf(Contracts\Polygon::class, $polygonWithSRID);
+	}
+
+	public function testBdMPolyFromText(): void
+	{
+		$mPolygon = Sfc::bdMPolyFromText('text');
+		$this->assertEquals(
+			'ST_BdMPolyFromText(?)',
+			(string) $mPolygon,
+		);
+		$this->assertEquals(['text'], $mPolygon->bindings);
+		$this->assertInstanceOf(Contracts\MultiPolygon::class, $mPolygon);
+
+		$mPolygonWithSRID = Sfc::bdMPolyFromText('text', 4326);
+		$this->assertEquals(
+			'ST_BdMPolyFromText(?, ?)',
+			(string) $mPolygonWithSRID,
+		);
+		$this->assertEquals(['text', 4326], $mPolygonWithSRID->bindings);
+		$this->assertInstanceOf(Contracts\MultiPolygon::class, $mPolygonWithSRID);
 	}
 }

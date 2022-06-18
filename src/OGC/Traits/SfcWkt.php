@@ -6,6 +6,9 @@ use TontonsB\SF\OGC\Contracts\Geometry;
 use TontonsB\SF\OGC\Contracts\GeometryCollection;
 use TontonsB\SF\OGC\Contracts\Point;
 use TontonsB\SF\OGC\Contracts\LineString;
+use TontonsB\SF\OGC\Contracts\MultiLineString;
+use TontonsB\SF\OGC\Contracts\MultiPoint;
+use TontonsB\SF\OGC\Contracts\MultiPolygon;
 use TontonsB\SF\OGC\Contracts\Polygon;
 
 /**
@@ -65,9 +68,41 @@ trait SfcWkt
 			: static::polygonFromMethod('ST_PolyFromText', $polygonTaggedText, $SRID);
 	}
 
-	// TODO: mPointFromText
-	// TODO: mLineFromText
-	// TODO: mPolyFromText
+	/**
+	 * Create a MultiPoint from WKT.
+	 *
+	 * If SRID is omitted, we will also omit it.
+	 */
+	public static function mPointFromText(string $multiPointTaggedText, int $SRID = null): MultiPoint
+	{
+		return is_null($SRID)
+			? static::multiPointFromMethod('ST_MPointFromText', $multiPointTaggedText)
+			: static::multiPointFromMethod('ST_MPointFromText', $multiPointTaggedText, $SRID);
+	}
+
+	/**
+	 * Create a MultiLineString from WKT.
+	 *
+	 * If SRID is omitted, we will also omit it.
+	 */
+	public static function mLineFromText(string $multiLineStringTaggedText, int $SRID = null): MultiLineString
+	{
+		return is_null($SRID)
+			? static::multiLineStringFromMethod('ST_MLineFromText', $multiLineStringTaggedText)
+			: static::multiLineStringFromMethod('ST_MLineFromText', $multiLineStringTaggedText, $SRID);
+	}
+
+	/**
+	 * Create a MultiPolygon from WKT.
+	 *
+	 * If SRID is omitted, we will also omit it.
+	 */
+	public static function mPolyFromText(string $multiPolygonTaggedText, int $SRID = null): MultiPolygon
+	{
+		return is_null($SRID)
+			? static::multiPolygonFromMethod('ST_MPolyFromText', $multiPolygonTaggedText)
+			: static::multiPolygonFromMethod('ST_MPolyFromText', $multiPolygonTaggedText, $SRID);
+	}
 
 	/**
 	 * Create a GeometryCollection from WKT.

@@ -34,6 +34,9 @@ class Sfc
 			'geometryCollection' => GeometryCollection::class,
 			'lineString' => LineString::class,
 			'multiCurve' => MultiCurve::class,
+			'multiLineString' => MultiLineString::class,
+			'multiPoint' => MultiPoint::class,
+			'multiPolygon' => MultiPolygon::class,
 			'point' => Point::class,
 			'polygon' => Polygon::class,
 		};

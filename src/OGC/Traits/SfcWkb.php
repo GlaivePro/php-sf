@@ -5,6 +5,9 @@ namespace TontonsB\SF\OGC\Traits;
 use TontonsB\SF\OGC\Contracts\Geometry;
 use TontonsB\SF\OGC\Contracts\GeometryCollection;
 use TontonsB\SF\OGC\Contracts\LineString;
+use TontonsB\SF\OGC\Contracts\MultiLineString;
+use TontonsB\SF\OGC\Contracts\MultiPoint;
+use TontonsB\SF\OGC\Contracts\MultiPolygon;
 use TontonsB\SF\OGC\Contracts\Point;
 use TontonsB\SF\OGC\Contracts\Polygon;
 
@@ -65,9 +68,41 @@ trait SfcWkb
 			: static::polygonFromMethod('ST_PolyFromWKB', $WKBPolygon, $SRID);
 	}
 
-	// TODO: mPointFromWKB
-	// TODO: mLineFromWKB
-	// TODO: mPolyFromWKB
+	/**
+	 * Create a MultiPoint from WKB.
+	 *
+	 * If SRID is omitted, we will also omit it.
+	 */
+	public static function mPointFromWKB(string $WKBMultiPoint, int $SRID = null): MultiPoint
+	{
+		return is_null($SRID)
+			? static::multiPointFromMethod('ST_MPointFromWKB', $WKBMultiPoint)
+			: static::multiPointFromMethod('ST_MPointFromWKB', $WKBMultiPoint, $SRID);
+	}
+
+	/**
+	 * Create a MultiLineString from WKB.
+	 *
+	 * If SRID is omitted, we will also omit it.
+	 */
+	public static function mLineFromWKB(string $WKBMultiLineString, int $SRID = null): MultiLineString
+	{
+		return is_null($SRID)
+			? static::multiLineStringFromMethod('ST_MLineFromWKB', $WKBMultiLineString)
+			: static::multiLineStringFromMethod('ST_MLineFromWKB', $WKBMultiLineString, $SRID);
+	}
+
+	/**
+	 * Create a MultiPolygon from WKB.
+	 *
+	 * If SRID is omitted, we will also omit it.
+	 */
+	public static function mPolyFromWKB(string $WKBMultiPolygon, int $SRID = null): MultiPolygon
+	{
+		return is_null($SRID)
+			? static::multiPolygonFromMethod('ST_MPolyFromWKB', $WKBMultiPolygon)
+			: static::multiPolygonFromMethod('ST_MPolyFromWKB', $WKBMultiPolygon, $SRID);
+	}
 
 	/**
 	 * Create a GeometryCollection from WKB.

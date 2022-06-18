@@ -86,6 +86,63 @@ class WkbConstructorTest extends TestCase
 		$this->assertInstanceOf(Contracts\Polygon::class, $polygonWithSRID);
 	}
 
+	public function testMPointFromWKB(): void
+	{
+		$mPoint = Sfc::mPointFromWKB('binary');
+		$this->assertEquals(
+			'ST_MPointFromWKB(?)',
+			(string) $mPoint,
+		);
+		$this->assertEquals(['binary'], $mPoint->bindings);
+		$this->assertInstanceOf(Contracts\MultiPoint::class, $mPoint);
+
+		$mPointWithSRID = Sfc::mPointFromWKB('binary', 4326);
+		$this->assertEquals(
+			'ST_MPointFromWKB(?, ?)',
+			(string) $mPointWithSRID,
+		);
+		$this->assertEquals(['binary', 4326], $mPointWithSRID->bindings);
+		$this->assertInstanceOf(Contracts\MultiPoint::class, $mPointWithSRID);
+	}
+
+	public function testMLineFromWKB(): void
+	{
+		$mLine = Sfc::mLineFromWKB('binary');
+		$this->assertEquals(
+			'ST_MLineFromWKB(?)',
+			(string) $mLine,
+		);
+		$this->assertEquals(['binary'], $mLine->bindings);
+		$this->assertInstanceOf(Contracts\MultiLineString::class, $mLine);
+
+		$mLineWithSRID = Sfc::mLineFromWKB('binary', 4326);
+		$this->assertEquals(
+			'ST_MLineFromWKB(?, ?)',
+			(string) $mLineWithSRID,
+		);
+		$this->assertEquals(['binary', 4326], $mLineWithSRID->bindings);
+		$this->assertInstanceOf(Contracts\MultiLineString::class, $mLineWithSRID);
+	}
+
+	public function testMPolyFromWKB(): void
+	{
+		$mPolygon = Sfc::mPolyFromWKB('binary');
+		$this->assertEquals(
+			'ST_MPolyFromWKB(?)',
+			(string) $mPolygon,
+		);
+		$this->assertEquals(['binary'], $mPolygon->bindings);
+		$this->assertInstanceOf(Contracts\MultiPolygon::class, $mPolygon);
+
+		$mPolygonWithSRID = Sfc::mPolyFromWKB('binary', 4326);
+		$this->assertEquals(
+			'ST_MPolyFromWKB(?, ?)',
+			(string) $mPolygonWithSRID,
+		);
+		$this->assertEquals(['binary', 4326], $mPolygonWithSRID->bindings);
+		$this->assertInstanceOf(Contracts\MultiPolygon::class, $mPolygonWithSRID);
+	}
+
 	public function testGeomCollFromWKB(): void
 	{
 		$geomColl = Sfc::geomCollFromWKB('binary');
@@ -122,5 +179,24 @@ class WkbConstructorTest extends TestCase
 		);
 		$this->assertEquals(['binary', 4326], $polygonWithSRID->bindings);
 		$this->assertInstanceOf(Contracts\Polygon::class, $polygonWithSRID);
+	}
+
+	public function testBdMPolyFromWKB(): void
+	{
+		$mPolygon = Sfc::bdMPolyFromWKB('binary');
+		$this->assertEquals(
+			'ST_BdMPolyFromWKB(?)',
+			(string) $mPolygon,
+		);
+		$this->assertEquals(['binary'], $mPolygon->bindings);
+		$this->assertInstanceOf(Contracts\MultiPolygon::class, $mPolygon);
+
+		$mPolygonWithSRID = Sfc::bdMPolyFromWKB('binary', 4326);
+		$this->assertEquals(
+			'ST_BdMPolyFromWKB(?, ?)',
+			(string) $mPolygonWithSRID,
+		);
+		$this->assertEquals(['binary', 4326], $mPolygonWithSRID->bindings);
+		$this->assertInstanceOf(Contracts\MultiPolygon::class, $mPolygonWithSRID);
 	}
 }

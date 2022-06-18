@@ -5,7 +5,7 @@ namespace TontonsB\SF;
 class Expression implements \Stringable
 {
 	public function __construct(
-		public readonly Expression|string $sql,
+		public readonly string $sql,
 		public readonly array $bindings = [],
 	) {}
 

@@ -14,7 +14,18 @@ class ExpressionTest extends TestCase
 		$expression = new Expression('sql');
 
 		$this->assertEquals('sql', $expression->sql);
+		$this->assertEquals('sql', (string) $expression);
 		$this->assertEquals([], $expression->bindings);
+	}
+
+	public function testWrapping(): void
+	{
+		$e = new Expression('sql');
+		$ee = new Expression($e);
+
+		$this->assertEquals('sql', $ee->sql);
+		$this->assertEquals('sql', (string) $ee);
+		$this->assertEquals([], $ee->bindings);
 	}
 
 	public function testConstructorWithBindings(): void

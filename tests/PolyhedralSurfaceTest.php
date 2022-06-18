@@ -29,7 +29,7 @@ class PolyhedralSurfaceTest extends TestCase
 		$this->assertInstanceOf(Contracts\Polygon::class, $patchN);
 	}
 
-	public function testBoundingPolygonsNotImplemented()
+	public function testBoundingPolygonsNotImplemented(): void
 	{
 		$this->expectException(MethodNotImplemented::class);
 
@@ -37,7 +37,7 @@ class PolyhedralSurfaceTest extends TestCase
 	}
 
 
-	public function testIsClosedNotImplemented()
+	public function testIsClosedNotImplemented(): void
 	{
 		$this->expectException(MethodNotImplemented::class);
 

@@ -7,7 +7,7 @@ use TontonsB\SF\OGC\Geometry;
 
 class GeometryQueryTest extends GeometryTestCase
 {
-	public function testMethodResults()
+	public function testMethodResults(): void
 	{
 		$another = new Geometry('another');
 
@@ -77,7 +77,7 @@ class GeometryQueryTest extends GeometryTestCase
 		$this->assertInstanceOf(Geometry::class, $locateBetween);
 	}
 
-	public function testWithGeometryType()
+	public function testWithGeometryType(): void
 	{
 		$another = new Geometry('somepoint');
 
@@ -87,7 +87,7 @@ class GeometryQueryTest extends GeometryTestCase
 		);
 	}
 
-	public function testWithString()
+	public function testWithString(): void
 	{
 		$this->assertEquals(
 			'ST_Equals(geom, somepoint)',
@@ -95,7 +95,7 @@ class GeometryQueryTest extends GeometryTestCase
 		);
 	}
 
-	public function testBindingHandling()
+	public function testBindingHandling(): void
 	{
 		$another = new Geometry('ST_MakePoint(?, ?)', [1, 4]);
 
@@ -108,7 +108,7 @@ class GeometryQueryTest extends GeometryTestCase
 		$this->assertEquals([1, 4], $equals->bindings);
 	}
 
-	public function testQueryTypes()
+	public function testQueryTypes(): void
 	{
 		$equals = $this->geom->equals('another');
 

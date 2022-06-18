@@ -49,7 +49,7 @@ class Expression implements \Stringable
 
 				$bindings = [
 					...$bindings,
-					...$arg->bindings
+					...$arg->bindings,
 				];
 			} else {
 				// Raw arguments are replaced by ? and moved to bindings.

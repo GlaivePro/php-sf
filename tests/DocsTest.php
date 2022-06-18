@@ -14,7 +14,7 @@ use TontonsB\SF\SpatiaLite;
  */
 class DocsTest extends TestCase
 {
-	public function testEnvelope()
+	public function testEnvelope(): void
 	{
 
 		$geometry = new Geometry('ST_MakePoint(?, ?)', [3, 5]);
@@ -32,7 +32,7 @@ class DocsTest extends TestCase
 		);
 	}
 
-	public function testChain()
+	public function testChain(): void
 	{
 		$geometry = new Geometry('ST_MakePoint(?, ?)', [3, 5]);
 		$another = new Geometry("'LINESTRING ( 2 0, 0 2 )'::geometry");
@@ -43,7 +43,7 @@ class DocsTest extends TestCase
 			->buffer(5.2)
 			->convexHull();
 
-			$this->assertSame(
+		$this->assertSame(
 			"ST_ConvexHull(ST_Buffer(ST_Buffer(ST_Union(ST_MakePoint(?, ?), 'LINESTRING ( 2 0, 0 2 )'::geometry), ST_Distance(ST_MakePoint(?, ?), ST_MakePoint(1, 1))), ?))",
 			(string) $expression,
 		);
@@ -54,7 +54,7 @@ class DocsTest extends TestCase
 		);
 	}
 
-	public function testSrid()
+	public function testSrid(): void
 	{
 		$geom = new Geometry('the_geom');
 
@@ -74,7 +74,7 @@ class DocsTest extends TestCase
 		);
 	}
 
-	public function testBuffer()
+	public function testBuffer(): void
 	{
 		$geom = new Geometry('geom');
 
@@ -89,7 +89,7 @@ class DocsTest extends TestCase
 		$this->assertEquals([3], $buf2->bindings);
 	}
 
-	public function testGeometryTypeHints()
+	public function testGeometryTypeHints(): void
 	{
 		$geom = new Geometry('geom');
 

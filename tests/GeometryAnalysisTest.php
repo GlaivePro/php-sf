@@ -7,7 +7,7 @@ use TontonsB\SF\OGC\Geometry;
 
 class GeometryAnalysisTest extends GeometryTestCase
 {
-	public function testMethodResults()
+	public function testMethodResults(): void
 	{
 		$another = new Geometry('another');
 

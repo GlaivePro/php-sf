@@ -8,7 +8,7 @@ use TontonsB\SF\Exceptions\MethodNotImplemented;
 
 class GeometryBasicTest extends GeometryTestCase
 {
-	public function testMethodResults()
+	public function testMethodResults(): void
 	{
 		$this->assertEquals(
 			'ST_Dimension(geom)',
@@ -75,7 +75,7 @@ class GeometryBasicTest extends GeometryTestCase
 		$this->assertInstanceOf(Geometry::class, $boundary);
 	}
 
-	public function testWrappingWithBindings()
+	public function testWrappingWithBindings(): void
 	{
 		$geom = new Geometry('ST_MakePoint(?, ?)', [4, 2]);
 
@@ -92,7 +92,7 @@ class GeometryBasicTest extends GeometryTestCase
 		);
 	}
 
-	public function testWrapTypes()
+	public function testWrapTypes(): void
 	{
 		$dimension = $this->geom->dimension();
 
@@ -100,7 +100,7 @@ class GeometryBasicTest extends GeometryTestCase
 		$this->assertNotInstanceOf(Geometry::class, $dimension);
 	}
 
-	public function testAssertExceptionReporting()
+	public function testAssertExceptionReporting(): void
 	{
 		$this->expectException(MethodNotImplemented::class);
 

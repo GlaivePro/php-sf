@@ -62,6 +62,16 @@ class DocsTest extends TestCase
 			'ST_SRID(the_geom)',
 			(string) $geom->srid(),
 		);
+
+		$this->assertEquals(
+			'ST_SRID(the_geom)',
+			$geom->srid()->sql,
+		);
+
+		$this->assertEquals(
+			'ST_SRID(the_geom)',
+			$geom->srid()->__toString(),
+		);
 	}
 
 	public function testBuffer()

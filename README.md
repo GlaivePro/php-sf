@@ -45,6 +45,10 @@ You can also specify columns:
 $geom = new Geometry('the_geom');
 $srid = $geom->srid();
 (string) $srid; // ST_SRID(the_geom);
+
+// alternate syntaxes to retrieve the SQL expression:
+$srid->sql; // ST_SRID(the_geom);
+$srid->__toString(); // ST_SRID(the_geom);
 ```
 
 Raw expressions can be prevented from going to bindings by wrapping them in an

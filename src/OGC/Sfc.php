@@ -11,10 +11,10 @@ namespace TontonsB\SF\OGC;
  */
 class Sfc
 {
-	use Traits\SfcWkt;
 	use Traits\SfcWkb;
-	use Traits\SfcWktOptional;
 	use Traits\SfcWkbOptional;
+	use Traits\SfcWkt;
+	use Traits\SfcWktOptional;
 
 	public static function __callStatic($method, $args)
 	{

@@ -27,7 +27,7 @@ trait SfcWkb
 	 */
 	public static function geomFromWKB(string $WKBGeometry, int $SRID = null): Geometry
 	{
-		return is_null($SRID)
+		return \is_null($SRID)
 			? static::geometryFromMethod('ST_GeomFromWKB', $WKBGeometry)
 			: static::geometryFromMethod('ST_GeomFromWKB', $WKBGeometry, $SRID);
 	}
@@ -39,7 +39,7 @@ trait SfcWkb
 	 */
 	public static function pointFromWKB(string $WKBPoint, int $SRID = null): Point
 	{
-		return is_null($SRID)
+		return \is_null($SRID)
 			? static::pointFromMethod('ST_PointFromWKB', $WKBPoint)
 			: static::pointFromMethod('ST_PointFromWKB', $WKBPoint, $SRID);
 	}
@@ -51,7 +51,7 @@ trait SfcWkb
 	 */
 	public static function lineFromWKB(string $WKBLineString, int $SRID = null): LineString
 	{
-		return is_null($SRID)
+		return \is_null($SRID)
 			? static::lineStringFromMethod('ST_LineFromWKB', $WKBLineString)
 			: static::lineStringFromMethod('ST_LineFromWKB', $WKBLineString, $SRID);
 	}
@@ -63,7 +63,7 @@ trait SfcWkb
 	 */
 	public static function polyFromWKB(string $WKBPolygon, int $SRID = null): Polygon
 	{
-		return is_null($SRID)
+		return \is_null($SRID)
 			? static::polygonFromMethod('ST_PolyFromWKB', $WKBPolygon)
 			: static::polygonFromMethod('ST_PolyFromWKB', $WKBPolygon, $SRID);
 	}
@@ -75,7 +75,7 @@ trait SfcWkb
 	 */
 	public static function mPointFromWKB(string $WKBMultiPoint, int $SRID = null): MultiPoint
 	{
-		return is_null($SRID)
+		return \is_null($SRID)
 			? static::multiPointFromMethod('ST_MPointFromWKB', $WKBMultiPoint)
 			: static::multiPointFromMethod('ST_MPointFromWKB', $WKBMultiPoint, $SRID);
 	}
@@ -87,7 +87,7 @@ trait SfcWkb
 	 */
 	public static function mLineFromWKB(string $WKBMultiLineString, int $SRID = null): MultiLineString
 	{
-		return is_null($SRID)
+		return \is_null($SRID)
 			? static::multiLineStringFromMethod('ST_MLineFromWKB', $WKBMultiLineString)
 			: static::multiLineStringFromMethod('ST_MLineFromWKB', $WKBMultiLineString, $SRID);
 	}
@@ -99,7 +99,7 @@ trait SfcWkb
 	 */
 	public static function mPolyFromWKB(string $WKBMultiPolygon, int $SRID = null): MultiPolygon
 	{
-		return is_null($SRID)
+		return \is_null($SRID)
 			? static::multiPolygonFromMethod('ST_MPolyFromWKB', $WKBMultiPolygon)
 			: static::multiPolygonFromMethod('ST_MPolyFromWKB', $WKBMultiPolygon, $SRID);
 	}
@@ -111,7 +111,7 @@ trait SfcWkb
 	 */
 	public static function geomCollFromWKB(string $WKBGeomCollection, int $SRID = null): GeometryCollection
 	{
-		return is_null($SRID)
+		return \is_null($SRID)
 			? static::geometryCollectionFromMethod('ST_GeomCollFromWKB', $WKBGeomCollection)
 			: static::geometryCollectionFromMethod('ST_GeomCollFromWKB', $WKBGeomCollection, $SRID);
 	}

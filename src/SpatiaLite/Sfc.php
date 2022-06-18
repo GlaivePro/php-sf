@@ -47,15 +47,15 @@ class Sfc extends OGCSfc
 	 */
 	public static function makePoint(float $x, float $y, int $srid = null, float $z = null, float $m = null): Point
 	{
-		if (is_null($z) && is_null($m))
-			return is_null($srid)
+		if (\is_null($z) && \is_null($m))
+			return \is_null($srid)
 				? Point::fromMethod('MakePoint', $x, $y)
 				: Point::fromMethod('MakePoint', $x, $y, $srid);
 
-		if (is_null($m))
+		if (\is_null($m))
 			return static::makePointZ($x, $y, $z, $srid);
 
-		if (is_null($z))
+		if (\is_null($z))
 			return static::makePointM($x, $y, $m, $srid);
 
 		return static::makePointZM($x, $y, $z, $m, $srid);
@@ -66,7 +66,7 @@ class Sfc extends OGCSfc
 	 */
 	public static function makePointZ(float $x, float $y, float $z, int $srid = null): Point
 	{
-		return is_null($srid)
+		return \is_null($srid)
 			? Point::fromMethod('MakePointZ', $x, $y, $z)
 			: Point::fromMethod('MakePointZ', $x, $y, $z, $srid);
 	}
@@ -76,7 +76,7 @@ class Sfc extends OGCSfc
 	 */
 	public static function makePointM(float $x, float $y, float $m, int $srid = null): Point
 	{
-		return is_null($srid)
+		return \is_null($srid)
 			? Point::fromMethod('MakePointM', $x, $y, $m)
 			: Point::fromMethod('MakePointM', $x, $y, $m, $srid);
 	}
@@ -86,7 +86,7 @@ class Sfc extends OGCSfc
 	 */
 	public static function makePointZM(float $x, float $y, float $z, float $m, int $srid = null): Point
 	{
-		return is_null($srid)
+		return \is_null($srid)
 			? Point::fromMethod('MakePointZM', $x, $y, $z, $m)
 			: Point::fromMethod('MakePointZM', $x, $y, $z, $m, $srid);
 	}

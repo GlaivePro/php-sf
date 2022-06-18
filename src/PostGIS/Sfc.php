@@ -50,13 +50,13 @@ class Sfc extends OGCSfc
 	 */
 	public static function makePoint(float $x, float $y, float $z = null, float $m = null): Point
 	{
-		if (is_null($z) && is_null($m))
+		if (\is_null($z) && \is_null($m))
 			return Point::fromMethod('ST_MakePoint', $x, $y);
 
-		if (is_null($m))
+		if (\is_null($m))
 			return Point::fromMethod('ST_MakePoint', $x, $y, $z);
 
-		if (is_null($z))
+		if (\is_null($z))
 			return static::makePointM($x, $y, $m);
 
 		return Point::fromMethod('ST_MakePoint', $x, $y, $z, $m);
@@ -81,15 +81,15 @@ class Sfc extends OGCSfc
 	 */
 	public static function point(float $x, float $y, int $srid = null, float $z = null, float $m = null): Point
 	{
-		if (is_null($z) && is_null($m))
-			return is_null($srid)
+		if (\is_null($z) && \is_null($m))
+			return \is_null($srid)
 				? Point::fromMethod('ST_Point', $x, $y)
 				: Point::fromMethod('ST_Point', $x, $y, $srid);
 
-		if (is_null($m))
+		if (\is_null($m))
 			return static::pointZ($x, $y, $z, $srid);
 
-		if (is_null($z))
+		if (\is_null($z))
 			return static::pointM($x, $y, $m, $srid);
 
 		return static::pointZM($x, $y, $z, $m, $srid);
@@ -102,7 +102,7 @@ class Sfc extends OGCSfc
 	 */
 	public static function pointZ(float $x, float $y, float $z, int $srid = null): Point
 	{
-		return is_null($srid)
+		return \is_null($srid)
 			? Point::fromMethod('ST_PointZ', $x, $y, $z)
 			: Point::fromMethod('ST_PointZ', $x, $y, $z, $srid);
 	}
@@ -114,7 +114,7 @@ class Sfc extends OGCSfc
 	 */
 	public static function pointM(float $x, float $y, float $m, int $srid = null): Point
 	{
-		return is_null($srid)
+		return \is_null($srid)
 			? Point::fromMethod('ST_PointM', $x, $y, $m)
 			: Point::fromMethod('ST_PointM', $x, $y, $m, $srid);
 	}
@@ -126,7 +126,7 @@ class Sfc extends OGCSfc
 	 */
 	public static function pointZM(float $x, float $y, float $z, float $m, int $srid = null): Point
 	{
-		return is_null($srid)
+		return \is_null($srid)
 			? Point::fromMethod('ST_PointZM', $x, $y, $z, $m)
 			: Point::fromMethod('ST_PointZM', $x, $y, $z, $m, $srid);
 	}

@@ -21,7 +21,7 @@ trait SfcWkbOptional
 	 */
 	public static function bdPolyFromWKB(string $WKBMultiLineString, int $SRID = null): Polygon
 	{
-		return is_null($SRID)
+		return \is_null($SRID)
 			? static::polygonFromMethod('ST_BdPolyFromWKB', $WKBMultiLineString)
 			: static::polygonFromMethod('ST_BdPolyFromWKB', $WKBMultiLineString, $SRID);
 	}
@@ -33,7 +33,7 @@ trait SfcWkbOptional
 	 */
 	public static function bdMPolyFromWKB(string $WKBMultiLineString, int $SRID = null): MultiPolygon
 	{
-		return is_null($SRID)
+		return \is_null($SRID)
 			? static::multiPolygonFromMethod('ST_BdMPolyFromWKB', $WKBMultiLineString)
 			: static::multiPolygonFromMethod('ST_BdMPolyFromWKB', $WKBMultiLineString, $SRID);
 	}

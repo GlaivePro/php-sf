@@ -15,6 +15,6 @@ namespace TontonsB\SF\OGC;
  */
 class PolyhedralSurface extends Surface implements Contracts\PolyhedralSurface
 {
-	use Traits\PolyhedralSurface;
 	use Traits\GeometryCollection;
+	use Traits\PolyhedralSurface;
 }

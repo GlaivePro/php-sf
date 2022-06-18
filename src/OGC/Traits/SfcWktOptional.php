@@ -21,7 +21,7 @@ trait SfcWktOptional
 	 */
 	public static function bdPolyFromText(string $multiLineStringTaggedText, int $SRID = null): Polygon
 	{
-		return is_null($SRID)
+		return \is_null($SRID)
 			? static::polygonFromMethod('ST_BdPolyFromText', $multiLineStringTaggedText)
 			: static::polygonFromMethod('ST_BdPolyFromText', $multiLineStringTaggedText, $SRID);
 	}
@@ -33,7 +33,7 @@ trait SfcWktOptional
 	 */
 	public static function bdMPolyFromText(string $multiLineStringTaggedText, int $SRID = null): MultiPolygon
 	{
-		return is_null($SRID)
+		return \is_null($SRID)
 			? static::multiPolygonFromMethod('ST_BdMPolyFromText', $multiLineStringTaggedText)
 			: static::multiPolygonFromMethod('ST_BdMPolyFromText', $multiLineStringTaggedText, $SRID);
 	}

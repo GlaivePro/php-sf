@@ -27,7 +27,7 @@ trait SfcWkt
 	 */
 	public static function geomFromText(string $geometryTaggedText, int $SRID = null): Geometry
 	{
-		return is_null($SRID)
+		return \is_null($SRID)
 			? static::geometryFromMethod('ST_GeomFromText', $geometryTaggedText)
 			: static::geometryFromMethod('ST_GeomFromText', $geometryTaggedText, $SRID);
 	}
@@ -39,7 +39,7 @@ trait SfcWkt
 	 */
 	public static function pointFromText(string $pointTaggedText, int $SRID = null): Point
 	{
-		return is_null($SRID)
+		return \is_null($SRID)
 			? static::pointFromMethod('ST_PointFromText', $pointTaggedText)
 			: static::pointFromMethod('ST_PointFromText', $pointTaggedText, $SRID);
 	}
@@ -51,7 +51,7 @@ trait SfcWkt
 	 */
 	public static function lineFromText(string $lineStringTaggedText, int $SRID = null): LineString
 	{
-		return is_null($SRID)
+		return \is_null($SRID)
 			? static::lineStringFromMethod('ST_LineFromText', $lineStringTaggedText)
 			: static::lineStringFromMethod('ST_LineFromText', $lineStringTaggedText, $SRID);
 	}
@@ -63,7 +63,7 @@ trait SfcWkt
 	 */
 	public static function polyFromText(string $polygonTaggedText, int $SRID = null): Polygon
 	{
-		return is_null($SRID)
+		return \is_null($SRID)
 			? static::polygonFromMethod('ST_PolyFromText', $polygonTaggedText)
 			: static::polygonFromMethod('ST_PolyFromText', $polygonTaggedText, $SRID);
 	}
@@ -75,7 +75,7 @@ trait SfcWkt
 	 */
 	public static function mPointFromText(string $multiPointTaggedText, int $SRID = null): MultiPoint
 	{
-		return is_null($SRID)
+		return \is_null($SRID)
 			? static::multiPointFromMethod('ST_MPointFromText', $multiPointTaggedText)
 			: static::multiPointFromMethod('ST_MPointFromText', $multiPointTaggedText, $SRID);
 	}
@@ -87,7 +87,7 @@ trait SfcWkt
 	 */
 	public static function mLineFromText(string $multiLineStringTaggedText, int $SRID = null): MultiLineString
 	{
-		return is_null($SRID)
+		return \is_null($SRID)
 			? static::multiLineStringFromMethod('ST_MLineFromText', $multiLineStringTaggedText)
 			: static::multiLineStringFromMethod('ST_MLineFromText', $multiLineStringTaggedText, $SRID);
 	}
@@ -99,7 +99,7 @@ trait SfcWkt
 	 */
 	public static function mPolyFromText(string $multiPolygonTaggedText, int $SRID = null): MultiPolygon
 	{
-		return is_null($SRID)
+		return \is_null($SRID)
 			? static::multiPolygonFromMethod('ST_MPolyFromText', $multiPolygonTaggedText)
 			: static::multiPolygonFromMethod('ST_MPolyFromText', $multiPolygonTaggedText, $SRID);
 	}
@@ -111,7 +111,7 @@ trait SfcWkt
 	 */
 	public static function geomCollFromText(string $geometryCollectionTaggedText, int $SRID = null): GeometryCollection
 	{
-		return is_null($SRID)
+		return \is_null($SRID)
 			? static::geometryCollectionFromMethod('ST_GeomCollFromText', $geometryCollectionTaggedText)
 			: static::geometryCollectionFromMethod('ST_GeomCollFromText', $geometryCollectionTaggedText, $SRID);
 	}

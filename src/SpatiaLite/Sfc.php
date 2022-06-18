@@ -23,7 +23,7 @@ class Sfc extends OGCSfc
 	 */
 	protected static function callFromMethod(string $method, array $args): Geometry
 	{
-		$class = match($method) {
+		$class = match ($method) {
 			'geometry' => Geometry::class,
 			'point' => Point::class,
 			// 'curve' => Curve::class,
@@ -38,7 +38,7 @@ class Sfc extends OGCSfc
 	 * Create a Point.
 	 *
 	 * Unlike MakePoint in SpatiaLite, this also accepts
-	 * makePoint(x: $x, y: $y, m: $m) and will use MakePointM in such case.
+	 * makePoint(x: $sx, y: $y, m: $m) and will use MakePointM in such case.
 	 * Similarly `z` arg is also supported using MakePointZ or MakePointZM.
 	 *
 	 * If the optional args are omitted, we will also omit them.

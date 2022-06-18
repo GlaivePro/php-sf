@@ -25,7 +25,7 @@ class Sfc extends OGCSfc
 	 */
 	protected static function callFromMethod(string $method, array $args): Geometry
 	{
-		$class = match($method) {
+		$class = match ($method) {
 			'geometry' => Geometry::class,
 			'geometryCollection' => GeometryCollection::class,
 			'lineString' => LineString::class,

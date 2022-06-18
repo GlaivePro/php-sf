@@ -16,7 +16,6 @@ class DocsTest extends TestCase
 {
 	public function testEnvelope(): void
 	{
-
 		$geometry = new Geometry('ST_MakePoint(?, ?)', [3, 5]);
 
 		$envelope = $geometry->envelope();
@@ -96,7 +95,6 @@ class DocsTest extends TestCase
 		$this->assertIsObject(
 			$geom->intersects("'LINESTRING ( 2 0, 0 2 )'::geometry")
 		);
-
 
 		$this->assertIsObject(
 			$geom->intersects('ST_MakePoint(3, 5)')

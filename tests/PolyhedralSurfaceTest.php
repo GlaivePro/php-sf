@@ -36,7 +36,6 @@ class PolyhedralSurfaceTest extends TestCase
 		(new PolyhedralSurface('surface'))->boundingPolygons(new Polygon('poly'));
 	}
 
-
 	public function testIsClosedNotImplemented(): void
 	{
 		$this->expectException(MethodNotImplemented::class);

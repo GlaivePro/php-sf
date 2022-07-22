@@ -1,8 +1,8 @@
 <?php
 
-namespace TontonsB\SF\OGC;
+namespace Janaseta\SF\OGC;
 
-use TontonsB\SF\Expression;
+use Janaseta\SF\Expression;
 
 /**
  * Implements geometry model according to

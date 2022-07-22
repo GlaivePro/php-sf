@@ -1,12 +1,12 @@
 <?php
 
-namespace TontonsB\SF\Tests;
+namespace Janaseta\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TontonsB\SF\OGC\Contracts;
-use TontonsB\SF\OGC\Line;
-use TontonsB\SF\OGC\LinearRing;
-use TontonsB\SF\OGC\LineString;
+use Janaseta\SF\OGC\Contracts;
+use Janaseta\SF\OGC\Line;
+use Janaseta\SF\OGC\LinearRing;
+use Janaseta\SF\OGC\LineString;
 
 class LineStringTest extends TestCase
 {

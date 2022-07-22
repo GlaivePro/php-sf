@@ -1,9 +1,9 @@
 <?php
 
-namespace TontonsB\SF\Tests;
+namespace Janaseta\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TontonsB\SF\OGC\Point;
+use Janaseta\SF\OGC\Point;
 
 class PointTest extends TestCase
 {

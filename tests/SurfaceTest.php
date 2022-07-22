@@ -1,11 +1,11 @@
 <?php
 
-namespace TontonsB\SF\Tests;
+namespace Janaseta\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TontonsB\SF\OGC\Geometry;
-use TontonsB\SF\OGC\Point;
-use TontonsB\SF\OGC\Surface;
+use Janaseta\SF\OGC\Geometry;
+use Janaseta\SF\OGC\Point;
+use Janaseta\SF\OGC\Surface;
 
 class SurfaceTest extends TestCase
 {

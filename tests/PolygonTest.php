@@ -1,11 +1,11 @@
 <?php
 
-namespace TontonsB\SF\Tests;
+namespace Janaseta\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TontonsB\SF\OGC\Contracts;
-use TontonsB\SF\OGC\Polygon;
-use TontonsB\SF\OGC\Triangle;
+use Janaseta\SF\OGC\Contracts;
+use Janaseta\SF\OGC\Polygon;
+use Janaseta\SF\OGC\Triangle;
 
 class PolygonTest extends TestCase
 {

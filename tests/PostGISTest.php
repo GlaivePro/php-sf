@@ -1,27 +1,27 @@
 <?php
 
-namespace Tontonsb\SF\Tests;
+namespace Janaseta\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TontonsB\SF\Exceptions\MethodNotImplemented;
-use TontonsB\SF\Expression;
-use TontonsB\SF\PostGIS\Curve;
-use TontonsB\SF\PostGIS\Geometry;
-use TontonsB\SF\PostGIS\GeometryCollection;
-use TontonsB\SF\PostGIS\Line;
-use TontonsB\SF\PostGIS\LinearRing;
-use TontonsB\SF\PostGIS\LineString;
-use TontonsB\SF\PostGIS\MultiCurve;
-use TontonsB\SF\PostGIS\MultiLineString;
-use TontonsB\SF\PostGIS\MultiPoint;
-use TontonsB\SF\PostGIS\MultiPolygon;
-use TontonsB\SF\PostGIS\Point;
-use TontonsB\SF\PostGIS\Polygon;
-use TontonsB\SF\PostGIS\PolyhedralSurface;
-use TontonsB\SF\PostGIS\Sfc;
-use TontonsB\SF\PostGIS\Surface;
-use TontonsB\SF\PostGIS\TIN;
-use TontonsB\SF\PostGIS\Triangle;
+use Janaseta\SF\Exceptions\MethodNotImplemented;
+use Janaseta\SF\Expression;
+use Janaseta\SF\PostGIS\Curve;
+use Janaseta\SF\PostGIS\Geometry;
+use Janaseta\SF\PostGIS\GeometryCollection;
+use Janaseta\SF\PostGIS\Line;
+use Janaseta\SF\PostGIS\LinearRing;
+use Janaseta\SF\PostGIS\LineString;
+use Janaseta\SF\PostGIS\MultiCurve;
+use Janaseta\SF\PostGIS\MultiLineString;
+use Janaseta\SF\PostGIS\MultiPoint;
+use Janaseta\SF\PostGIS\MultiPolygon;
+use Janaseta\SF\PostGIS\Point;
+use Janaseta\SF\PostGIS\Polygon;
+use Janaseta\SF\PostGIS\PolyhedralSurface;
+use Janaseta\SF\PostGIS\Sfc;
+use Janaseta\SF\PostGIS\Surface;
+use Janaseta\SF\PostGIS\TIN;
+use Janaseta\SF\PostGIS\Triangle;
 
 class PostGISTest extends TestCase
 {

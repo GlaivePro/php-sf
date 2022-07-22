@@ -1,8 +1,8 @@
 <?php
 
-namespace TontonsB\SF\PostGIS;
+namespace Janaseta\SF\PostGIS;
 
-use TontonsB\SF\OGC\Contracts\TIN as OGCTIN;
+use Janaseta\SF\OGC\Contracts\TIN as OGCTIN;
 
 /**
  * TIN model with PostGIS-specific functions.

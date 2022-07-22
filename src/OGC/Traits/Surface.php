@@ -1,8 +1,8 @@
 <?php
 
-namespace TontonsB\SF\OGC\Traits;
+namespace Janaseta\SF\OGC\Traits;
 
-use TontonsB\SF\OGC\Contracts;
+use Janaseta\SF\OGC\Contracts;
 
 /**
  * Implements geometry model according to

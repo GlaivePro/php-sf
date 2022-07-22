@@ -1,9 +1,9 @@
 <?php
 
-namespace TontonsB\SF\OGC\Traits;
+namespace Janaseta\SF\OGC\Traits;
 
-use TontonsB\SF\Expression;
-use TontonsB\SF\OGC\Contracts;
+use Janaseta\SF\Expression;
+use Janaseta\SF\OGC\Contracts;
 
 /**
  * Returns SQL statements common to

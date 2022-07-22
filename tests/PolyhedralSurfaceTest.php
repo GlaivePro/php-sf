@@ -1,13 +1,13 @@
 <?php
 
-namespace TontonsB\SF\Tests;
+namespace Janaseta\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TontonsB\SF\Exceptions\MethodNotImplemented;
-use TontonsB\SF\OGC\Contracts;
-use TontonsB\SF\OGC\Polygon;
-use TontonsB\SF\OGC\PolyhedralSurface;
-use TontonsB\SF\OGC\TIN;
+use Janaseta\SF\Exceptions\MethodNotImplemented;
+use Janaseta\SF\OGC\Contracts;
+use Janaseta\SF\OGC\Polygon;
+use Janaseta\SF\OGC\PolyhedralSurface;
+use Janaseta\SF\OGC\TIN;
 
 class PolyhedralSurfaceTest extends TestCase
 {

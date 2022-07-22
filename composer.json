@@ -1,5 +1,5 @@
 {
-    "name": "tontonsb/php-sf",
+    "name": "janaseta/sf",
     "description": "SFA-SQL expression builder",
     "authors": [
         {
@@ -8,7 +8,7 @@
             "homepage": "https://github.com/tontonsb"
         }
     ],
-    "homepage": "https://github.com/tontonsb/php-sf",
+    "homepage": "https://github.com/janaseta/php-sf",
     "keywords": [
 		"Simple features", "Simple feature access",
 		"SFA-SQL", "SQL/MM",
@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "TontonsB\\SF\\": "src"
+            "Janaseta\\SF\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "TontonsB\\SF\\Tests\\": "tests"
+            "Janaseta\\SF\\Tests\\": "tests"
         }
     },
 	"config": {

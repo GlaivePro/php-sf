@@ -1,8 +1,8 @@
 <?php
 
-namespace TontonsB\SF\PostGIS;
+namespace Janaseta\SF\PostGIS;
 
-use TontonsB\SF\OGC\Contracts\MultiLineString as OGCMultiLineString;
+use Janaseta\SF\OGC\Contracts\MultiLineString as OGCMultiLineString;
 
 /**
  * MultiLineString model with PostGIS-specific functions.

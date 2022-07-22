@@ -1,10 +1,10 @@
 <?php
 
-namespace TontonsB\SF\Tests;
+namespace Janaseta\SF\Tests;
 
-use TontonsB\SF\Exceptions\MethodNotImplemented;
-use TontonsB\SF\Expression;
-use TontonsB\SF\OGC\Geometry;
+use Janaseta\SF\Exceptions\MethodNotImplemented;
+use Janaseta\SF\Expression;
+use Janaseta\SF\OGC\Geometry;
 
 class GeometryBasicTest extends GeometryTestCase
 {

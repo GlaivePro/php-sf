@@ -1,9 +1,9 @@
 <?php
 
-namespace TontonsB\SF\Tests;
+namespace Janaseta\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TontonsB\SF\OGC\Geometry;
+use Janaseta\SF\OGC\Geometry;
 
 class GeometryTestCase extends TestCase
 {

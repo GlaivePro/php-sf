@@ -1,8 +1,8 @@
 <?php
 
-namespace TontonsB\SF\PostGIS;
+namespace Janaseta\SF\PostGIS;
 
-use TontonsB\SF\OGC\Contracts\LineString as OGCLinearRing;
+use Janaseta\SF\OGC\Contracts\LineString as OGCLinearRing;
 
 /**
  * LinearRing model with PostGIS-specific functions.

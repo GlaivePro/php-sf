@@ -1,11 +1,11 @@
 <?php
 
-namespace TontonsB\SF\Tests;
+namespace Janaseta\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TontonsB\SF\OGC\Contracts;
-use TontonsB\SF\OGC\MultiCurve;
-use TontonsB\SF\OGC\MultiLineString;
+use Janaseta\SF\OGC\Contracts;
+use Janaseta\SF\OGC\MultiCurve;
+use Janaseta\SF\OGC\MultiLineString;
 
 class MultiCurveTest extends TestCase
 {

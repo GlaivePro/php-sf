@@ -1,8 +1,8 @@
 <?php
 
-namespace TontonsB\SF\SpatiaLite;
+namespace Janaseta\SF\SpatiaLite;
 
-use TontonsB\SF\OGC\Sfc as OGCSfc;
+use Janaseta\SF\OGC\Sfc as OGCSfc;
 
 /**
  * Implements constructors available in SpatiaLite.

@@ -1,12 +1,12 @@
 <?php
 
-namespace TontonsB\SF\Tests;
+namespace Janaseta\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TontonsB\SF\OGC\Contracts;
-use TontonsB\SF\OGC\MultiPolygon;
-use TontonsB\SF\OGC\MultiSurface;
-use TontonsB\SF\OGC\Point;
+use Janaseta\SF\OGC\Contracts;
+use Janaseta\SF\OGC\MultiPolygon;
+use Janaseta\SF\OGC\MultiSurface;
+use Janaseta\SF\OGC\Point;
 
 class MultiSurfaceTest extends TestCase
 {

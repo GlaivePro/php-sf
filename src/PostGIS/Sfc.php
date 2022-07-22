@@ -1,10 +1,10 @@
 <?php
 
-namespace TontonsB\SF\PostGIS;
+namespace Janaseta\SF\PostGIS;
 
-use TontonsB\SF\Exceptions\MethodNotImplemented;
-use TontonsB\SF\Expression;
-use TontonsB\SF\OGC\Sfc as OGCSfc;
+use Janaseta\SF\Exceptions\MethodNotImplemented;
+use Janaseta\SF\Expression;
+use Janaseta\SF\OGC\Sfc as OGCSfc;
 
 /**
  * Implements constructors available in PostGIS.

@@ -1,12 +1,12 @@
 <?php
 
-namespace TontonsB\SF\Tests;
+namespace Janaseta\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TontonsB\SF\OGC\Contracts;
-use TontonsB\SF\OGC\Geometry;
-use TontonsB\SF\OGC\GeometryCollection;
-use TontonsB\SF\OGC\MultiPoint;
+use Janaseta\SF\OGC\Contracts;
+use Janaseta\SF\OGC\Geometry;
+use Janaseta\SF\OGC\GeometryCollection;
+use Janaseta\SF\OGC\MultiPoint;
 
 class GeometryCollectionTest extends TestCase
 {

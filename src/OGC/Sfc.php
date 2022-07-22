@@ -1,6 +1,6 @@
 <?php
 
-namespace TontonsB\SF\OGC;
+namespace Janaseta\SF\OGC;
 
 /**
  * Simple feature consrtuctors for OGC model.

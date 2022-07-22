@@ -1,6 +1,6 @@
 <?php
 
-namespace TontonsB\SF;
+namespace Janaseta\SF;
 
 class Expression implements \Stringable
 {

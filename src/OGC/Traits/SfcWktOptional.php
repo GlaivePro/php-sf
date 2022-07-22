@@ -1,9 +1,9 @@
 <?php
 
-namespace TontonsB\SF\OGC\Traits;
+namespace Janaseta\SF\OGC\Traits;
 
-use TontonsB\SF\OGC\Contracts\MultiPolygon;
-use TontonsB\SF\OGC\Contracts\Polygon;
+use Janaseta\SF\OGC\Contracts\MultiPolygon;
+use Janaseta\SF\OGC\Contracts\Polygon;
 
 /**
  * Implements constructors according to

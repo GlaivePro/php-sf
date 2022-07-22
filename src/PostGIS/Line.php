@@ -1,8 +1,8 @@
 <?php
 
-namespace TontonsB\SF\PostGIS;
+namespace Janaseta\SF\PostGIS;
 
-use TontonsB\SF\OGC\Contracts\LineString as OGCLine;
+use Janaseta\SF\OGC\Contracts\LineString as OGCLine;
 
 /**
  * Line model with PostGIS-specific functions.

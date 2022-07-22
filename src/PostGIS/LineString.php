@@ -1,13 +1,13 @@
 <?php
 
-namespace TontonsB\SF\PostGIS;
+namespace Janaseta\SF\PostGIS;
 
-use TontonsB\SF\OGC\Contracts\LineString as OGCLineString;
+use Janaseta\SF\OGC\Contracts\LineString as OGCLineString;
 
 /**
  * LineString model with PostGIS-specific functions.
  */
 class LineString extends Curve implements OGCLineString
 {
-	use \TontonsB\SF\OGC\Traits\LineString;
+	use \Janaseta\SF\OGC\Traits\LineString;
 }

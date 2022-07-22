@@ -1,11 +1,11 @@
 <?php
 
-namespace Tontonsb\SF\Tests;
+namespace Janaseta\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TontonsB\SF\SpatiaLite\Geometry;
-use TontonsB\SF\SpatiaLite\Point;
-use TontonsB\SF\SpatiaLite\Sfc;
+use Janaseta\SF\SpatiaLite\Geometry;
+use Janaseta\SF\SpatiaLite\Point;
+use Janaseta\SF\SpatiaLite\Sfc;
 
 class SpatiaLiteTest extends TestCase
 {

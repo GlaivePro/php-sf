@@ -1,9 +1,9 @@
 <?php
 
-namespace TontonsB\SF\PostGIS;
+namespace Janaseta\SF\PostGIS;
 
-use TontonsB\SF\Expression;
-use TontonsB\SF\OGC\Geometry as OGCGeometry;
+use Janaseta\SF\Expression;
+use Janaseta\SF\OGC\Geometry as OGCGeometry;
 
 /**
  * Geometry model with PostGIS-specific functions.

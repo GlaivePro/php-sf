@@ -1,10 +1,10 @@
 <?php
 
-namespace TontonsB\SF\OGC\Traits;
+namespace Janaseta\SF\OGC\Traits;
 
-use TontonsB\SF\Exceptions\MethodNotImplemented;
-use TontonsB\SF\Expression;
-use TontonsB\SF\OGC\Contracts\Geometry as GeometryInterface;
+use Janaseta\SF\Exceptions\MethodNotImplemented;
+use Janaseta\SF\Expression;
+use Janaseta\SF\OGC\Contracts\Geometry as GeometryInterface;
 
 /**
  * Supports basic methods on geometry object according to

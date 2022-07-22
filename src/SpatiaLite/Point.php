@@ -1,13 +1,13 @@
 <?php
 
-namespace TontonsB\SF\SpatiaLite;
+namespace Janaseta\SF\SpatiaLite;
 
-use TontonsB\SF\OGC\Contracts\Point as OGCPoint;
+use Janaseta\SF\OGC\Contracts\Point as OGCPoint;
 
 /**
  * Point model with SpatiaLite-specific functions.
  */
 class Point extends Geometry implements OGCPoint
 {
-	use \TontonsB\SF\OGC\Traits\Point;
+	use \Janaseta\SF\OGC\Traits\Point;
 }

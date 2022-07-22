@@ -1,15 +1,15 @@
 <?php
 
-namespace TontonsB\SF\OGC\Traits;
+namespace Janaseta\SF\OGC\Traits;
 
-use TontonsB\SF\OGC\Contracts\Geometry;
-use TontonsB\SF\OGC\Contracts\GeometryCollection;
-use TontonsB\SF\OGC\Contracts\LineString;
-use TontonsB\SF\OGC\Contracts\MultiLineString;
-use TontonsB\SF\OGC\Contracts\MultiPoint;
-use TontonsB\SF\OGC\Contracts\MultiPolygon;
-use TontonsB\SF\OGC\Contracts\Point;
-use TontonsB\SF\OGC\Contracts\Polygon;
+use Janaseta\SF\OGC\Contracts\Geometry;
+use Janaseta\SF\OGC\Contracts\GeometryCollection;
+use Janaseta\SF\OGC\Contracts\LineString;
+use Janaseta\SF\OGC\Contracts\MultiLineString;
+use Janaseta\SF\OGC\Contracts\MultiPoint;
+use Janaseta\SF\OGC\Contracts\MultiPolygon;
+use Janaseta\SF\OGC\Contracts\Point;
+use Janaseta\SF\OGC\Contracts\Polygon;
 
 /**
  * Implements constructors according to

@@ -1,6 +1,6 @@
 <?php
 
-namespace TontonsB\SF\OGC\Contracts;
+namespace Janaseta\SF\OGC\Contracts;
 
 /**
  * Defines geometry model according to

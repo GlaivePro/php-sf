@@ -1,8 +1,8 @@
 <?php
 
-namespace TontonsB\SF\SpatiaLite;
+namespace Janaseta\SF\SpatiaLite;
 
-use TontonsB\SF\OGC\Geometry as OGCGeometry;
+use Janaseta\SF\OGC\Geometry as OGCGeometry;
 
 /**
  * Geometry model with SpatiaLite-specific functions.

@@ -1,13 +1,13 @@
 <?php
 
-namespace TontonsB\SF\Tests;
+namespace Janaseta\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TontonsB\SF\Expression;
-use TontonsB\SF\OGC\Geometry;
-use TontonsB\SF\OGC\Sfc;
-use TontonsB\SF\PostGIS;
-use TontonsB\SF\SpatiaLite;
+use Janaseta\SF\Expression;
+use Janaseta\SF\OGC\Geometry;
+use Janaseta\SF\OGC\Sfc;
+use Janaseta\SF\PostGIS;
+use Janaseta\SF\SpatiaLite;
 
 /**
  * Test exmaples from the docs to ensure docs are correct.

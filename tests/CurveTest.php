@@ -1,10 +1,10 @@
 <?php
 
-namespace TontonsB\SF\Tests;
+namespace Janaseta\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TontonsB\SF\OGC\Curve;
-use TontonsB\SF\OGC\Point;
+use Janaseta\SF\OGC\Curve;
+use Janaseta\SF\OGC\Point;
 
 class CurveTest extends TestCase
 {

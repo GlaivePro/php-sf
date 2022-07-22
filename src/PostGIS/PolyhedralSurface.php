@@ -1,17 +1,17 @@
 <?php
 
-namespace TontonsB\SF\PostGIS;
+namespace Janaseta\SF\PostGIS;
 
-use TontonsB\SF\Expression;
-use TontonsB\SF\OGC\Contracts\PolyhedralSurface as OGCPolyhedralSurface;
+use Janaseta\SF\Expression;
+use Janaseta\SF\OGC\Contracts\PolyhedralSurface as OGCPolyhedralSurface;
 
 /**
  * PolyhedralSurface model with PostGIS-specific functions.
  */
 class PolyhedralSurface extends Surface implements OGCPolyhedralSurface
 {
-	use \TontonsB\SF\OGC\Traits\GeometryCollection;
-	use \TontonsB\SF\OGC\Traits\PolyhedralSurface;
+	use \Janaseta\SF\OGC\Traits\GeometryCollection;
+	use \Janaseta\SF\OGC\Traits\PolyhedralSurface;
 
 	public function numPatches(): Expression // Integer-valued expression
 	{

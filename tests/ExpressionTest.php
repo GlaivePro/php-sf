@@ -1,11 +1,11 @@
 <?php
 
-namespace TontonsB\SF\Tests;
+namespace Janaseta\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TontonsB\SF\Exceptions\InvalidExpressionType;
-use TontonsB\SF\Expression;
-use TontonsB\SF\OGC\Geometry;
+use Janaseta\SF\Exceptions\InvalidExpressionType;
+use Janaseta\SF\Expression;
+use Janaseta\SF\OGC\Geometry;
 
 class ExpressionTest extends TestCase
 {

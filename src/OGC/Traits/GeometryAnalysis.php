@@ -1,9 +1,9 @@
 <?php
 
-namespace TontonsB\SF\OGC\Traits;
+namespace Janaseta\SF\OGC\Traits;
 
-use TontonsB\SF\Expression;
-use TontonsB\SF\OGC\Contracts\Geometry as GeometryInterface;
+use Janaseta\SF\Expression;
+use Janaseta\SF\OGC\Contracts\Geometry as GeometryInterface;
 
 /**
  * Supports analysis methods on geometry object according to

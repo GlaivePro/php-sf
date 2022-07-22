@@ -1,13 +1,13 @@
 <?php
 
-namespace TontonsB\SF\PostGIS;
+namespace Janaseta\SF\PostGIS;
 
-use TontonsB\SF\OGC\Contracts\Polygon as OGCPolygon;
+use Janaseta\SF\OGC\Contracts\Polygon as OGCPolygon;
 
 /**
  * Polygon model with PostGIS-specific functions.
  */
 class Polygon extends Surface implements OGCPolygon
 {
-	use \TontonsB\SF\OGC\Traits\Polygon;
+	use \Janaseta\SF\OGC\Traits\Polygon;
 }

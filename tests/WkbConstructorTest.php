@@ -1,10 +1,10 @@
 <?php
 
-namespace TontonsB\SF\Tests;
+namespace Janaseta\SF\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TontonsB\SF\OGC\Contracts;
-use TontonsB\SF\OGC\Sfc;
+use Janaseta\SF\OGC\Contracts;
+use Janaseta\SF\OGC\Sfc;
 
 class WkbConstructorTest extends TestCase
 {

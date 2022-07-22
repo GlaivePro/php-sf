@@ -1,9 +1,9 @@
 <?php
 
-namespace TontonsB\SF\Tests;
+namespace Janaseta\SF\Tests;
 
-use TontonsB\SF\Expression;
-use TontonsB\SF\OGC\Geometry;
+use Janaseta\SF\Expression;
+use Janaseta\SF\OGC\Geometry;
 
 class GeometryQueryTest extends GeometryTestCase
 {

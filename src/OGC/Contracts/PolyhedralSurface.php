@@ -1,8 +1,8 @@
 <?php
 
-namespace TontonsB\SF\OGC\Contracts;
+namespace Janaseta\SF\OGC\Contracts;
 
-use TontonsB\SF\Expression;
+use Janaseta\SF\Expression;
 
 /**
  * Defines geometry model according to

@@ -1,8 +1,8 @@
 <?php
 
-namespace TontonsB\SF\PostGIS;
+namespace Janaseta\SF\PostGIS;
 
-use TontonsB\SF\OGC\Contracts\Triangle as OGCTriangle;
+use Janaseta\SF\OGC\Contracts\Triangle as OGCTriangle;
 
 /**
  * Triangle model with PostGIS-specific functions.

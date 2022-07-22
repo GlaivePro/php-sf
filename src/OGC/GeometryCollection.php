@@ -1,6 +1,6 @@
 <?php
 
-namespace TontonsB\SF\OGC;
+namespace Janaseta\SF\OGC;
 
 /**
  * Implements geometry model according to

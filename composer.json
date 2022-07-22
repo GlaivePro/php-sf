@@ -11,7 +11,7 @@
     "homepage": "https://github.com/janaseta/php-sf",
     "keywords": [
 		"Simple features", "Simple feature access",
-		"SFA-SQL", "SQL/MM",
+		"SFA-SQL", "SQL-MM",
 		"PostGIS", "SpatiaLite",
 		"OpenGIS", "ISO 19125", "ISO 19107",
 		"Geo", "GIS", "Geometry", "Geography"

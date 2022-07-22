@@ -1,6 +1,7 @@
 {
     "name": "janaseta/sf",
     "description": "SFA-SQL expression builder",
+	"license": "MIT",
     "authors": [
         {
             "name": "Juris Evertovskis",

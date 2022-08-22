@@ -1,6 +1,6 @@
 <?php
 
-namespace Janaseta\SF\Tests;
+namespace Janaseta\SF\Tests\SQL;
 
 use PHPUnit\Framework\TestCase;
 use Janaseta\SF\Exceptions\InvalidExpressionType;

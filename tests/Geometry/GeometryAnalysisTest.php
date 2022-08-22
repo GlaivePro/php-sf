@@ -1,6 +1,6 @@
 <?php
 
-namespace Janaseta\SF\Tests;
+namespace Janaseta\SF\Tests\Geometry;
 
 use Janaseta\SF\Expression;
 use Janaseta\SF\OGC\Geometry;

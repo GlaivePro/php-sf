@@ -1,6 +1,6 @@
 <?php
 
-namespace Janaseta\SF\Tests;
+namespace Janaseta\SF\Tests\Geometry;
 
 use PHPUnit\Framework\TestCase;
 use Janaseta\SF\OGC\Point;

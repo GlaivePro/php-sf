@@ -1,6 +1,6 @@
 <?php
 
-namespace Janaseta\SF\Tests;
+namespace Janaseta\SF\Tests\Feature;
 
 use PHPUnit\Framework\TestCase;
 use Janaseta\SF\Expression;

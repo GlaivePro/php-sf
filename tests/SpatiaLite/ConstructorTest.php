@@ -1,38 +1,16 @@
 <?php
 
-namespace Janaseta\SF\Tests;
+namespace Janaseta\SF\Tests\SpatiaLite;
 
 use PHPUnit\Framework\TestCase;
-use Janaseta\SF\SpatiaLite\Geometry;
-use Janaseta\SF\SpatiaLite\Point;
 use Janaseta\SF\SpatiaLite\Sfc;
 
-class SpatiaLiteTest extends TestCase
+/**
+ * Test SpatiaLite specific constructors.
+ */
+class ConstructorTest extends TestCase
 {
-	public function testGeometry(): void
-	{
-		$geom = new Geometry('geom');
-
-		$setSRID = $geom->setSRID(4326);
-		$this->assertEquals(
-			'SetSRID(geom, ?)',
-			(string) $setSRID,
-		);
-		$this->assertEquals([4326], $setSRID->bindings);
-		$this->assertInstanceOf(Geometry::class, $setSRID);
-	}
-
-	/**
-	 * Ensure that the proxied methods create SpatiaLite objects
-	 */
-	public function testProxiedConstructors(): void
-	{
-		$this->assertInstanceOf(Geometry::class, Sfc::geomFromText('text'));
-
-		$this->assertInstanceOf(Point::class, Sfc::pointFromWKB('binary'));
-	}
-
-	public function testPointConstructor(): void
+	public function testPoint(): void
 	{
 		$point = Sfc::point(1, 3);
 		$this->assertSame(
@@ -42,7 +20,7 @@ class SpatiaLiteTest extends TestCase
 		$this->assertEquals([1, 3], $point->bindings);
 	}
 
-	public function testMakePointConstructors(): void
+	public function testMakePoint(): void
 	{
 		$point = Sfc::makePoint(1, 3);
 		$this->assertSame(

@@ -9,8 +9,23 @@
     </include>
   </coverage>
   <testsuites>
-    <testsuite name="SF tests">
-        <directory suffix="Test.php">./tests</directory>
+    <testsuite name="OGC Geometry method tests">
+        <directory suffix="Test.php">./tests/Geometry</directory>
+    </testsuite>
+    <testsuite name="Feature tests">
+        <directory suffix="Test.php">./tests/Feature</directory>
+    </testsuite>
+    <testsuite name="Contructor tests">
+        <directory suffix="Test.php">./tests/Constructors</directory>
+    </testsuite>
+    <testsuite name="PostGIS tests">
+        <directory suffix="Test.php">./tests/PostGIS</directory>
+    </testsuite>
+    <testsuite name="SpatiaLite tests">
+        <directory suffix="Test.php">./tests/SpatiaLite</directory>
+    </testsuite>
+    <testsuite name="SQL tooling tests">
+        <directory suffix="Test.php">./tests/SQL</directory>
     </testsuite>
   </testsuites>
 </phpunit>

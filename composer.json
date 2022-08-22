@@ -21,6 +21,9 @@
         "php": "^8.1"
     },
     "require-dev": {
+        "ext-dom": "*",
+        "ext-mbstring": "*",
+        "ext-xdebug": "*",
         "janaseta/php-cs": "^1.0",
         "phpunit/phpunit": "^9.0"
     },

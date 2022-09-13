@@ -7,7 +7,7 @@ use Janaseta\SF\Expression;
 use Janaseta\SF\PostGIS\LineString;
 use Janaseta\SF\PostGIS\Sfc;
 
-class PostGISTest extends TestCase
+class ConstructorTest extends TestCase
 {
 	public function testMakePointConstructors(): void
 	{

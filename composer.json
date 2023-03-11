@@ -41,7 +41,7 @@
         "sort-packages": true
     },
 	"scripts": {
-		"test": "XDEBUG_MODE=coverage phpunit --coverage-text --colors --testdox",
+		"test": "XDEBUG_MODE=coverage phpunit --testsuite=DatabaseLess --coverage-text --colors --testdox",
 		"fix": "php-cs-fixer fix",
 		"cs": "@fix --dry-run --diff"
     },

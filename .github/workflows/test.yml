@@ -16,6 +16,12 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    name: Test on PHP${{matrix.php}}
+
+    strategy:
+     matrix:
+        php: ["8.1", "8.2"]
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2

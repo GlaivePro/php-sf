@@ -13,7 +13,7 @@ on:
       - 'tests/**'
 
 jobs:
-  test:
+  php-test:
     runs-on: ubuntu-latest
 
     name: Test on PHP${{matrix.php}}
@@ -31,3 +31,28 @@ jobs:
 
       - name: Run tests
         run: composer test
+
+  postgis-test:
+    runs-on: ubuntu-latest
+
+    name: Test with PostGIS
+
+    services:
+      postgis:
+        image: postgis/postgis:14-3.3
+        env:
+          POSTGRES_DB: sfa
+          POSTGRES_USER: sfa
+          POSTGRES_PASSWORD: sfa
+        ports:
+          - 5432:5432
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        uses: ramsey/composer-install@v2
+
+      - name: Run tests
+        run: composer test-pg

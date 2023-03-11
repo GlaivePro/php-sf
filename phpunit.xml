@@ -35,5 +35,8 @@
     <testsuite name="SQL">
         <directory suffix="Test.php">./tests/SQL</directory>
     </testsuite>
+    <testsuite name="PGIntegration">
+        <directory suffix="Test.php">./tests/Integration/PostGIS</directory>
+    </testsuite>
   </testsuites>
 </phpunit>

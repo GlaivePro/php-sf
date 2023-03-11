@@ -56,7 +56,7 @@ class Geometry extends Expression implements Contracts\Geometry
 		return Expression::fromMethod(
 			$method,
 			$this,
-			Geometry::make($another),
+			self::make($another),
 		);
 	}
 
@@ -68,7 +68,7 @@ class Geometry extends Expression implements Contracts\Geometry
 		return static::sfc::geometryFromMethod(
 			$method,
 			$this,
-			Geometry::make($another),
+			self::make($another),
 		);
 	}
 }

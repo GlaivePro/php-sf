@@ -5,6 +5,10 @@ on:
   pull_request:
   push:
     branches: [ master ]
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - '.php-cs-fixer.dist.php'
 
 jobs:
   php-cs-fixer:
@@ -12,7 +16,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Install dependencies
         uses: ramsey/composer-install@v2

@@ -244,3 +244,10 @@ in Eloquent. Also adds support for these types in migrations.
 
 Implementation of SFA object oriented features in plain PHP. Part of project
 [Geo I/O](https://github.com/geo-io) that includes other Geo PHP tools as well.
+
+### jsor/doctrine-postgis
+
+https://github.com/jsor/doctrine-postgis
+
+PostGIS support for Doctrine, see the [supported functions](https://github.com/jsor/doctrine-postgis/blob/main/docs/function-index.md).
+We should strive to support the same.

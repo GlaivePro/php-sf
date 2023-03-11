@@ -56,7 +56,9 @@ class Geometry extends Expression implements Contracts\Geometry
 		return Expression::fromMethod(
 			$method,
 			$this,
-			self::make($another),
+			// Workaround as `self::method()` is actually somewhat equal to `static::method()`
+			// See https://stackoverflow.com/questions/75710102/is-self-actually-sometimes-late-in-php
+			self::class::make($another),
 		);
 	}
 
@@ -68,7 +70,9 @@ class Geometry extends Expression implements Contracts\Geometry
 		return static::sfc::geometryFromMethod(
 			$method,
 			$this,
-			self::make($another),
+			// Workaround as `self::method()` is actually somewhat equal to `static::method()`
+			// See https://stackoverflow.com/questions/75710102/is-self-actually-sometimes-late-in-php
+			self::class::make($another),
 		);
 	}
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Janaseta\SF\PostGIS;
+namespace GlaivePro\SF\PostGIS;
 
-use Janaseta\SF\OGC\Contracts\MultiPolygon as OGCMultiPolygon;
+use GlaivePro\SF\OGC\Contracts\MultiPolygon as OGCMultiPolygon;
 
 /**
  * MultiPolygon model with PostGIS-specific functions.

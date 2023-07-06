@@ -1,9 +1,9 @@
 <?php
 
-namespace Janaseta\SF\PostGIS;
+namespace GlaivePro\SF\PostGIS;
 
-use Janaseta\SF\Expression;
-use Janaseta\SF\OGC\Geometry as OGCGeometry;
+use GlaivePro\SF\Expression;
+use GlaivePro\SF\OGC\Geometry as OGCGeometry;
 
 /**
  * Geometry model with PostGIS-specific functions.

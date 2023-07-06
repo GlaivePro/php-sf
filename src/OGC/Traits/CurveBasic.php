@@ -1,8 +1,8 @@
 <?php
 
-namespace Janaseta\SF\OGC\Traits;
+namespace GlaivePro\SF\OGC\Traits;
 
-use Janaseta\SF\Expression;
+use GlaivePro\SF\Expression;
 
 /**
  * Returns SQL statements common to

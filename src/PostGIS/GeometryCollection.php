@@ -1,13 +1,13 @@
 <?php
 
-namespace Janaseta\SF\PostGIS;
+namespace GlaivePro\SF\PostGIS;
 
-use Janaseta\SF\OGC\Contracts\GeometryCollection as OGCGeometryCollection;
+use GlaivePro\SF\OGC\Contracts\GeometryCollection as OGCGeometryCollection;
 
 /**
  * GeometryCollection model with PostGIS-specific functions.
  */
 class GeometryCollection extends Geometry implements OGCGeometryCollection
 {
-	use \Janaseta\SF\OGC\Traits\GeometryCollection;
+	use \GlaivePro\SF\OGC\Traits\GeometryCollection;
 }

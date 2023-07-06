@@ -1,13 +1,13 @@
 <?php
 
-namespace Janaseta\SF\PostGIS;
+namespace GlaivePro\SF\PostGIS;
 
-use Janaseta\SF\OGC\Contracts\Point as OGCPoint;
+use GlaivePro\SF\OGC\Contracts\Point as OGCPoint;
 
 /**
  * Point model with PostGIS-specific functions.
  */
 class Point extends Geometry implements OGCPoint
 {
-	use \Janaseta\SF\OGC\Traits\Point;
+	use \GlaivePro\SF\OGC\Traits\Point;
 }

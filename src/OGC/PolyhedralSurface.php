@@ -1,6 +1,6 @@
 <?php
 
-namespace Janaseta\SF\OGC;
+namespace GlaivePro\SF\OGC;
 
 /**
  * Implements geometry model according to

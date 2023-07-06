@@ -1,8 +1,8 @@
 <?php
 
-namespace Janaseta\SF\SpatiaLite;
+namespace GlaivePro\SF\SpatiaLite;
 
-use Janaseta\SF\OGC\Geometry as OGCGeometry;
+use GlaivePro\SF\OGC\Geometry as OGCGeometry;
 
 /**
  * Geometry model with SpatiaLite-specific functions.

@@ -1,9 +1,9 @@
 <?php
 
-namespace Janaseta\SF\OGC\Traits;
+namespace GlaivePro\SF\OGC\Traits;
 
-use Janaseta\SF\Expression;
-use Janaseta\SF\OGC\Contracts\Geometry as GeometryInterface;
+use GlaivePro\SF\Expression;
+use GlaivePro\SF\OGC\Contracts\Geometry as GeometryInterface;
 
 /**
  * Supports analysis methods on geometry object according to

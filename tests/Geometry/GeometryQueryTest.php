@@ -1,9 +1,9 @@
 <?php
 
-namespace Janaseta\SF\Tests\Geometry;
+namespace GlaivePro\SF\Tests\Geometry;
 
-use Janaseta\SF\Expression;
-use Janaseta\SF\OGC\Geometry;
+use GlaivePro\SF\Expression;
+use GlaivePro\SF\OGC\Geometry;
 
 class GeometryQueryTest extends GeometryTestCase
 {

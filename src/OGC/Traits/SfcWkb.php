@@ -1,15 +1,15 @@
 <?php
 
-namespace Janaseta\SF\OGC\Traits;
+namespace GlaivePro\SF\OGC\Traits;
 
-use Janaseta\SF\OGC\Contracts\Geometry;
-use Janaseta\SF\OGC\Contracts\GeometryCollection;
-use Janaseta\SF\OGC\Contracts\LineString;
-use Janaseta\SF\OGC\Contracts\MultiLineString;
-use Janaseta\SF\OGC\Contracts\MultiPoint;
-use Janaseta\SF\OGC\Contracts\MultiPolygon;
-use Janaseta\SF\OGC\Contracts\Point;
-use Janaseta\SF\OGC\Contracts\Polygon;
+use GlaivePro\SF\OGC\Contracts\Geometry;
+use GlaivePro\SF\OGC\Contracts\GeometryCollection;
+use GlaivePro\SF\OGC\Contracts\LineString;
+use GlaivePro\SF\OGC\Contracts\MultiLineString;
+use GlaivePro\SF\OGC\Contracts\MultiPoint;
+use GlaivePro\SF\OGC\Contracts\MultiPolygon;
+use GlaivePro\SF\OGC\Contracts\Point;
+use GlaivePro\SF\OGC\Contracts\Polygon;
 
 /**
  * Implements constructors according to

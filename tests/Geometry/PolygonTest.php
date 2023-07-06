@@ -1,11 +1,11 @@
 <?php
 
-namespace Janaseta\SF\Tests\Geometry;
+namespace GlaivePro\SF\Tests\Geometry;
 
 use PHPUnit\Framework\TestCase;
-use Janaseta\SF\OGC\Contracts;
-use Janaseta\SF\OGC\Polygon;
-use Janaseta\SF\OGC\Triangle;
+use GlaivePro\SF\OGC\Contracts;
+use GlaivePro\SF\OGC\Polygon;
+use GlaivePro\SF\OGC\Triangle;
 
 class PolygonTest extends TestCase
 {

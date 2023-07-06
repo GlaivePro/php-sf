@@ -1,8 +1,8 @@
 <?php
 
-namespace Janaseta\SF\SpatiaLite;
+namespace GlaivePro\SF\SpatiaLite;
 
-use Janaseta\SF\OGC\Sfc as OGCSfc;
+use GlaivePro\SF\OGC\Sfc as OGCSfc;
 
 /**
  * Implements constructors available in SpatiaLite.

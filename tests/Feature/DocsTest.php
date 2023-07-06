@@ -1,13 +1,13 @@
 <?php
 
-namespace Janaseta\SF\Tests\Feature;
+namespace GlaivePro\SF\Tests\Feature;
 
 use PHPUnit\Framework\TestCase;
-use Janaseta\SF\Expression;
-use Janaseta\SF\OGC\Geometry;
-use Janaseta\SF\OGC\Sfc;
-use Janaseta\SF\PostGIS;
-use Janaseta\SF\SpatiaLite;
+use GlaivePro\SF\Expression;
+use GlaivePro\SF\OGC\Geometry;
+use GlaivePro\SF\OGC\Sfc;
+use GlaivePro\SF\PostGIS;
+use GlaivePro\SF\SpatiaLite;
 
 /**
  * Test exmaples from the docs to ensure docs are correct.

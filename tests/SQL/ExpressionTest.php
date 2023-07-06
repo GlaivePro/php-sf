@@ -1,11 +1,11 @@
 <?php
 
-namespace Janaseta\SF\Tests\SQL;
+namespace GlaivePro\SF\Tests\SQL;
 
 use PHPUnit\Framework\TestCase;
-use Janaseta\SF\Exceptions\InvalidExpressionType;
-use Janaseta\SF\Expression;
-use Janaseta\SF\OGC\Geometry;
+use GlaivePro\SF\Exceptions\InvalidExpressionType;
+use GlaivePro\SF\Expression;
+use GlaivePro\SF\OGC\Geometry;
 
 class ExpressionTest extends TestCase
 {

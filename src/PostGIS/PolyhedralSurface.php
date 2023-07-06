@@ -1,17 +1,17 @@
 <?php
 
-namespace Janaseta\SF\PostGIS;
+namespace GlaivePro\SF\PostGIS;
 
-use Janaseta\SF\Expression;
-use Janaseta\SF\OGC\Contracts\PolyhedralSurface as OGCPolyhedralSurface;
+use GlaivePro\SF\Expression;
+use GlaivePro\SF\OGC\Contracts\PolyhedralSurface as OGCPolyhedralSurface;
 
 /**
  * PolyhedralSurface model with PostGIS-specific functions.
  */
 class PolyhedralSurface extends Surface implements OGCPolyhedralSurface
 {
-	use \Janaseta\SF\OGC\Traits\GeometryCollection;
-	use \Janaseta\SF\OGC\Traits\PolyhedralSurface;
+	use \GlaivePro\SF\OGC\Traits\GeometryCollection;
+	use \GlaivePro\SF\OGC\Traits\PolyhedralSurface;
 
 	public function numPatches(): Expression // Integer-valued expression
 	{

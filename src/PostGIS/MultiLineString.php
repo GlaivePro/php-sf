@@ -1,8 +1,8 @@
 <?php
 
-namespace Janaseta\SF\PostGIS;
+namespace GlaivePro\SF\PostGIS;
 
-use Janaseta\SF\OGC\Contracts\MultiLineString as OGCMultiLineString;
+use GlaivePro\SF\OGC\Contracts\MultiLineString as OGCMultiLineString;
 
 /**
  * MultiLineString model with PostGIS-specific functions.

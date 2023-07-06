@@ -1,11 +1,11 @@
 <?php
 
-namespace Janaseta\SF\Tests\Geometry;
+namespace GlaivePro\SF\Tests\Geometry;
 
 use PHPUnit\Framework\TestCase;
-use Janaseta\SF\OGC\Contracts;
-use Janaseta\SF\OGC\MultiCurve;
-use Janaseta\SF\OGC\MultiLineString;
+use GlaivePro\SF\OGC\Contracts;
+use GlaivePro\SF\OGC\MultiCurve;
+use GlaivePro\SF\OGC\MultiLineString;
 
 class MultiCurveTest extends TestCase
 {

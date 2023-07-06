@@ -1,10 +1,10 @@
 <?php
 
-namespace Janaseta\SF\Tests\Geometry;
+namespace GlaivePro\SF\Tests\Geometry;
 
 use PHPUnit\Framework\TestCase;
-use Janaseta\SF\OGC\Curve;
-use Janaseta\SF\OGC\Point;
+use GlaivePro\SF\OGC\Curve;
+use GlaivePro\SF\OGC\Point;
 
 class CurveTest extends TestCase
 {

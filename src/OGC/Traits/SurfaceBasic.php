@@ -1,9 +1,9 @@
 <?php
 
-namespace Janaseta\SF\OGC\Traits;
+namespace GlaivePro\SF\OGC\Traits;
 
-use Janaseta\SF\Expression;
-use Janaseta\SF\OGC\Contracts;
+use GlaivePro\SF\Expression;
+use GlaivePro\SF\OGC\Contracts;
 
 /**
  * Returns SQL statements common to

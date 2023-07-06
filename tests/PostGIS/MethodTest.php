@@ -1,19 +1,19 @@
 <?php
 
-namespace Janaseta\SF\Tests\PostGIS;
+namespace GlaivePro\SF\Tests\PostGIS;
 
 use PHPUnit\Framework\TestCase;
-use Janaseta\SF\PostGIS\Curve;
-use Janaseta\SF\PostGIS\Geometry;
-use Janaseta\SF\PostGIS\GeometryCollection;
-use Janaseta\SF\PostGIS\Line;
-use Janaseta\SF\PostGIS\LinearRing;
-use Janaseta\SF\PostGIS\LineString;
-use Janaseta\SF\PostGIS\Polygon;
-use Janaseta\SF\PostGIS\PolyhedralSurface;
-use Janaseta\SF\PostGIS\Surface;
-use Janaseta\SF\PostGIS\TIN;
-use Janaseta\SF\PostGIS\Triangle;
+use GlaivePro\SF\PostGIS\Curve;
+use GlaivePro\SF\PostGIS\Geometry;
+use GlaivePro\SF\PostGIS\GeometryCollection;
+use GlaivePro\SF\PostGIS\Line;
+use GlaivePro\SF\PostGIS\LinearRing;
+use GlaivePro\SF\PostGIS\LineString;
+use GlaivePro\SF\PostGIS\Polygon;
+use GlaivePro\SF\PostGIS\PolyhedralSurface;
+use GlaivePro\SF\PostGIS\Surface;
+use GlaivePro\SF\PostGIS\TIN;
+use GlaivePro\SF\PostGIS\Triangle;
 
 /**
  * Ensure that methods use the dialect-specific syntax.

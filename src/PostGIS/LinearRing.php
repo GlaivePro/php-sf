@@ -1,8 +1,8 @@
 <?php
 
-namespace Janaseta\SF\PostGIS;
+namespace GlaivePro\SF\PostGIS;
 
-use Janaseta\SF\OGC\Contracts\LineString as OGCLinearRing;
+use GlaivePro\SF\OGC\Contracts\LineString as OGCLinearRing;
 
 /**
  * LinearRing model with PostGIS-specific functions.

@@ -1,11 +1,11 @@
 <?php
 
-namespace Janaseta\SF\Tests\Geometry;
+namespace GlaivePro\SF\Tests\Geometry;
 
 use PHPUnit\Framework\TestCase;
-use Janaseta\SF\OGC\Geometry;
-use Janaseta\SF\OGC\Point;
-use Janaseta\SF\OGC\Surface;
+use GlaivePro\SF\OGC\Geometry;
+use GlaivePro\SF\OGC\Point;
+use GlaivePro\SF\OGC\Surface;
 
 class SurfaceTest extends TestCase
 {

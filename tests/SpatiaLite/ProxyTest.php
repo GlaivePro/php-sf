@@ -1,11 +1,11 @@
 <?php
 
-namespace Janaseta\SF\Tests\SpatiaLite;
+namespace GlaivePro\SF\Tests\SpatiaLite;
 
 use PHPUnit\Framework\TestCase;
-use Janaseta\SF\SpatiaLite\Geometry;
-use Janaseta\SF\SpatiaLite\Point;
-use Janaseta\SF\SpatiaLite\Sfc;
+use GlaivePro\SF\SpatiaLite\Geometry;
+use GlaivePro\SF\SpatiaLite\Point;
+use GlaivePro\SF\SpatiaLite\Sfc;
 
 /**
  * Ensure that extending is correct.

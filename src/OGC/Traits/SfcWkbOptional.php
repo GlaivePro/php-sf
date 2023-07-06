@@ -1,9 +1,9 @@
 <?php
 
-namespace Janaseta\SF\OGC\Traits;
+namespace GlaivePro\SF\OGC\Traits;
 
-use Janaseta\SF\OGC\Contracts\MultiPolygon;
-use Janaseta\SF\OGC\Contracts\Polygon;
+use GlaivePro\SF\OGC\Contracts\MultiPolygon;
+use GlaivePro\SF\OGC\Contracts\Polygon;
 
 /**
  * Implements constructors according to

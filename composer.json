@@ -29,12 +29,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Janaseta\\SF\\": "src"
+            "GlaivePro\\SF\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Janaseta\\SF\\Tests\\": "tests"
+            "GlaivePro\\SF\\Tests\\": "tests"
         }
     },
 	"config": {

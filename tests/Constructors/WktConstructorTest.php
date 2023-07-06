@@ -1,10 +1,10 @@
 <?php
 
-namespace Janaseta\SF\Tests\Constructors;
+namespace GlaivePro\SF\Tests\Constructors;
 
 use PHPUnit\Framework\TestCase;
-use Janaseta\SF\OGC\Contracts;
-use Janaseta\SF\OGC\Sfc;
+use GlaivePro\SF\OGC\Contracts;
+use GlaivePro\SF\OGC\Sfc;
 
 class WktConstructorTest extends TestCase
 {

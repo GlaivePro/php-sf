@@ -1,6 +1,6 @@
 <?php
 
-namespace Janaseta\SF\Exceptions;
+namespace GlaivePro\SF\Exceptions;
 
 class InvalidExpressionType extends \DomainException
 {

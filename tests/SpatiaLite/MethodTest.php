@@ -1,9 +1,9 @@
 <?php
 
-namespace Janaseta\SF\Tests\SpatiaLite;
+namespace GlaivePro\SF\Tests\SpatiaLite;
 
 use PHPUnit\Framework\TestCase;
-use Janaseta\SF\SpatiaLite\Geometry;
+use GlaivePro\SF\SpatiaLite\Geometry;
 
 /**
  * Ensure that methods use the dialect-specific syntax.

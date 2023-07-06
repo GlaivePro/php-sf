@@ -1,8 +1,8 @@
 <?php
 
-namespace Janaseta\SF\PostGIS;
+namespace GlaivePro\SF\PostGIS;
 
-use Janaseta\SF\OGC\Contracts\LineString as OGCLine;
+use GlaivePro\SF\OGC\Contracts\LineString as OGCLine;
 
 /**
  * Line model with PostGIS-specific functions.

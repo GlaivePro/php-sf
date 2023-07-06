@@ -1,13 +1,13 @@
 <?php
 
-namespace Janaseta\SF\Tests\Geometry;
+namespace GlaivePro\SF\Tests\Geometry;
 
 use PHPUnit\Framework\TestCase;
-use Janaseta\SF\Exceptions\MethodNotImplemented;
-use Janaseta\SF\OGC\Contracts;
-use Janaseta\SF\OGC\Polygon;
-use Janaseta\SF\OGC\PolyhedralSurface;
-use Janaseta\SF\OGC\TIN;
+use GlaivePro\SF\Exceptions\MethodNotImplemented;
+use GlaivePro\SF\OGC\Contracts;
+use GlaivePro\SF\OGC\Polygon;
+use GlaivePro\SF\OGC\PolyhedralSurface;
+use GlaivePro\SF\OGC\TIN;
 
 class PolyhedralSurfaceTest extends TestCase
 {

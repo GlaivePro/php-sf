@@ -1,18 +1,18 @@
 <?php
 
-namespace Janaseta\SF\Tests\PostGIS;
+namespace GlaivePro\SF\Tests\PostGIS;
 
 use PHPUnit\Framework\TestCase;
-use Janaseta\SF\Exceptions\MethodNotImplemented;
-use Janaseta\SF\PostGIS\Geometry;
-use Janaseta\SF\PostGIS\GeometryCollection;
-use Janaseta\SF\PostGIS\MultiCurve;
-use Janaseta\SF\PostGIS\MultiLineString;
-use Janaseta\SF\PostGIS\MultiPoint;
-use Janaseta\SF\PostGIS\MultiPolygon;
-use Janaseta\SF\PostGIS\Point;
-use Janaseta\SF\PostGIS\Sfc;
-use Janaseta\SF\PostGIS\Surface;
+use GlaivePro\SF\Exceptions\MethodNotImplemented;
+use GlaivePro\SF\PostGIS\Geometry;
+use GlaivePro\SF\PostGIS\GeometryCollection;
+use GlaivePro\SF\PostGIS\MultiCurve;
+use GlaivePro\SF\PostGIS\MultiLineString;
+use GlaivePro\SF\PostGIS\MultiPoint;
+use GlaivePro\SF\PostGIS\MultiPolygon;
+use GlaivePro\SF\PostGIS\Point;
+use GlaivePro\SF\PostGIS\Sfc;
+use GlaivePro\SF\PostGIS\Surface;
 
 /**
  * Ensure that extending is correct.

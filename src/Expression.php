@@ -1,6 +1,6 @@
 <?php
 
-namespace Janaseta\SF;
+namespace GlaivePro\SF;
 
 class Expression implements \Stringable
 {

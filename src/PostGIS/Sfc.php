@@ -1,10 +1,10 @@
 <?php
 
-namespace Janaseta\SF\PostGIS;
+namespace GlaivePro\SF\PostGIS;
 
-use Janaseta\SF\Exceptions\MethodNotImplemented;
-use Janaseta\SF\Expression;
-use Janaseta\SF\OGC\Sfc as OGCSfc;
+use GlaivePro\SF\Exceptions\MethodNotImplemented;
+use GlaivePro\SF\Expression;
+use GlaivePro\SF\OGC\Sfc as OGCSfc;
 
 /**
  * Implements constructors available in PostGIS.

@@ -1,12 +1,12 @@
 <?php
 
-namespace Janaseta\SF\Tests\Geometry;
+namespace GlaivePro\SF\Tests\Geometry;
 
 use PHPUnit\Framework\TestCase;
-use Janaseta\SF\OGC\Contracts;
-use Janaseta\SF\OGC\MultiPolygon;
-use Janaseta\SF\OGC\MultiSurface;
-use Janaseta\SF\OGC\Point;
+use GlaivePro\SF\OGC\Contracts;
+use GlaivePro\SF\OGC\MultiPolygon;
+use GlaivePro\SF\OGC\MultiSurface;
+use GlaivePro\SF\OGC\Point;
 
 class MultiSurfaceTest extends TestCase
 {

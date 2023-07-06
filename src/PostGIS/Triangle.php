@@ -1,8 +1,8 @@
 <?php
 
-namespace Janaseta\SF\PostGIS;
+namespace GlaivePro\SF\PostGIS;
 
-use Janaseta\SF\OGC\Contracts\Triangle as OGCTriangle;
+use GlaivePro\SF\OGC\Contracts\Triangle as OGCTriangle;
 
 /**
  * Triangle model with PostGIS-specific functions.

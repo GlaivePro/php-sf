@@ -1,12 +1,12 @@
 <?php
 
-namespace Janaseta\SF\Tests\Geometry;
+namespace GlaivePro\SF\Tests\Geometry;
 
 use PHPUnit\Framework\TestCase;
-use Janaseta\SF\OGC\Contracts;
-use Janaseta\SF\OGC\Line;
-use Janaseta\SF\OGC\LinearRing;
-use Janaseta\SF\OGC\LineString;
+use GlaivePro\SF\OGC\Contracts;
+use GlaivePro\SF\OGC\Line;
+use GlaivePro\SF\OGC\LinearRing;
+use GlaivePro\SF\OGC\LineString;
 
 class LineStringTest extends TestCase
 {

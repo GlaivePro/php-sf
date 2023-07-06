@@ -1,8 +1,8 @@
 <?php
 
-namespace Janaseta\SF\PostGIS;
+namespace GlaivePro\SF\PostGIS;
 
-use Janaseta\SF\OGC\Contracts\TIN as OGCTIN;
+use GlaivePro\SF\OGC\Contracts\TIN as OGCTIN;
 
 /**
  * TIN model with PostGIS-specific functions.

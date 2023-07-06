@@ -1,13 +1,13 @@
 <?php
 
-namespace Janaseta\SF\PostGIS;
+namespace GlaivePro\SF\PostGIS;
 
-use Janaseta\SF\OGC\Contracts\Polygon as OGCPolygon;
+use GlaivePro\SF\OGC\Contracts\Polygon as OGCPolygon;
 
 /**
  * Polygon model with PostGIS-specific functions.
  */
 class Polygon extends Surface implements OGCPolygon
 {
-	use \Janaseta\SF\OGC\Traits\Polygon;
+	use \GlaivePro\SF\OGC\Traits\Polygon;
 }

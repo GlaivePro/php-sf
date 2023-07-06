@@ -1,11 +1,11 @@
 <?php
 
-namespace Janaseta\SF\Tests\PostGIS;
+namespace GlaivePro\SF\Tests\PostGIS;
 
 use PHPUnit\Framework\TestCase;
-use Janaseta\SF\Expression;
-use Janaseta\SF\PostGIS\LineString;
-use Janaseta\SF\PostGIS\Sfc;
+use GlaivePro\SF\Expression;
+use GlaivePro\SF\PostGIS\LineString;
+use GlaivePro\SF\PostGIS\Sfc;
 
 class ConstructorTest extends TestCase
 {

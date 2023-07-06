@@ -1,8 +1,8 @@
 <?php
 
-namespace Janaseta\SF\PostGIS;
+namespace GlaivePro\SF\PostGIS;
 
-use Janaseta\SF\OGC\Contracts\MultiPoint as OGCMultiPoint;
+use GlaivePro\SF\OGC\Contracts\MultiPoint as OGCMultiPoint;
 
 /**
  * MultiPoint model with PostGIS-specific functions.

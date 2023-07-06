@@ -1,9 +1,9 @@
 <?php
 
-namespace Janaseta\SF\Tests\Geometry;
+namespace GlaivePro\SF\Tests\Geometry;
 
 use PHPUnit\Framework\TestCase;
-use Janaseta\SF\OGC\Point;
+use GlaivePro\SF\OGC\Point;
 
 class PointTest extends TestCase
 {

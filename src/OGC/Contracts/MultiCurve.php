@@ -1,8 +1,8 @@
 <?php
 
-namespace Janaseta\SF\OGC\Contracts;
+namespace GlaivePro\SF\OGC\Contracts;
 
-use Janaseta\SF\Expression;
+use GlaivePro\SF\Expression;
 
 /**
  * Defines geometry model according to

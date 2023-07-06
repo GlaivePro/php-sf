@@ -1,8 +1,8 @@
 <?php
 
-namespace Janaseta\SF\OGC\Traits;
+namespace GlaivePro\SF\OGC\Traits;
 
-use Janaseta\SF\OGC\Contracts;
+use GlaivePro\SF\OGC\Contracts;
 
 /**
  * Implements geometry model according to

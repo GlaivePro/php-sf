@@ -1,12 +1,12 @@
 <?php
 
-namespace Janaseta\SF\Tests\Geometry;
+namespace GlaivePro\SF\Tests\Geometry;
 
 use PHPUnit\Framework\TestCase;
-use Janaseta\SF\OGC\Contracts;
-use Janaseta\SF\OGC\Geometry;
-use Janaseta\SF\OGC\GeometryCollection;
-use Janaseta\SF\OGC\MultiPoint;
+use GlaivePro\SF\OGC\Contracts;
+use GlaivePro\SF\OGC\Geometry;
+use GlaivePro\SF\OGC\GeometryCollection;
+use GlaivePro\SF\OGC\MultiPoint;
 
 class GeometryCollectionTest extends TestCase
 {

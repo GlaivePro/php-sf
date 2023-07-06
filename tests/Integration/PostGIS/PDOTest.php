@@ -1,11 +1,11 @@
 <?php
 
-namespace Janaseta\SF\Tests\Integration\PostGIS;
+namespace GlaivePro\SF\Tests\Integration\PostGIS;
 
-use Janaseta\SF\Expression;
-use Janaseta\SF\PostGIS\Geometry;
-use Janaseta\SF\PostGIS\Point;
-use Janaseta\SF\PostGIS\Sfc;
+use GlaivePro\SF\Expression;
+use GlaivePro\SF\PostGIS\Geometry;
+use GlaivePro\SF\PostGIS\Point;
+use GlaivePro\SF\PostGIS\Sfc;
 use PDO;
 use PHPUnit\Framework\TestCase;
 

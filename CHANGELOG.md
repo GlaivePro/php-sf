@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Changelog
 - PHP 8.2 support
+- MySQL support
 
 ## [0.1.0] - 2022-07-22
 ### Added

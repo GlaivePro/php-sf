@@ -13,6 +13,7 @@
         <directory suffix="Test.php">./tests/Geometry</directory>
         <directory suffix="Test.php">./tests/Feature</directory>
         <directory suffix="Test.php">./tests/Constructors</directory>
+        <directory suffix="Test.php">./tests/MySQL</directory>
         <directory suffix="Test.php">./tests/PostGIS</directory>
         <directory suffix="Test.php">./tests/SpatiaLite</directory>
         <directory suffix="Test.php">./tests/SQL</directory>

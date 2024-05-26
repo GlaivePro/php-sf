@@ -155,6 +155,7 @@ support all cases.
 
 ### Roadmap
 
+- Document internals (class, trait & contract modelling; callFromMethod, wrap etc)
 - All the SFA model
 - All the other SFA-SQL functions
 - Internal support for return and arg types (e.g. `IntExpression`, `AreaExpression`)

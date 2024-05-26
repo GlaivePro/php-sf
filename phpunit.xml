@@ -27,6 +27,9 @@
     <testsuite name="Contructor">
         <directory suffix="Test.php">./tests/Constructors</directory>
     </testsuite>
+    <testsuite name="MySQL">
+        <directory suffix="Test.php">./tests/MySQL</directory>
+    </testsuite>
     <testsuite name="PostGIS">
         <directory suffix="Test.php">./tests/PostGIS</directory>
     </testsuite>

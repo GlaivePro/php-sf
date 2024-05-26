@@ -38,7 +38,7 @@ jobs:
     name: Test with MariaDB
 
     services:
-      postgis:
+      mariadb:
         image: mariadb:10
         env:
           MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: yes
@@ -66,7 +66,7 @@ jobs:
     name: Test with Mysql
 
     services:
-      postgis:
+      mysql:
         image: mysql:8
         env:
           MYSQL_DATABASE: sfa

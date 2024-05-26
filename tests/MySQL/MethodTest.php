@@ -68,6 +68,30 @@ class MethodTest extends TestCase
 		$curve->boundary();
 	}
 
+	public function testGeometryRelateNotImplemented(): void
+	{
+		$this->expectException(MethodNotImplemented::class);
+
+		$curve = new Geometry('geom');
+		$curve->relate('geom2', 'matrix');
+	}
+
+	public function testGeometryLocateAlongNotImplemented(): void
+	{
+		$this->expectException(MethodNotImplemented::class);
+
+		$curve = new Geometry('geom');
+		$curve->locateAlong(1.0);
+	}
+
+	public function testGeometryLocateBetweenNotImplemented(): void
+	{
+		$this->expectException(MethodNotImplemented::class);
+
+		$curve = new Geometry('geom');
+		$curve->locateBetween(1.0, 2.0);
+	}
+
 	public function testMultiSurfacePointOnSurfaceNotImplemented(): void
 	{
 		$this->expectException(MethodNotImplemented::class);

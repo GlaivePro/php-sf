@@ -32,6 +32,59 @@ jobs:
       - name: Run tests
         run: composer test
 
+  mariadb-test:
+    runs-on: ubuntu-latest
+
+    name: Test with MariaDB
+
+    services:
+      postgis:
+        image: mariadb:10
+        env:
+          MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: yes
+          MARIADB_DATABASE: sfa
+          MARIADB_USER: sfa
+          MARIADB_PASSWORD: sfa
+        ports:
+          - 3306:3306
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        uses: ramsey/composer-install@v2
+
+      - name: Run tests
+        run: composer test-maria
+
+
+  mysql-test:
+    runs-on: ubuntu-latest
+
+    name: Test with Mysql
+
+    services:
+      postgis:
+        image: mysql:8
+        env:
+          MYSQL_DATABASE: sfa
+          MYSQL_USER: sfa
+          MYSQL_PASSWORD: sfa
+        ports:
+          - 3306:3306
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        uses: ramsey/composer-install@v2
+
+      - name: Run tests
+        run: composer test-my
+
+
   postgis-test:
     runs-on: ubuntu-latest
 
@@ -49,7 +102,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install dependencies
         uses: ramsey/composer-install@v2

@@ -43,6 +43,12 @@
     <testsuite name="SQL">
         <directory suffix="Test.php">./tests/SQL</directory>
     </testsuite>
+    <testsuite name="MariaIntegration">
+        <directory suffix="Test.php">./tests/Integration/MariaDB</directory>
+    </testsuite>
+    <testsuite name="MyIntegration">
+        <directory suffix="Test.php">./tests/Integration/MySQL</directory>
+    </testsuite>
     <testsuite name="PGIntegration">
         <directory suffix="Test.php">./tests/Integration/PostGIS</directory>
     </testsuite>

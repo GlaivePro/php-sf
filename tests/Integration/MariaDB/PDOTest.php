@@ -17,7 +17,7 @@ class PDOTest extends TestCase
 	{
 		parent::setUp();
 
-		$dsn = "pgsql:host=localhost;port=5432;dbname=sfa;";
+		$dsn = "mysql:host=localhost;port=3306;dbname=sfa;";
 
 		$this->pdo = new PDO($dsn, 'sfa', 'sfa', [
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

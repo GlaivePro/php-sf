@@ -6,17 +6,9 @@ use GlaivePro\SF\Exceptions\MethodNotImplemented;
 use PHPUnit\Framework\TestCase;
 use GlaivePro\SF\MySQL\Curve;
 use GlaivePro\SF\MySQL\Geometry;
-use GlaivePro\SF\MySQL\GeometryCollection;
-use GlaivePro\SF\MySQL\Line;
-use GlaivePro\SF\MySQL\LinearRing;
-use GlaivePro\SF\MySQL\LineString;
 use GlaivePro\SF\MySQL\MultiSurface;
 use GlaivePro\SF\MySQL\Point;
-use GlaivePro\SF\MySQL\Polygon;
-use GlaivePro\SF\MySQL\PolyhedralSurface;
 use GlaivePro\SF\MySQL\Surface;
-use GlaivePro\SF\MySQL\TIN;
-use GlaivePro\SF\MySQL\Triangle;
 
 /**
  * Ensure that methods use the dialect-specific syntax.
@@ -99,9 +91,6 @@ class MethodTest extends TestCase
 		$curve = new Point('point');
 		$curve->M();
 	}
-
-
-
 
 	public function testSurfacePointOnSurfaceNotImplemented(): void
 	{

@@ -161,6 +161,7 @@ support all cases.
 - PostGIS specific stuff like constructors, additional args, geography stuff and so on
 - Testing support, including a SpatiaLite driver and ability to replace "drivers"
 - Laravel query builder and Eloquent (casts, setting, queries...) integration
+- MariaDB support
 
 ## Terminology and references
 

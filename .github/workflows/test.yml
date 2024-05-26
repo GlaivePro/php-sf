@@ -69,6 +69,7 @@ jobs:
       mysql:
         image: mysql:8
         env:
+          MYSQL_ALLOW_EMPTY_ROOT_PASSWORD: yes
           MYSQL_DATABASE: sfa
           MYSQL_USER: sfa
           MYSQL_PASSWORD: sfa

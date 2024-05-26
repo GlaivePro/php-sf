@@ -3,7 +3,6 @@
 namespace GlaivePro\SF\MySQL;
 
 use GlaivePro\SF\Exceptions\MethodNotImplemented;
-use GlaivePro\SF\Expression;
 use GlaivePro\SF\OGC\Sfc as OGCSfc;
 
 /**

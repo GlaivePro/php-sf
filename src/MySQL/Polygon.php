@@ -2,7 +2,6 @@
 
 namespace GlaivePro\SF\MySQL;
 
-use GlaivePro\SF\Expression;
 use GlaivePro\SF\OGC\Contracts\Polygon as OGCPolygon;
 
 /**

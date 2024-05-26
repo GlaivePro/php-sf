@@ -4,6 +4,7 @@ namespace GlaivePro\SF\MySQL;
 
 use GlaivePro\SF\Exceptions\MethodNotImplemented;
 use GlaivePro\SF\Expression;
+use GlaivePro\SF\OGC\Contracts\Geometry as GeometryInterface;
 use GlaivePro\SF\OGC\Geometry as OGCGeometry;
 
 /**
@@ -33,7 +34,22 @@ class Geometry extends OGCGeometry
 		throw new MethodNotImplemented;
 	}
 
-	public function boundary(): \GlaivePro\SF\OGC\Contracts\Geometry
+	public function boundary(): GeometryInterface
+	{
+		throw new MethodNotImplemented;
+	}
+
+	public function relate(GeometryInterface|string $another, string $matrix): Expression // Boolean-valued expression
+	{
+		throw new MethodNotImplemented;
+	}
+
+	public function locateAlong(float $mValue): GeometryInterface
+	{
+		throw new MethodNotImplemented;
+	}
+
+	public function locateBetween(float $mStart, float $mEnd): GeometryInterface
 	{
 		throw new MethodNotImplemented;
 	}

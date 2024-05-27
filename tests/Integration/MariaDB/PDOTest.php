@@ -17,7 +17,7 @@ class PDOTest extends TestCase
 	{
 		parent::setUp();
 
-		$dsn = "mysql:host=localhost;port=3307;dbname=sfa;";
+		$dsn = "mysql:host=127.0.0.1;port=3306;dbname=sfa;";
 
 		$this->pdo = new PDO($dsn, 'sfa', 'sfa', options: [
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -42,8 +42,8 @@ class PDOTest extends TestCase
 	{
 		// Let's try various APIs
 		$points = [
-			Sfc::makePoint(0, 0),
-			new Point('ST_MakePoint(?, ?)', [0, 10]),
+			Sfc::point(0, 0),
+			new Point('POINT(?, ?)', [0, 10]),
 			new Geometry("'POINT(5 5)'::geometry"),
 		];
 

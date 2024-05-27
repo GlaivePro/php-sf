@@ -47,10 +47,17 @@ jobs:
           MARIADB_PASSWORD: sfa
         ports:
           - 3306:3306
+        options: --health-cmd="healthcheck.sh --connect --innodb_initialized" --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: HUH?
+        run: mysql -u sfa -p sfa -h localhost -P 3307 -D sfa -e 'select 1+3;'
+
+      - name: huh?
+        run: cat healthcheck.sh
 
       - name: Install dependencies
         uses: ramsey/composer-install@v2

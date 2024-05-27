@@ -42,8 +42,8 @@ class PDOTest extends TestCase
 	{
 		// Let's try various APIs
 		$points = [
-			Sfc::makePoint(0, 0),
-			new Point('ST_MakePoint(?, ?)', [0, 10]),
+			Sfc::point(0, 0),
+			new Point('POINT(?, ?)', [0, 10]),
 			new Geometry("'POINT(5 5)'::geometry"),
 		];
 

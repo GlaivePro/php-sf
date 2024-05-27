@@ -130,4 +130,9 @@ class ExpressionTest extends TestCase
 		$this->assertInstanceOf(Geometry::class, $geometry);
 		$this->assertEquals('method(expr)', (string) $geometry);
 	}
+
+	public function testFromMethodWithoutArgs(): void
+	{
+		$this->assertEquals('VERSION()', Expression::fromMethod('VERSION'));
+	}
 }

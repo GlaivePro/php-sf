@@ -174,6 +174,132 @@ builder.
 - Laravel query builder and Eloquent (casts, setting, queries...) integration
 - MariaDB support
 
+## Architecture
+
+Some implementation details to help organizing the stuff.
+
+### Expressions
+
+The main building block is the `Expression` class that represents an SQL
+expression along with bindings. All the geometry classes are subclasses of
+`Expression`. All expressions have two public properties and they are stringable:
+
+```php
+$expression->sql; // string
+$expression->bindings; // array
+(string) $expression; // same as $expression->sql
+```
+
+There are three ways to create any expression object:
+
+```php
+// the constructor allows specifying sql and optionally bindings
+new Expression('mycolumn');
+new Expression('count(mycolumn)');
+new Expression('? + ?', [1, 3]);
+// You can also instantiate any subclass of expression
+// here's an expression that refers to your location column and knows that
+// it represents a point-typed value
+new Point('the_location');
+
+// the make factory can instantiate an expression as well
+Expression::make('mycolumn');
+// it can wrap an existing expression to cast it to another type:
+Geometry::make($someExpression); // return a Geometry with the same $sql and $bindings as $someExpression has
+// the goal is to enforce type — it only accepts strings or subclasses
+// i.e. the argument of Expression::make is covariant and violates Liskov substitution principle
+Geometry::make(new Geometry('the_location')); // ok
+Geometry::make(new Point('the_location')); // ok, point can be treated as geometry
+Point::make(new Geometry('the_location')); // throws InvalidExpressionType — arbitrary geometry can't be treated as a point
+Geometry::make('mygeom'); // ok, we trust you know what you're doing
+
+// the fromMethod factory constructs an SQL statement calling a function
+Expression::fromMethod('VERSION'); // makes an expression with $sql equal to VERSION()
+// it puts raw args as bindings
+Point::fromMethod('ST_MakePoint', 23, 56); // $sql is ST_MakeLine(?, ?) and $bindings is [23, 56]
+// expression args are inserted as args
+LineString::fromMethod('ST_MakeLine', new Point('start_point_col'), new Point('end_point_col')); // $sql is ST_MakeLine(start_point_col, end_point_col)
+// expression arg bindings are merged
+$point1 = Point::fromMethod('POINT', 23, 56);
+$point2 = Point::fromMethod('POINT', 23, 57);
+LineString::fromMethod('ST_MakeLine', $point1, $point2); // $sql is ST_MakeLine(POINT(?, ?), POINT(?, ?)) and $bindings is [23, 56, 23, 57]
+```
+
+### Expression subclasses
+
+The goal of expression subclasses is to know what type of object we are dealing
+with and what methods are available on it.
+
+```php
+$point = new Point('some_col');
+$point->x(); // an Expression with $sql equal to ST_X(some_col)
+
+$line = new LineString('line_column');
+$endPoint = $line->pointN(-1); // a Point with $sql = ST_PointN(line_column, ?) and $bindings [-1]
+$endPoint->x(); // and expression with $sql = ST_X(ST_PointN(line_column, ?)) and $bindings = [-1]
+$endPoint->pointN(-1); // throws exception as you cant ST_PointN on a point
+```
+
+Currently we only have expression subclasses for geometry, but we might have
+other types (integer valued expression, area valued expression and so on) later.
+
+### Hierarchy and composition
+
+The geometry class hierarchy as defined in the OGC spec along with the required
+methods is defined in interfaces in `OGC\Contracts`.
+
+The default mapping from OOP methods to SQL as described in the OGC spec is
+implemented in `OGC\Traits`.
+
+The classes are built somewhat like this (pseudocode):
+
+```php
+class PostGIS\Line extends PostGIS\LineString implements OGC\Contracts\Line
+{
+	// default implementation
+	use OGC\Traits\Line;
+
+	// PostGIS-specific overrides and additions
+	public function someLineMethod($anArg)
+	{
+		//
+	}
+}
+```
+
+We also include classes in the `OGC` namespace that implement everything as
+defined in the spec. Seemingly there are no DBMSs that implement everything
+exactly like that, but let it be for now.
+
+Btw if an OGC-defined method is not implemented in the particular DBMS, you
+will get a MethodNotImplemented exception thrown.
+
+### Constructors
+
+Constructors are implemented in classes named `Sfc` (simple feature constructor).
+
+You have the defaults in `OGC\Sfc`:
+
+```php
+Sfc::pointFromText('POINT(23 56)'); // returns a Point with $sql = ST_PointFromText(?) and $bindings = ['POINT(23 56)']
+```
+
+And the more specific stuff in the specific `Sfc`s:
+
+```php
+PostGIS\Sfc::makePointM(23, 56, 5); // returns a Point with $sql = ST_MakePointM(?, ?, ?) and $bindings = [23, 56, 5]
+```
+
+The `Sfc` classes also have the `[type]FromMethod` magic methods, e.g.
+```php
+PostGIS\Sfc::pointFromMethod(...$args); // same as PostGIS\Point::fromMethod(...$args)
+MySQL\Sfc::pointFromMethod(...$args); // same as MySQL\Point::fromMethod(...$args)
+```
+
+Which is useful when you want to share functionality across Sfc classes but
+need to return a geometry class belonging to the particular DBMS.
+
+
 ## Terminology and references
 
 - **SF** — [Simple Features](https://en.wikipedia.org/wiki/Simple_Features),

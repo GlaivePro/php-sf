@@ -17,21 +17,20 @@ class PDOTest extends TestCase
 	{
 		parent::setUp();
 
-		/* $dsn = "mysql:host=127.0.0.1;port=3306;dbname=sfa;";
+		$dsn = "mysql:host=127.0.0.1;port=3306;dbname=sfa;";
 
 		$this->pdo = new PDO($dsn, 'sfa', 'sfa', [
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 			PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-		]);*/
+		]);
 	}
 
-	public function testConstructorsXXXX(): void
+	public function testConstructors(): void
 	{
 		$point = Sfc::point(23, 56, 4326);
 
 
-		$this->assertEquals(123, (string) $point->x());
-
+		$this->assertEquals(23, Sfc::point(23, 56)->x());
 
 		$this->assertEquals(23, $this->selectVal($point->x()));
 		$this->assertEquals(56, $this->selectVal($point->y()));

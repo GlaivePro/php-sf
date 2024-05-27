@@ -29,9 +29,7 @@ class PDOTest extends TestCase
 	{
 		$point = Sfc::point(23, 56, 4326);
 
-
-		$this->assertEquals(23, Sfc::point(23, 56)->x());
-
+		$this->assertEquals(23, (string) $point->x());
 		$this->assertEquals(23, $this->selectVal($point->x()));
 		$this->assertEquals(56, $this->selectVal($point->y()));
 		$this->assertEquals(4326, $this->selectVal($point->srid()));
@@ -52,7 +50,8 @@ class PDOTest extends TestCase
 
 		$hull = $points[0]->union($points[1])->union($points[2])->convexHull();
 
-		$this->assertSame('POLYGON((0 0,0 10,5 5,0 0))', $this->selectVal($hull->asText()));
+		// other DBs (postgres, mariadb) make POLYGON((0 0,0 10,5 5,0 0))....
+		$this->assertSame('POLYGON((0 0,5 5,0 10,0 0))', $this->selectVal($hull->asText()));
 
 		$pointInside = Sfc::point(3, 5);
 		$pointOutside = Sfc::point(10, 10);

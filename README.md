@@ -153,6 +153,16 @@ ArcSDE implementation. If method names are different, we should have aliases
 to support PostGIS naming. If arguments are different, we should strive to
 support all cases.
 
+MySQL, MariaDB and SpatiaLite support would also be nice.
+
+However, at this point in time, this is not supposed to be a compatibility
+layer between the databases. If the same function does different things on
+different databases, we are not homogenizing the behaviour. We just let you
+call the function as is.
+
+A homogenization layer might be useful, but that's another step, after the raw
+builder.
+
 ### Roadmap
 
 - Document internals (class, trait & contract modelling; callFromMethod, wrap etc)

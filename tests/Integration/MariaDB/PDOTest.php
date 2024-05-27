@@ -53,30 +53,30 @@ class PDOTest extends TestCase
 
 		$pointInside = Sfc::point(3, 5);
 		$pointOutside = Sfc::point(10, 10);
-		$this->assertEquals(true, $this->selectVal(
+		$this->assertTrue($this->selectVal(
 			$hull->contains($pointInside)
 		));
-		$this->assertEquals(true, $this->selectVal(
+		$this->assertTrue($this->selectVal(
 			$pointInside->within($hull)
 		));
-		$this->assertEquals(false, $this->selectVal(
+		$this->assertFalse($this->selectVal(
 			$hull->contains($pointOutside)
 		));
-		$this->assertEquals(false, $this->selectVal(
+		$this->assertFalse($this->selectVal(
 			$pointOutside->within($hull)
 		));
 
 		$line = Sfc::lineFromText('LINESTRING(3 3,10 10)');
-		$this->assertEquals(false, this->selectVal(
+		$this->assertFalse(this->selectVal(
 			$hull->contains($line)
 		));
-		$this->assertEquals(false, $this->selectVal(
+		$this->assertFalse($this->selectVal(
 			$line->within($hull)
 		));
-		$this->assertEquals(true, $this->selectVal(
+		$this->assertTrue($this->selectVal(
 			$hull->intersects($line)
 		));
-		$this->assertEquals(true, $this->selectVal(
+		$this->assertTrue($this->selectVal(
 			$line->intersects($hull)
 		));
 	}

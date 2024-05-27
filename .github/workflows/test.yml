@@ -43,8 +43,6 @@ jobs:
         env:
           MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: yes
           MARIADB_DATABASE: sfa
-          MARIADB_USER: sfa
-          MARIADB_PASSWORD: sfa
         ports:
           - 3306:3306
         options: --health-cmd="healthcheck.sh --connect --innodb_initialized" --health-interval=10s --health-timeout=5s --health-retries=3
@@ -63,7 +61,7 @@ jobs:
   mysql-test:
     runs-on: ubuntu-latest
 
-    name: Test with Mysql
+    name: Test with MySQL
 
     services:
       mysql:
@@ -71,8 +69,6 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: yes
           MYSQL_DATABASE: sfa
-          MYSQL_USER: sfa
-          MYSQL_PASSWORD: sfa
         ports:
           - 3306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
@@ -102,6 +98,7 @@ jobs:
           POSTGRES_PASSWORD: sfa
         ports:
           - 5432:5432
+        options: --health-cmd=pg_isready --health-interval=10s --health-timeout=5s --health-retries=3
 
     steps:
       - name: Checkout code

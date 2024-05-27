@@ -19,7 +19,7 @@ class PDOTest extends TestCase
 
 		$dsn = "mysql:host=localhost;port=3306;dbname=sfa;";
 
-		$this->pdo = new PDO($dsn, 'sfa', 'sfa', [
+		$this->pdo = new PDO($dsn, options: [
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 			PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
 		]);

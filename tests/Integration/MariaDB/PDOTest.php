@@ -67,7 +67,7 @@ class PDOTest extends TestCase
 		));
 
 		$line = Sfc::lineFromText('LINESTRING(3 3,10 10)');
-		$this->assertEquals(0, this->selectVal(
+		$this->assertEquals(0, $this->selectVal(
 			$hull->contains($line)
 		));
 		$this->assertEquals(0, $this->selectVal(

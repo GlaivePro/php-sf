@@ -1,5 +1,5 @@
 {
-    "name": "janaseta/sf",
+    "name": "glaivepro/sf",
     "description": "SFA-SQL expression builder",
 	"license": "MIT",
     "authors": [
@@ -9,7 +9,7 @@
             "homepage": "https://github.com/tontonsb"
         }
     ],
-    "homepage": "https://github.com/janaseta/php-sf",
+    "homepage": "https://github.com/glaivepro/php-sf",
     "keywords": [
 		"Simple features", "Simple feature access",
 		"SFA-SQL", "SQL-MM",

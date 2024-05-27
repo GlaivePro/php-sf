@@ -53,6 +53,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: HUH?
+        run: mysql -u sfa -p sfa -D sfa -e 'select 1+3;'
+
+      - name: huh?
+        run: cat healthcheck.sh
+
       - name: Install dependencies
         uses: ramsey/composer-install@v2
 

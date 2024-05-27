@@ -44,7 +44,7 @@ class PDOTest extends TestCase
 		$points = [
 			Sfc::point(0, 0),
 			new Point('POINT(?, ?)', [0, 10]),
-			new Geometry("'POINT(5 5)'::geometry"),
+			new Geometry("ST_GeomFromText('POINT(5 5)')"),
 		];
 
 		$hull = $points[0]->union($points[1])->union($points[2])->convexHull();

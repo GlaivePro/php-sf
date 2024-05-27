@@ -17,17 +17,21 @@ class PDOTest extends TestCase
 	{
 		parent::setUp();
 
-		$dsn = "mysql:host=127.0.0.1;port=3306;dbname=sfa;";
+		/* $dsn = "mysql:host=127.0.0.1;port=3306;dbname=sfa;";
 
 		$this->pdo = new PDO($dsn, 'sfa', 'sfa', [
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 			PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-		]);
+		]);*/
 	}
 
-	public function testConstructors(): void
+	public function testConstructorsXXXX(): void
 	{
 		$point = Sfc::point(23, 56, 4326);
+
+
+		$this->assertEquals(123, (string) $point->x());
+
 
 		$this->assertEquals(23, $this->selectVal($point->x()));
 		$this->assertEquals(56, $this->selectVal($point->y()));
@@ -44,7 +48,7 @@ class PDOTest extends TestCase
 		$points = [
 			Sfc::point(0, 0),
 			new Point('POINT(?, ?)', [0, 10]),
-			new Geometry("'POINT(5 5)'::geometry"),
+			new Geometry("ST_GeomFromText('POINT(5 5)')"),
 		];
 
 		$hull = $points[0]->union($points[1])->union($points[2])->convexHull();

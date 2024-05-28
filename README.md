@@ -267,7 +267,7 @@ other types (integer valued expression, area valued expression and so on) later.
 
 ### Geometry class
 
-In addition to base Expression tools, `Geometry` (and all the GIS subclass) has these helpers:
+In addition to base Expression tools, `Geometry` (and all the GIS subclasses) has these helpers:
 
 ```php
 // Wrap the expression in a function call

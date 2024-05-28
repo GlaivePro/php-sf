@@ -20,6 +20,6 @@ class Point extends Geometry implements OGCPoint
 
 	public function M(): Expression
 	{
-		throw new MethodNotImplemented();
+		throw new MethodNotImplemented;
 	}
 }

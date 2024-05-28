@@ -2,7 +2,4 @@
 
 namespace GlaivePro\SF\Exceptions;
 
-class InvalidExpressionType extends \DomainException
-{
-	//
-}
+class InvalidExpressionType extends \DomainException {}

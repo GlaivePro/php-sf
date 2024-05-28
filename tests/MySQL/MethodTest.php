@@ -123,5 +123,4 @@ class MethodTest extends TestCase
 		$curve = new Surface('surface');
 		$curve->pointOnSurface();
 	}
-
 }

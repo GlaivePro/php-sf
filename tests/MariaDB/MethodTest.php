@@ -4,19 +4,9 @@ namespace GlaivePro\SF\Tests\MariaDB;
 
 use GlaivePro\SF\Exceptions\MethodNotImplemented;
 use PHPUnit\Framework\TestCase;
-use GlaivePro\SF\MariaDB\Curve;
 use GlaivePro\SF\MariaDB\Geometry;
-use GlaivePro\SF\MariaDB\GeometryCollection;
-use GlaivePro\SF\MariaDB\Line;
-use GlaivePro\SF\MariaDB\LinearRing;
-use GlaivePro\SF\MariaDB\LineString;
-use GlaivePro\SF\MariaDB\MultiSurface;
 use GlaivePro\SF\MariaDB\Point;
 use GlaivePro\SF\MariaDB\Polygon;
-use GlaivePro\SF\MariaDB\PolyhedralSurface;
-use GlaivePro\SF\MariaDB\Surface;
-use GlaivePro\SF\MariaDB\TIN;
-use GlaivePro\SF\MariaDB\Triangle;
 
 /**
  * Ensure that methods use the dialect-specific syntax.

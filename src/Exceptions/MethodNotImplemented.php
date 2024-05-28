@@ -2,7 +2,4 @@
 
 namespace GlaivePro\SF\Exceptions;
 
-class MethodNotImplemented extends \BadMethodCallException
-{
-	//
-}
+class MethodNotImplemented extends \BadMethodCallException {}

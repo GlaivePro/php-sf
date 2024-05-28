@@ -40,7 +40,7 @@ class Sfc extends OGCSfc
 	 */
 	public static function point(float $x, float $y, int $srid = null): Point
 	{
-		$point =  Point::fromMethod('Point', $x, $y);
+		$point = Point::fromMethod('Point', $x, $y);
 
 		if (\is_null($srid))
 			return $point;
@@ -79,5 +79,4 @@ class Sfc extends OGCSfc
 	{
 		throw new MethodNotImplemented;
 	}
-
 }

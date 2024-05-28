@@ -14,6 +14,6 @@ class MultiSurface extends GeometryCollection implements OGCMultiSurface
 
 	public function pointOnSurface(): \GlaivePro\SF\OGC\Contracts\Point
 	{
-		throw new MethodNotImplemented();
+		throw new MethodNotImplemented;
 	}
 }

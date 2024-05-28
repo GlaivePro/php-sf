@@ -2,8 +2,6 @@
 
 namespace GlaivePro\SF\OGC\Contracts;
 
-use GlaivePro\SF\Expression;
-
 /**
  * Defines geometry model according to
  * 6.1.12 PolyhedralSurface

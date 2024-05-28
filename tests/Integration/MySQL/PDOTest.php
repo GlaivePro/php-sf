@@ -11,13 +11,13 @@ use PHPUnit\Framework\TestCase;
 
 class PDOTest extends TestCase
 {
-	protected \PDO $pdo;
+	protected PDO $pdo;
 
 	protected function setUp(): void
 	{
 		parent::setUp();
 
-		$dsn = "mysql:host=127.0.0.1;port=3306;dbname=sfa;";
+		$dsn = 'mysql:host=127.0.0.1;port=3306;dbname=sfa;';
 
 		$this->pdo = new PDO($dsn, 'sfa', 'sfa', [
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -83,7 +83,6 @@ class PDOTest extends TestCase
 			$line->intersects($hull)
 		));
 	}
-
 
 	protected function selectVal(Expression $expression)
 	{

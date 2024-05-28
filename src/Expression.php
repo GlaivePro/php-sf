@@ -3,7 +3,6 @@
 namespace GlaivePro\SF;
 
 use Closure;
-use GlaivePro\SF\Exceptions\QuoterMissingException;
 
 class Expression implements \Stringable
 {
@@ -56,7 +55,7 @@ class Expression implements \Stringable
 					...$bindings,
 					...$arg->bindings,
 				];
-			} else if (static::quotes()) {
+			} elseif (static::quotes()) {
 				// In quoting mode raw args are quoted and used as params
 				$params[] = static::quote($arg);
 			} else {
@@ -78,7 +77,7 @@ class Expression implements \Stringable
 
 	protected static function quotes(): bool
 	{
-		return !!static::$quoter;
+		return (bool) static::$quoter;
 	}
 
 	public static function setQuoter(?Closure $quoter): void

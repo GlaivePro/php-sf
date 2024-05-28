@@ -52,5 +52,12 @@
 		"test": "Run tests",
         "fix": "Fix code style",
 		"cs": "Dry run CS fixer"
-    }
+    },
+	"extra": {
+		"laravel": {
+			"providers": [
+				"GlaivePro\\SF\\LaravelServiceProvider"
+			]
+		}
+	}
 }

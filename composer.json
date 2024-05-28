@@ -24,7 +24,7 @@
         "ext-dom": "*",
         "ext-mbstring": "*",
         "ext-xdebug": "*",
-        "janaseta/php-cs": "^1.0",
+        "friendsofphp/php-cs-fixer": "^3.57",
         "phpunit/phpunit": "^9.0"
     },
     "autoload": {

@@ -2,8 +2,6 @@
 
 namespace GlaivePro\SF;
 
-use GlaivePro\SF\OGC\Sfc as OGCSfc;
-
 /**
  * Creating simple feature classes of the selected driver.
  */

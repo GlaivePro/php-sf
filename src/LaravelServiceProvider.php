@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider;
 
 class LaravelServiceProvider extends ServiceProvider
 {
-	public function register()
+	public function register(): void
 	{
 		$this->app->bind(
 			Sf::class,
@@ -24,7 +24,7 @@ class LaravelServiceProvider extends ServiceProvider
 		);
 	}
 
-	public function boot()
+	public function boot(): void
 	{
 		// Laravel does not support param bindings in many places, e.g.
 		// $myModel->attr = 'unaccent(?)'; can't have bindings.
@@ -34,7 +34,7 @@ class LaravelServiceProvider extends ServiceProvider
 
 	protected function getDriverName(string $laravelDriverName): string
 	{
-		return match($laravelDriverName) {
+		return match ($laravelDriverName) {
 			'mariadb' => 'MariaDB',
 			'mysql' => 'MySQL',
 			'pgsql' => 'PostGIS',

@@ -2,8 +2,13 @@
 
 namespace GlaivePro\SF;
 
+use Closure;
+use GlaivePro\SF\Exceptions\QuoterMissingException;
+
 class Expression implements \Stringable
 {
+	protected static ?Closure $quoter = null;
+
 	public function __construct(
 		public readonly string $sql,
 		public readonly array $bindings = [],
@@ -51,8 +56,11 @@ class Expression implements \Stringable
 					...$bindings,
 					...$arg->bindings,
 				];
+			} else if (static::quotes()) {
+				// In quoting mode raw args are quoted and used as params
+				$params[] = static::quote($arg);
 			} else {
-				// Raw arguments are replaced by ? and moved to bindings.
+				// In bindings mode raw arguments are replaced by ? and moved to bindings.
 				$params[] = '?';
 				$bindings[] = $arg;
 			}
@@ -61,5 +69,20 @@ class Expression implements \Stringable
 		$params = implode(', ', $params);
 
 		return new static("$method($params)", $bindings);
+	}
+
+	protected static function quote($value)
+	{
+		return (static::$quoter)($value);
+	}
+
+	protected static function quotes(): bool
+	{
+		return !!static::$quoter;
+	}
+
+	public static function setQuoter(?Closure $quoter): void
+	{
+		static::$quoter = $quoter;
 	}
 }

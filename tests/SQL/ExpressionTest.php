@@ -6,6 +6,7 @@ use PHPUnit\Framework\TestCase;
 use GlaivePro\SF\Exceptions\InvalidExpressionType;
 use GlaivePro\SF\Expression;
 use GlaivePro\SF\OGC\Geometry;
+use PDO;
 
 class ExpressionTest extends TestCase
 {
@@ -134,5 +135,22 @@ class ExpressionTest extends TestCase
 	public function testFromMethodWithoutArgs(): void
 	{
 		$this->assertEquals('VERSION()', Expression::fromMethod('VERSION'));
+	}
+
+	public function testQuotingMode(): void
+	{
+		$pdo = new PDO('sqlite::memory:');
+
+		Expression::setQuoter($pdo->quote(...));
+
+		$expression = Expression::fromMethod(
+			'method',
+			"dangerous');",
+			100,
+			new Expression(200),
+		);
+
+		$this->assertSame("method('dangerous'');', '100', 200)", (string) $expression);
+		$this->assertCount(0, $expression->bindings);
 	}
 }

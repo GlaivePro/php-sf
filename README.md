@@ -98,6 +98,16 @@ $sfc = new Sfc('PostGIS');
 $sfc->makePoint(1, 3); // a PostGIS/Point with ST_MakePoint(?, ?) and [1, 3] bindings
 ```
 
+If you can't use bindings, you can use the quoting mode:
+
+```php
+// specify a quoter
+Expression::setQuoter($myPdoInstance->quote(...));
+
+// use as normally, bindings will always be empty
+Sfc::makePoint(1, 3)->setSRID(3059); // ST_SetSRID(ST_MakePoint(1, 3), 3059)
+```
+
 ## Usage examples
 
 This section presents some plain examples in plain PDO.

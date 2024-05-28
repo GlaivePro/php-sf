@@ -265,6 +265,27 @@ $endPoint->pointN(-1); // throws exception as you cant ST_PointN on a point
 Currently we only have expression subclasses for geometry, but we might have
 other types (integer valued expression, area valued expression and so on) later.
 
+### Geometry class
+
+In addition to base Expression tools, `Geometry` (and all the GIS subclass) has these helpers:
+
+```php
+// Wrap the expression in a function call
+$myGeometry = new Geometry('col');
+$myGeometry->wrap('COUNT'); // COUNT(col)
+
+// Query the geometry against another geometry
+$myGeometry = new Point('start');
+$myGeometry->query('ST_Distance', new Point('end')); // Expression holding ST_Distance(start, end)
+// This also autowraps the second arg as a geometry if you pass a string
+$myGeometry->query('ST_Distance', 'end'); // Expression holding ST_Distance(start, end)
+
+// Combine the geometry with another
+$point = new Point('start');
+$point->combine('ST_Union', 'end'); // Geometry holding ST_Union(start, end)
+// The only difference is that ->query() returns a base Expression, but ->combine() returns a Geometry
+```
+
 ### Hierarchy and composition
 
 The geometry class hierarchy as defined in the OGC spec along with the required

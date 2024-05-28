@@ -86,6 +86,18 @@ SpatiaLite\Sfc::makePoint(1, 3)->setSRID(3059);
 // Produces SetSRID(MakePoint(?, ?), ?) with bindings [1, 3, 3059]
 ```
 
+Use factories with drivers set on them:
+
+```php
+// simple feature classes
+$sf = new Sf('PostGIS');
+$sf->point('mycol'); // a PostGIS/Point wrapping the `mycol`
+
+// simple feature constructors
+$sfc = new Sfc('PostGIS');
+$sfc->makePoint(1, 3); // a PostGIS/Point with ST_MakePoint(?, ?) and [1, 3] bindings
+```
+
 ## Usage examples
 
 This section presents some plain examples in plain PDO.
